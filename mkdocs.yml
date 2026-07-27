@@ -137,6 +137,7 @@ plugins:
           - "Interview-Questions/LangGraph.md"
           - "Interview-Questions/TensorFlow.md"
           - "Interview-Questions/PyTorch.md"
+          - "Interview-Questions/Forward-Deployed-Engineer.md"
         #   - another_page.md
         restart_increment_after:
           - Interview-Questions/*"
@@ -215,6 +216,7 @@ nav:
       - Transformers: Interview-Questions/Transformers.md
       - TensorFlow: Interview-Questions/TensorFlow.md
       - PyTorch: Interview-Questions/PyTorch.md
+      - Forward Deployed Engineer (FDE): Interview-Questions/Forward-Deployed-Engineer.md
       - Interview Question Resources: Interview-Questions/Interview-Question-Resources.md
   
   - 📝 Cheat Sheets:
