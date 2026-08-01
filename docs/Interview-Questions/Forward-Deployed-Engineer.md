@@ -7,11 +7,44 @@ description: 100+ Forward Deployed Engineer interview questions covering custome
 
 <!-- [TOC] -->
 
-A Forward Deployed Engineer is an engineer embedded with a customer and held accountable for a working outcome inside that customer's environment, rather than for a feature shipped into a shared product. The role originated at Palantir, which also supplied the vocabulary the rest of the industry borrowed: product engineers are Devs, forward deployed engineers are Deltas, and the two are separated by scope rather than seniority.
+A Forward Deployed Engineer is an engineer embedded with a customer and held accountable for a **working outcome inside that customer's environment**, rather than for a feature shipped into a shared product. The role originated at Palantir, and the rest of the industry borrowed both the pattern and its vocabulary.
 
-The title exploded in 2025 and 2026. Indeed data shared with Business Insider put FDE postings at 643 in April 2025 and 5,330 in April 2026. The funded org-chart moves arrived within nine weeks of each other: OpenAI's Deployment Company (11 May 2026), Anthropic's joint venture Ode (4 May 2026), an AWS forward deployed organization (30 June 2026), and Microsoft's Frontier Company (2 July 2026). Loop shapes are described in reasonable detail, by a mix of published job descriptions and candidate reports, for Palantir, OpenAI, Google Cloud, Databricks, Sierra, Cognition and LangChain. Many more companies now hire under the title, or under a close equivalent, without a well-described process: Anthropic (whose customer-facing engineering roles were posted under Applied AI as of mid-2026), Glean, ElevenLabs, Cursor, Cohere, Mistral, Scale AI, Decagon, Baseten, Ramp, Snowflake, Anduril and Applied Intuition.
+!!! info "Two genuinely different jobs now wear the same title"
 
-Prepare for the fact that two genuinely different jobs now wear the same title. The classic Palantir-style FDE is a data integration and deployment engineer: terabyte-scale pipelines, ontology and semantic modelling over messy customer sources, access control, on-prem and air-gapped installs, on-call. The AI-lab FDE is a full-stack LLM product engineer with a customer attached: discovery, eval design, RAG and agent architecture, guardrails, production rollout, adoption. This page is organized to cover both. It runs through role positioning, data and integration, deployment and operations, AI and LLM systems, customer craft and scoping, and behavioral and situational questions, then closes with a 100-question quick reference table and a two week preparation plan.
+    Work out which variant you are interviewing for before you prepare. This page covers both.
+
+    | | Classic, Palantir style | AI lab |
+    |---|---|---|
+    | **Core work** | Data integration and deployment engineering | Full-stack LLM product engineering with a customer attached |
+    | **Typical surface** | Terabyte-scale pipelines, ontology and semantic modelling over messy customer sources, access control | Discovery, eval design, RAG and agent architecture, guardrails |
+    | **Environment** | On-prem and air-gapped installs, on-call | Production rollout, adoption |
+
+**How fast the title grew.**
+
+- Indeed data shared with Business Insider put FDE postings at **643 in April 2025** and **5,330 in April 2026**.
+- The funded org-chart moves arrived within nine weeks of each other:
+
+| Date | 2026 org-chart move |
+|---|---|
+| 4 May 2026 | Anthropic's joint venture Ode |
+| 11 May 2026 | OpenAI's Deployment Company |
+| 30 June 2026 | An AWS forward deployed organization |
+| 2 July 2026 | Microsoft's Frontier Company |
+
+**Which companies this page can actually describe.**
+
+- **Loop shapes described in reasonable detail**, by a mix of published job descriptions and candidate reports: Palantir, OpenAI, Google Cloud, Databricks, Sierra, Cognition, LangChain.
+- **Hiring under the title, or under a close equivalent, without a well-described process:** Anthropic (whose customer-facing engineering roles were posted under Applied AI as of mid-2026), Glean, ElevenLabs, Cursor, Cohere, Mistral, Scale AI, Decagon, Baseten, Ramp, Snowflake, Anduril, Applied Intuition.
+
+**How this page is organized.** Six question sections, then reference material:
+
+- Role and positioning
+- Data and integration
+- Deployment, debugging and operations
+- Deploying AI and LLM systems
+- Customer craft and scoping
+- Behavioral and situational
+- Closing with a 100-question quick reference table and a two week preparation plan
 
 ---
 
@@ -63,7 +96,9 @@ AI LAB (artifact driven, as described in candidate write-ups)
 
 Reports differ on ordering and detail, and the same company runs different round lists for different requisitions, so ask for your round list in writing rather than treating the sketch above as a syllabus.
 
-Selectivity is real and self-reported aggregator data is only indicative: Taro's public Palantir FDSE page computes its metrics from 125 submitted interview experiences and characterises the loop as failing the large majority of engineers who attempt it. Treat that as directional rather than as a measured pass rate. Timelines are contested, with candidate reports ranging from an offer within about a week of the final round to processes stretching across months with long silences in between. Do not plan around either extreme.
+**Selectivity is real, but self-reported aggregator data is only indicative.** Taro's public Palantir FDSE page computes its metrics from 125 submitted interview experiences and characterises the loop as failing the large majority of engineers who attempt it. Treat that as directional rather than as a measured pass rate.
+
+**Timelines are contested.** Candidate reports range from an offer within about a week of the final round to processes stretching across months with long silences in between. Do not plan around either extreme.
 
 ---
 
@@ -84,11 +119,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     **Where the role came from:**
 
     - The role originated at **Palantir**, where engineers were sent to work inside customer sites rather than shipping features from a central product org, and the pattern spread from there.
+    - Palantir also supplied the vocabulary the rest of the industry borrowed: product engineers are **Devs**, forward deployed engineers are **Deltas**, and the two are separated by scope rather than seniority.
     - The reason the model exists is that the engineer who sits with the customer sees what the product is missing. Treat the role as an **R&D function, not a services function**: the observations you bring back are supposed to become platform capability rather than another bespoke application.
 
     **The framing worth memorizing, because it is the one interviewers reach for:**
 
-    Product engineering and forward deployed engineering split by scope, not by seniority. A product engineer optimises for one capability across many customers. A forward deployed engineer optimises for one customer across many capabilities. Everything else about the role follows from that one sentence: the travel, the ambiguity, the willingness to write code you know is not the general solution, and the obligation to feed what you learn back into the product.
+    Product engineering and forward deployed engineering split by scope, not by seniority. A product engineer optimises for one capability across many customers. A forward deployed engineer optimises for one customer across many capabilities.
+
+    Everything else about the role follows from that one sentence: the travel, the ambiguity, the willingness to write code you know is not the general solution, and the obligation to feed what you learn back into the product.
 
     **Naming precision that scores points:** Palantir's primary title is Forward Deployed Software Engineer (FDSE), internally "Delta," and it sits in **Business Development, not Product Development**. The sibling role, Deployment Strategist, is internally "Echo." Newer Palantir new-grad postings have rebranded to "Forward Deployed Engineer (FDE)" with harder copy, including the line "You will not be handed a ticket queue." The posture that copy is signalling is that you are expected to sit with the customer, the mess and the consequences rather than behind a triage layer.
 
@@ -101,16 +139,28 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | The gap between "it works" and "people use it" | An engineer who owns adoption, not just delivery |
     | Customer data reality never matches the sales pitch | Discovery done by the person who has to build it |
 
-    Almost every 2026 FDE announcement cites the MIT NANDA finding that roughly 95% of enterprise generative-AI pilots produce no measurable P&L impact, and reads the diagnosis as a deployment problem rather than a model problem. **Attribute and hedge it if you use it**, because the figure is contested and argued to be widely misrepresented. The safer framing: traditional software delivery ends at launch, but AI systems are probabilistic, so FDEs are measured on whether the system keeps running well and keeps adding value *after* go-live.
+    Almost every 2026 FDE announcement cites the MIT NANDA finding that roughly 95% of enterprise generative-AI pilots produce no measurable P&L impact, and reads the diagnosis as a deployment problem rather than a model problem.
+
+    !!! warning "Attribute and hedge that statistic if you use it"
+        The figure is contested and argued to be widely misrepresented. The safer framing: traditional software delivery ends at launch, but AI systems are probabilistic, so FDEs are measured on whether the system keeps running well and keeps adding value *after* go-live.
 
     **Scale of the 2026 shift (useful for a "why now" answer):**
 
     - Indeed data shared with Business Insider: FDE postings went from 643 in April 2025 to 5,330 in April 2026, up roughly 729% year over year.
     - OpenAI Deployment Company (announced 11 May 2026, $4B+ raised), Anthropic's joint venture Ode (4 May 2026, $1.5B), AWS's $1B FDE org (30 June 2026, ~45-day sprints), Microsoft Frontier Company (2 July 2026, $2.5B, 6,000 people). Reported valuations for these vehicles vary widely across coverage; quote the announced capital, not a valuation.
 
-    **What it is not: consulting.** A consulting engagement typically produces an analysis, a recommendation or a one-time solution and then closes. An FDE engagement produces a running system the customer keeps, plus a set of observations that change the vendor's product. The tell is what happens after go-live: a consultancy bills the next statement of work, while an FDE org is judged on whether the deployment is still being used and whether anything from it shipped into the platform. Nor is it sales: FDE postings are overwhelmingly written into engineering job families rather than sales ones. That tells you what the work is; it does not tell you how the job is paid, so confirm the compensation structure with the recruiter rather than assuming it from the title.
+    **What it is not: consulting.**
 
-    **What the title has fragmented into.** As of a mid-July 2026 snapshot of Palantir's live job feed, 287 postings were open, of which roughly 69 were in the "Forward Deployed" family and 35 were Deployment Strategist. Posting counts move week to week, so treat these as a shape rather than a constant. The FDE title alone spans at least seven specialisations that do not share one skill surface. The split below is an approximate reading of that single snapshot, grouped by hand from posting titles, and the right-hand column paraphrases posting copy rather than quoting an official taxonomy:
+    | | Consulting engagement | FDE engagement |
+    |---|---|---|
+    | **What it produces** | An analysis, a recommendation or a one-time solution, then it closes | A running system the customer keeps, plus observations that change the vendor's product |
+    | **The tell, after go-live** | The consultancy bills the next statement of work | The org is judged on whether the deployment is still being used, and whether anything from it shipped into the platform |
+
+    **Nor is it sales.** FDE postings are overwhelmingly written into engineering job families rather than sales ones. That tells you what the work is; it does not tell you how the job is paid, so confirm the compensation structure with the recruiter rather than assuming it from the title.
+
+    **What the title has fragmented into.** As of a mid-July 2026 snapshot of Palantir's live job feed, 287 postings were open, of which roughly 69 were in the "Forward Deployed" family and 35 were Deployment Strategist. Posting counts move week to week, so treat these as a shape rather than a constant.
+
+    The FDE title alone spans at least seven specialisations that do not share one skill surface. The split below is an approximate reading of that single snapshot, grouped by hand from posting titles, and the right-hand column paraphrases posting copy rather than quoting an official taxonomy:
 
     ```
     Approximate grouping of one snapshot, not a published breakdown
@@ -124,9 +174,22 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     Forward Deployed Mixed Reality       ~1   specialised client surface
     ```
 
-    Elsewhere the spread is wider still. Anduril's Forward Deployed Engineer, Air Defense posting is a field hardware job: it asks for the "ability to climb towers to install, maintain, and repair sensor equipment and components including cameras, radars, and Pan Tilt Units," "strong mechanical aptitude to troubleshoot and repair critical site infrastructure including generators, solar power systems, and hydraulic systems," eligibility for a US Top Secret/Secret clearance, and the "ability to travel to remote regions of the world for up to two months at a time (up to 80% of the year)." Applied Intuition's Forward Deployed Engineer posting (note the title, which is not Forward Deployed Software Engineer) asks for proficiency in "C++, Python," US citizenship, and a US security clearance held or obtainable. Always ask which variant you are interviewing for.
+    **Outside Palantir the spread is wider still.**
 
-    **Know the dissent too, because interviewers respect it.** Ex-Palantir FDE Piotr Kraus, speaking to [LeadDev](https://leaddev.com/hiring/the-rise-of-the-forward-deployed-engineer), put it as "the role is definitely real, but the title might have become a little bit frothy." Those are Kraus's words, not the publication's position. The broader criticism is that many orgs now apply the label to anyone who is customer-facing and somewhat technical. The common thread in the dissent is that the feedback loop only exists when the same people own implementation end to end, so an org that keeps the customer-facing engineer away from the build gets the title without the mechanism. Being able to state that test, and then ask an interviewer whether their team passes it, is a stronger answer than either cheerleading or cynicism.
+    - **Anduril, Forward Deployed Engineer, Air Defense.** A field hardware job. The posting asks for:
+        - the "ability to climb towers to install, maintain, and repair sensor equipment and components including cameras, radars, and Pan Tilt Units"
+        - "strong mechanical aptitude to troubleshoot and repair critical site infrastructure including generators, solar power systems, and hydraulic systems"
+        - eligibility for a US Top Secret/Secret clearance
+        - the "ability to travel to remote regions of the world for up to two months at a time (up to 80% of the year)"
+    - **Applied Intuition, Forward Deployed Engineer.** Note the title, which is not Forward Deployed Software Engineer. Asks for proficiency in "C++, Python," US citizenship, and a US security clearance held or obtainable.
+
+    Always ask which variant you are interviewing for.
+
+    **Know the dissent too, because interviewers respect it.** Ex-Palantir FDE Piotr Kraus, speaking to [LeadDev](https://leaddev.com/hiring/the-rise-of-the-forward-deployed-engineer), put it as "the role is definitely real, but the title might have become a little bit frothy." Those are Kraus's words, not the publication's position.
+
+    The broader criticism is that many orgs now apply the label to anyone who is customer-facing and somewhat technical. The common thread in the dissent is that the feedback loop only exists when the same people own implementation end to end, so an org that keeps the customer-facing engineer away from the build gets the title without the mechanism.
+
+    Being able to state that test, and then ask an interviewer whether their team passes it, is a stronger answer than either cheerleading or cynicism.
 
     !!! tip "Interviewer's Insight"
         **What they're testing:** Whether you understand the role you applied for, or whether you read a listicle.
@@ -174,7 +237,11 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **The nuance that separates a good answer from a great one:** some companies treat all of these as one talent family, and write senior postings that list Solutions Architect, Forward Deployed Engineer, Customer Engineer and Sales Engineer as interchangeable prior experience. So the honest answer is that the *function* is well defined even where the *titles* are not. Say that out loud, then describe the function you want rather than arguing about labels.
 
-    **The internal division of labour is worth knowing too**, because it is the same question asked from inside a company. Palantir pairs Deployment Strategists (Echo) with FDSEs (Delta), and the pairing is deliberately blurry: the strategist side leans toward problem definition, workflow and datasets, the engineering side toward pipelines and applications, but both sit somewhere on a spectrum between product manager, engineer and strategist, and individual strategists range from writing code daily to writing none. Do not walk into an interview asserting a clean split. Glean's version of the pairing is a pod: its Founding Forward Deployed Engineer posting describes "working in a pod with Forward Deployed PMs directly with the C-suite of the world's most influential companies," and asks the engineer to "operate with the autonomy and accountability of a founder."
+    **The internal division of labour is worth knowing too**, because it is the same question asked from inside a company. Palantir pairs Deployment Strategists (Echo) with FDSEs (Delta), and the pairing is deliberately blurry: the strategist side leans toward problem definition, workflow and datasets, the engineering side toward pipelines and applications.
+
+    Both sit somewhere on a spectrum between product manager, engineer and strategist, and individual strategists range from writing code daily to writing none. Do not walk into an interview asserting a clean split.
+
+    **Glean's version of the pairing is a pod.** Its Founding Forward Deployed Engineer posting describes "working in a pod with Forward Deployed PMs directly with the C-suite of the world's most influential companies," and asks the engineer to "operate with the autonomy and accountability of a founder."
 
     **A tight answer you can deliver in 30 seconds:**
 
@@ -231,7 +298,16 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - AI-lab side: owning discovery, technical scoping, system design, build and production rollout for an LLM system, with success measured on production adoption, a measurable workflow change, and eval results that are credible enough to change what the vendor builds next. The deliverables tend to be integration surfaces the customer keeps and extends: tool servers, agent definitions, eval suites and the runbook that goes with them.
     - Cursor's job description is the bluntest published statement of the bar: "This is not a demo role. You are responsible for systems that work in the real world."
 
-    **The interview loops differ structurally, not just in difficulty.** Based on candidate write-ups, Palantir's is round-name driven and code heavy: an online assessment mixing algorithms, SQL and a paginated REST task, then roughly three 60-minute rounds pulled from a named pool (Decomposition, Learning, Re-engineering, Coding, System Design), then a hiring manager final. The AI labs are described as artifact driven: you produce something on your own time and then defend it live. Candidates report that OpenAI issues a multi-hour take-home built on its own APIs plus a recorded video walkthrough, that Cognition asks for a take-home inside Devin and a timed simulated customer call, and that LangChain opens with a non-technical product explainer before any code. Preparing an algorithms drill for an artifact loop, or a portfolio for a round-name loop, is the mismatch that costs candidates the offer. (The full loop-by-loop comparison, and the caveat that goes with it, sits in the "What Interviewers Are Actually Testing" section at the top of this page.)
+    **The interview loops differ structurally, not just in difficulty.** Based on candidate write-ups, Palantir's is round-name driven and code heavy: an online assessment mixing algorithms, SQL and a paginated REST task, then roughly three 60-minute rounds pulled from a named pool (Decomposition, Learning, Re-engineering, Coding, System Design), then a hiring manager final.
+
+    **The AI labs are described as artifact driven:** you produce something on your own time and then defend it live. Candidates report that:
+
+    - OpenAI issues a multi-hour take-home built on its own APIs plus a recorded video walkthrough.
+    - Cognition asks for a take-home inside Devin and a timed simulated customer call.
+    - LangChain opens with a non-technical product explainer before any code.
+
+    !!! warning "The mismatch that costs candidates the offer"
+        Preparing an algorithms drill for an artifact loop, or a portfolio for a round-name loop, is the mismatch that costs candidates the offer. (The full loop-by-loop comparison, and the caveat that goes with it, sits in the "What Interviewers Are Actually Testing" section at the top of this page.)
 
     **What each side actually optimises for:** the Decomposition round is the one with no FAANG equivalent and the one candidates most often fail. It runs at a higher altitude than a system design round: the failure mode is staying abstract and never landing on a concrete build, and the round ends on business outcome, KPIs and what you would present to executives rather than on throughput and caching. The AI-lab equivalent differentiator is a single question: **"How do you know your AI system is actually working?"**
 
@@ -289,16 +365,26 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - **FIS and Anthropic (announced May 2026):** the two companies announced a collaboration bringing agentic AI to banking, starting with financial crimes, with the stated aim of compressing anti-money-laundering investigations from hours to minutes by automatically assembling evidence across a bank's core systems. Embed, build, transfer is the shape to describe.
     - **Crisis engagements collapse the whole calendar.** Emergency response work can require something operational within days, which is the counterexample to any answer that assumes a fixed cadence. If you claim a standard phase length, be ready to say what you would cut to hit a one-week deadline instead.
 
-    **What a week looks like in practice:** a few days onsite or on calls with the users and the data owners, a few days building, and a running thread of unblocking. Nabeel Qureshi's essay [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir) puts a number on it: he describes FDEs as typically expected to go onsite to the customer's offices 3 to 4 days per week, which meant a great deal of travel. The split to expect is blunt: an FDE spends far more of the week in front of customers than a product engineer does, and the building happens around that.
+    **What a week looks like in practice:** a few days onsite or on calls with the users and the data owners, a few days building, and a running thread of unblocking.
 
-    **Governance is part of the answer, not an afterthought.** Insight Partners' practitioner write-up on the role frames it in two halves. On the front door, Rajkumar Irudayaraj: "Interest is not the same as readiness. Define entry criteria, exit criteria, and kill triggers before the build starts." On the back door, the article's own section heading is "Design every engagement to end. Solve the hard problem, then leave." Irudayaraj again on what the team is for: "The FDE should be a permanent learning loop for the company, not a permanent crutch."
+    Nabeel Qureshi's essay [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir) puts a number on it: he describes FDEs as typically expected to go onsite to the customer's offices 3 to 4 days per week, which meant a great deal of travel.
+
+    The split to expect is blunt: an FDE spends far more of the week in front of customers than a product engineer does, and the building happens around that.
+
+    **Governance is part of the answer, not an afterthought.** Insight Partners' practitioner write-up on the role frames it in two halves.
+
+    - **On the front door,** Rajkumar Irudayaraj: "Interest is not the same as readiness. Define entry criteria, exit criteria, and kill triggers before the build starts."
+    - **On the back door,** the article's own section heading is "Design every engagement to end. Solve the hard problem, then leave."
+    - **On what the team is for,** Irudayaraj again: "The FDE should be a permanent learning loop for the company, not a permanent crutch."
 
     **Discovery is where the value is created, and where candidates are thin.** Expect the customer's description of their systems to differ from what you actually find, and budget discovery time for the gap rather than treating it as a surprise. Two habits worth internalising:
 
     - [Ramp's engineering blog](https://engineering.ramp.com/post/forward-deployed-engineering) puts the discipline in two words: "always be scoping". Treat scope as something you re-cut every week against what discovery has actually turned up, not something you agree once at kickoff and then defend.
     - Prototype rather than interview when a stakeholder cannot articulate what they want. People are far better at reacting to something concrete than at specifying it in the abstract, so put a rough version in front of them within days and ask whether this is what they meant. A wrong prototype extracts more requirements in ten minutes than a workshop does in a week.
 
-    **Anchor discovery to the executive, then work downward.** The problem the sponsor can state in one sentence is the one that survives the next budget cycle; the problems the operators describe are the ones that make the system usable. You need both, in that order, and you only get the first by asking for the meeting. PHASE 1 is not finished until you can write the sponsor's problem, the measured baseline, the system of record and the security path to production on a single page and have the customer agree with all four.
+    **Anchor discovery to the executive, then work downward.** The problem the sponsor can state in one sentence is the one that survives the next budget cycle; the problems the operators describe are the ones that make the system usable. You need both, in that order, and you only get the first by asking for the meeting.
+
+    PHASE 1 is not finished until you can write the sponsor's problem, the measured baseline, the system of record and the security path to production on a single page and have the customer agree with all four.
 
     !!! tip "Interviewer's Insight"
         **What they're testing:** Whether you scope before you build, and whether you plan the handoff.
@@ -343,11 +429,24 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     INTENT_SETS = ["refund", "address_change", "policy_lookup", "escalation"]
     ```
 
-    Make it concrete by building the evaluation set with the customer's domain experts before significant development starts, not after. In a deep technical-debugging workflow that means writing down the ordered sequence of actions a skilled human performs to work a case from symptom to resolution, which can easily run to dozens of steps. That sequence is the label. Development is not complete until the evals verify efficacy. Starting with evaluations rather than bolting them on at the end is the recommendation this page would give for any customer-facing AI build, because the eval set is also the artifact that lets you and the customer agree what "good" means before either of you has an incentive to argue about it.
+    **Build the evaluation set with the customer's domain experts before significant development starts, not after.** In a deep technical-debugging workflow that means writing down the ordered sequence of actions a skilled human performs to work a case from symptom to resolution, which can easily run to dozens of steps. That sequence is the label.
 
-    **Layer 2: adoption, which is where deployments actually die.** A system with perfect offline scores and 5% adoption is a failed deployment, and it will be scored as one. Instrument adoption the way you instrument quality: weekly active users **inside the workflow** rather than logins, task completion rate, the share of tasks where a user overrode the system, and the cohort curve showing whether week-4 users are still there in week 12. Set the adoption target with the sponsor before launch, in the same document as the quality gates, so nobody can relitigate what "rolled out" meant.
+    Development is not complete until the evals verify efficacy. Starting with evaluations rather than bolting them on at the end is the recommendation this page would give for any customer-facing AI build, because the eval set is also the artifact that lets you and the customer agree what "good" means before either of you has an incentive to argue about it.
 
-    **Layer 3: measured business impact, with a baseline.** Senior forward deployed postings write this in as a responsibility: own the value case, set the impact hypothesis, measure a baseline before anything ships, and run the pre-deployment and post-deployment comparison yourself. The honest version of this answer names the target you agreed with the customer, the baseline you measured before anything shipped, and the delta you actually landed, including when the delta came in under the target. A candidate who reports a real shortfall against a stated goal is a stronger signal than one who reports a round number with no baseline behind it.
+    **Layer 2: adoption, which is where deployments actually die.** A system with perfect offline scores and 5% adoption is a failed deployment, and it will be scored as one. Instrument adoption the way you instrument quality:
+
+    - Weekly active users **inside the workflow** rather than logins
+    - Task completion rate
+    - The share of tasks where a user overrode the system
+    - The cohort curve showing whether week-4 users are still there in week 12
+
+    Set the adoption target with the sponsor before launch, in the same document as the quality gates, so nobody can relitigate what "rolled out" meant.
+
+    **Layer 3: measured business impact, with a baseline.** Senior forward deployed postings write this in as a responsibility: own the value case, set the impact hypothesis, measure a baseline before anything ships, and run the pre-deployment and post-deployment comparison yourself.
+
+    The honest version of this answer names the target you agreed with the customer, the baseline you measured before anything shipped, and the delta you actually landed, including when the delta came in under the target.
+
+    A candidate who reports a real shortfall against a stated goal is a stronger signal than one who reports a round number with no baseline behind it.
 
     **Layer 4: what the company learned.** The durable version of this loop is that product engineers watch what forward deployed engineers keep doing by hand and build the thing that deletes the manual step. Your side of it is to identify and codify the repeatable pattern rather than leaving it in one account's repository. How much of the bespoke work gets absorbed back into the product is a fair question to ask your interviewer, because it tells you whether the team is a learning loop or a delivery shop.
 
@@ -410,9 +509,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     Score 0-4   -> leave it bespoke, document the hack, set a review date
     ```
 
-    **The second engagement is where you learn, not the first.** Reuse compounds: the first build for a new problem is almost entirely bespoke, and it is only after the second and third that you can see which pieces were the customer and which were the problem shape. Team structure follows the same curve. A forward deployed org that only ever optimises for the account in front of it never gets cheaper; the larger prize is building the internal systems that make each subsequent deployment cost less than the last, and that work has to be funded deliberately because no single customer will ever ask for it.
+    **The second engagement is where you learn, not the first.** Reuse compounds: the first build for a new problem is almost entirely bespoke, and it is only after the second and third that you can see which pieces were the customer and which were the problem shape.
 
-    **The mechanism matters as much as the decision.** The products that come out of forward deployed work are almost never designed as products. They start as the tool somebody built to delete a manual step they had watched three engineers perform at three different customer sites: an ingestion helper, a visualisation surface, an internal app builder. Note the direction of travel, because it is the part candidates invert. Nobody set out to build a platform, they set out to stop doing the same cruft work by hand. The handoff artifact that makes this work is a written spec describing the observed need, how often it appeared, and what the bespoke version currently does, not a repository thrown over the wall for someone else to interpret.
+    **Team structure follows the same curve.** A forward deployed org that only ever optimises for the account in front of it never gets cheaper; the larger prize is building the internal systems that make each subsequent deployment cost less than the last, and that work has to be funded deliberately because no single customer will ever ask for it.
+
+    **The mechanism matters as much as the decision.** The products that come out of forward deployed work are almost never designed as products. They start as the tool somebody built to delete a manual step they had watched three engineers perform at three different customer sites: an ingestion helper, a visualisation surface, an internal app builder.
+
+    **Note the direction of travel, because it is the part candidates invert.** Nobody set out to build a platform, they set out to stop doing the same cruft work by hand.
+
+    The handoff artifact that makes this work is a written spec describing the observed need, how often it appeared, and what the bespoke version currently does, not a repository thrown over the wall for someone else to interpret.
 
     | Approach to customer variation | When it is right | Failure mode |
     |---|---|---|
@@ -421,7 +526,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Extension points and plugins | Variation is a genuine domain difference | Plugin API becomes a public contract |
     | Fork per customer | Almost never | N codebases, N security patches |
 
-    **Name the economics, because senior interviewers do.** Senior forward deployed postings encode this as a responsibility: align early on what should generalise, what stays customer-specific, and what "ready for handoff" means in concrete terms, then turn ambiguous feedback, failures and escalations into durable product requirements rather than a growing pile of one-off fixes. The counterweight worth naming is contract size. Embedding engineers inside a customer is expensive per account, so the model only pays for itself above some deal value; below it the economics collapse back into consulting with a product logo on the invoice. You will not find one published threshold that everybody agrees on, which is exactly why "what contract sizes does this team support?" is a strong question to ask your interviewer. Nabeel Qureshi's evidence for the other side, in [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir), is margin structure: he contrasts Palantir's 80% gross margins in 2023, which are software margins, with Accenture's 32%.
+    **Name the economics, because senior interviewers do.** Senior forward deployed postings encode this as a responsibility: align early on what should generalise, what stays customer-specific, and what "ready for handoff" means in concrete terms, then turn ambiguous feedback, failures and escalations into durable product requirements rather than a growing pile of one-off fixes.
+
+    **The counterweight worth naming is contract size.** Embedding engineers inside a customer is expensive per account, so the model only pays for itself above some deal value; below it the economics collapse back into consulting with a product logo on the invoice.
+
+    !!! tip "A strong question to ask your interviewer"
+        You will not find one published threshold that everybody agrees on, which is exactly why "what contract sizes does this team support?" is a strong question to ask your interviewer.
+
+    Nabeel Qureshi's evidence for the other side, in [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir), is margin structure: he contrasts Palantir's 80% gross margins in 2023, which are software margins, with Accenture's 32%.
 
     **The cleanest one-liner for the division of labour is a road metaphor:** the forward deployed side lays the rough track that proves people want to travel that way, and core engineering decides which tracks are worth paving. Say the counterweight out loud as well: aggressive scoping genuinely does conflict with the engineering instinct to generalise, because good interfaces and platforms are what make software scale, so treat this as a judgement call you re-make per component rather than a rule you apply once.
 
@@ -457,7 +569,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - **Business curiosity.** You have to want to know how the customer makes money, or you will build the technically elegant thing nobody needed.
     - The blunt version of the hiring bar is whether the interviewer would want you next to them in a difficult customer room at the end of a bad week.
 
-    Value orientation is the trait these teams say they cannot teach. Coding is teachable; caring about whether the customer's number actually moved is not. Behavioral rounds in this family are consequently biased toward failure rather than triumph, so bring the mistake, the struggle and what you changed, not a polished success story. The other counterweight for candidates preparing this as a pure engineering role is social: the job demands unusual sensitivity to context and the ability to earn the trust of senior corporate or government counterparts who did not ask for you to be there.
+    **Value orientation is the trait these teams say they cannot teach.** Coding is teachable; caring about whether the customer's number actually moved is not. Behavioral rounds in this family are consequently biased toward failure rather than triumph, so bring the mistake, the struggle and what you changed, not a polished success story.
+
+    **The other counterweight is social.** If you are preparing this as a pure engineering role, note that the job demands unusual sensitivity to context and the ability to earn the trust of senior corporate or government counterparts who did not ask for you to be there.
 
     **Palantir's new-grad FDE posting names five values, the clearest modern trait bar:** going where you are needed most; **agency**, meaning you learn continuously, make decisions with incomplete information and do not wait to be told what to do next; embracing the ambiguity; intrinsic motivation; and **ruthless goal orientation**, meaning you do not treat a product's existing boundaries as the limit of what you can do about the customer's problem.
 
@@ -491,11 +605,27 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **Career paths in and out, worth knowing before you commit:**
 
-    - **In:** Palantir hires very early career (FDSE asks for "1+ years of relevant, post-college work experience" and runs internships). AI labs hire senior: OpenAI's Forward Deployed Engineer, Gov posting asks "5+ years of engineering or technical deployment experience," its Forward Deployed Software Engineer asks "7+ years of professional full stack engineering experience," and Cursor asks "5+ years of experience with software development" plus "2+ years in a customer-facing role, leading discovery conversations." Senior forward-deployed postings generally want several years of production engineering behind you, and increasingly want evidence you have sat in front of a customer.
-    - **Out:** Nabeel Qureshi's first-hand account of the original model, [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir), claims a typical YC batch contains more ex-Palantir founders than ex-Googlers, despite Google employing roughly 50 times more people. Treat that as one practitioner's observation rather than a measured statistic, but the underlying logic is sound: the role gives you repeated exposure to unsolved business problems, real customers and end-to-end ownership, which is close to founder training. The other common exits are into core product engineering at the same company, into engineering leadership, and into the same function at a competitor at a higher level. Ask your interviewer where the last three people who left this team went.
-    - **Compensation context (2026):** posted bands vary a lot by company, level and location, and aggregator medians move quickly. Read the band on the posting you are actually interviewing for, and check levels.fyi yourself for current totals rather than repeating a figure from a blog post.
+    **In:** Palantir hires very early career (FDSE asks for "1+ years of relevant, post-college work experience" and runs internships). AI labs hire senior:
 
-    **Know the dissent on longevity.** One industry view is that the title is a phase and will fade the way "prompt engineer" did, once AI tooling settles and organizational data silos break down. The competing view is convergence rather than disappearance: as product engineers are pushed closer to customers and forward deployed engineers are pushed to build reusable platform pieces, the two roles meet in the middle and the distinction becomes one of emphasis. A candidate who can discuss this credibly signals they chose the role rather than chased a title.
+    - OpenAI's Forward Deployed Engineer, Gov posting asks "5+ years of engineering or technical deployment experience."
+    - Its Forward Deployed Software Engineer asks "7+ years of professional full stack engineering experience."
+    - Cursor asks "5+ years of experience with software development" plus "2+ years in a customer-facing role, leading discovery conversations."
+
+    Senior forward-deployed postings generally want several years of production engineering behind you, and increasingly want evidence you have sat in front of a customer.
+
+    **Out:** Nabeel Qureshi's first-hand account of the original model, [Reflections on Palantir](https://nabeelqu.substack.com/p/reflections-on-palantir), claims a typical YC batch contains more ex-Palantir founders than ex-Googlers, despite Google employing roughly 50 times more people.
+
+    Treat that as one practitioner's observation rather than a measured statistic, but the underlying logic is sound: the role gives you repeated exposure to unsolved business problems, real customers and end-to-end ownership, which is close to founder training.
+
+    The other common exits are into core product engineering at the same company, into engineering leadership, and into the same function at a competitor at a higher level. Ask your interviewer where the last three people who left this team went.
+
+    **Compensation context (2026):** posted bands vary a lot by company, level and location, and aggregator medians move quickly. Read the band on the posting you are actually interviewing for, and check levels.fyi yourself for current totals rather than repeating a figure from a blog post.
+
+    **Know the dissent on longevity.** One industry view is that the title is a phase and will fade the way "prompt engineer" did, once AI tooling settles and organizational data silos break down.
+
+    The competing view is convergence rather than disappearance: as product engineers are pushed closer to customers and forward deployed engineers are pushed to build reusable platform pieces, the two roles meet in the middle and the distinction becomes one of emphasis.
+
+    A candidate who can discuss this credibly signals they chose the role rather than chased a title.
 
     !!! tip "Interviewer's Insight"
         **What they're testing:** Genuine role fit, individual ownership, and whether you will still be here in 18 months.
@@ -537,7 +667,11 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     That last row is the one candidates skip. The hard part of this job is rarely the modelling. It is finding the workflow nobody documented, the data source people actually trust, and the person who knows why the process works the way it does.
 
-    **Step 2: know the connectivity model.** On a mature platform the connection is agent-based, not direct: an agent process runs *inside* the customer network and reaches out, so you reason about egress rules, proxies and private link rather than asking security to open an inbound port. The usual shape is a worker component that does the reading and a proxy component that brokers the connection, with direct database connections treated as the legacy path. Private link on the major clouds keeps the data path off the public internet, which is normally a hard security-review requirement rather than a preference. Say this out loud in the interview; it signals you have deployed somewhere real.
+    **Step 2: know the connectivity model.** On a mature platform the connection is agent-based, not direct: an agent process runs *inside* the customer network and reaches out, so you reason about egress rules, proxies and private link rather than asking security to open an inbound port.
+
+    The usual shape is a worker component that does the reading and a proxy component that brokers the connection, with direct database connections treated as the legacy path. Private link on the major clouds keeps the data path off the public internet, which is normally a hard security-review requirement rather than a preference.
+
+    Say this out loud in the interview; it signals you have deployed somewhere real.
 
     **Step 3: map transport to first-day risk.**
 
@@ -858,7 +992,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
              VALUES (s.order_id, s.status, s.total, FALSE, s.change_lsn, s.change_ts);
     ```
 
-    Three properties make that re-runnable: the changelog is deduped to one row per key, **every** matched branch (delete included) is guarded by the monotonic sequence and advances `t.change_lsn`, so a replayed or late change cannot regress a row, and deletes are soft so downstream joins do not silently lose history. Note the two details candidates usually miss: putting the `change_lsn` guard only on the update branch lets a re-delivered delete re-apply on top of a newer state, and omitting `is_deleted` from the insert leaves the flag undefined for fresh rows even though the soft-delete logic depends on it.
+    **Three properties make that re-runnable:**
+
+    - The changelog is deduped to one row per key.
+    - **Every** matched branch, delete included, is guarded by the monotonic sequence and advances `t.change_lsn`, so a replayed or late change cannot regress a row.
+    - Deletes are soft, so downstream joins do not silently lose history.
+
+    !!! warning "Two details candidates usually miss"
+        - Putting the `change_lsn` guard only on the update branch lets a re-delivered delete re-apply on top of a newer state.
+        - Omitting `is_deleted` from the insert leaves the flag undefined for fresh rows, even though the soft-delete logic depends on it.
 
     **Watermark bookkeeping, with the overlap that saves you:**
 
@@ -928,7 +1070,10 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     ORDER BY name_sim DESC;
     ```
 
-    That shape is the one to reach for on any platform: an edit-distance expression inside a blocked join, so the expensive comparison only ever runs within a bucket. Resist the urge to make an LLM the matcher. A model is a reasonable assistant for the human review queue, where it can explain why two records look alike, but it is the wrong tool for the deterministic, auditable, re-runnable core of entity resolution, and you will not be able to explain a merge decision to the customer six months later.
+    That shape is the one to reach for on any platform: an edit-distance expression inside a blocked join, so the expensive comparison only ever runs within a bucket.
+
+    !!! warning "Resist the urge to make an LLM the matcher"
+        A model is a reasonable assistant for the human review queue, where it can explain why two records look alike. It is the wrong tool for the deterministic, auditable, re-runnable core of entity resolution, and you will not be able to explain a merge decision to the customer six months later.
 
     **Weighted scoring in Python:**
 
@@ -1080,7 +1225,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     Build the abort behaviour in rather than alerting after the fact: when an expectation fails during a build, aborting saves compute and prevents bad data reaching downstream consumers. Also set the SLA with headroom. If the business needs 30-minute freshness, alert at 20 so you have room to fix it before anyone is affected.
 
-    **Surfacing to a non-technical user is half the job.** The operator screen should show a ranked list of assets by risk, the two or three signals driving each score, the recommended action, and a visible "data as of HH:MM" indicator. When the pipeline is degraded, degrade the UI honestly with a banner rather than showing a stale score as if it were live. And close the loop: let the operator mark a prediction right or wrong, because that feedback is both the adoption mechanism and your only source of production labels.
+    **Surfacing to a non-technical user is half the job.** The operator screen should show:
+
+    - A ranked list of assets by risk
+    - The two or three signals driving each score
+    - The recommended action
+    - A visible "data as of HH:MM" indicator
+
+    When the pipeline is degraded, degrade the UI honestly with a banner rather than showing a stale score as if it were live. And close the loop: let the operator mark a prediction right or wrong, because that feedback is both the adoption mechanism and your only source of production labels.
 
     **Do not skip the operational tail.** A runbook naming the on-call owner, expected recovery steps, and how to trigger a replay is a deliverable, not a nice-to-have. The classic forward deployed week is exactly this shape: building and maintaining large pipelines, configuring access controls that satisfy a regulator, designing workflows so non-technical users can act on high-noise data, and investigating the outage nobody scheduled.
 
@@ -1116,7 +1268,12 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **The operational argument for single-tenant that candidates forget:** updates can be rolled out progressively across tenants, which reduces the likelihood of a system-wide outage. Isolation is a release-safety feature, not only a data-privacy feature.
 
-    **Vendor-hosted versus customer-hosted is a separate axis, and it has feature skew.** Never claim parity. Running a vendor's models through a cloud marketplace platform such as Amazon Bedrock reliably lags that vendor's own first-party API on newer surfaces (file handling, server-side tools, connector protocols, batch APIs and packaged capabilities), and it imposes its own limits, for example a 20 MB payload cap. Do not enumerate the current gaps from memory: pull the platform's feature matrix for the exact model and region in week one and design against that document, because the list moves every few months. Model lifecycle dates on a partner-operated platform are also set by that partner and can differ from the vendor's own schedule. That last one is the trap, because a deprecation you did not schedule can force an upgrade into an environment you do not control.
+    **Vendor-hosted versus customer-hosted is a separate axis, and it has feature skew.** Never claim parity. Running a vendor's models through a cloud marketplace platform such as Amazon Bedrock reliably lags that vendor's own first-party API on newer surfaces (file handling, server-side tools, connector protocols, batch APIs and packaged capabilities), and it imposes its own limits, for example a 20 MB payload cap.
+
+    Do not enumerate the current gaps from memory: pull the platform's feature matrix for the exact model and region in week one and design against that document, because the list moves every few months.
+
+    !!! warning "The deprecation trap"
+        Model lifecycle dates on a partner-operated platform are also set by that partner and can differ from the vendor's own schedule. That last one is the trap, because a deprecation you did not schedule can force an upgrade into an environment you do not control.
 
     So the customer-hosted conversation is really four questions:
 
@@ -1160,7 +1317,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **Framing:** the demo worked on your laptop because your laptop had DNS, egress, a package registry and a valid TLS chain. A customer environment is defined by which of those it takes away. Forward deployed infrastructure postings describe the required surface consistently: cloud services and Terraform, container orchestration, and cloud networking (VPCs, IAM, DNS, load balancing), plus a track record of shipping into customer-owned environments and surviving their security review, compliance requirements and change management process.
+    **Framing:** the demo worked on your laptop because your laptop had DNS, egress, a package registry and a valid TLS chain. A customer environment is defined by which of those it takes away.
+
+    Forward deployed infrastructure postings describe the required surface consistently: cloud services and Terraform, container orchestration, and cloud networking (VPCs, IAM, DNS, load balancing), plus a track record of shipping into customer-owned environments and surviving their security review, compliance requirements and change management process.
 
     **The failure list, roughly in the order it bites you:**
 
@@ -1277,7 +1436,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **Why standard CI/CD fails here, stated precisely:** a pipeline couples a service to an environment. Give every customer environment its own pipeline and each one evolves independently, so the pipelines themselves drift apart and nobody can say what version any given customer is actually running. The drift is not in the software, it is in the delivery mechanism.
 
-    **The shape that works is a constraint-based control loop, not a pipeline.** Instead of pushing a build at an environment, you publish a target state and let each environment converge on it when its own constraints allow. The planner only ever recommends steps toward the target that satisfy every declared constraint, which is what makes one intent safe to apply across environments that are nothing like each other: a cloud tenant, an on-premises rack and a disconnected field installation all read the same target and each moves as far as it legally can.
+    **The shape that works is a constraint-based control loop, not a pipeline.** Instead of pushing a build at an environment, you publish a target state and let each environment converge on it when its own constraints allow.
+
+    The planner only ever recommends steps toward the target that satisfy every declared constraint, which is what makes one intent safe to apply across environments that are nothing like each other: a cloud tenant, an on-premises rack and a disconnected field installation all read the same target and each moves as far as it legally can.
 
     **Four mechanisms to name:**
 
@@ -1299,7 +1460,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
       supported-versions: { minimum: 31, maximum: 33 }   # phased migration window
     ```
 
-    **2. Treat schema migrations as a deployment constraint.** Validate that the target release's supported schema version range contains the environment's current schema version before the upgrade is even planned. That is what makes a multi-release migration across a fleet you do not control possible: release A supports schema 31 to 32 and writes both, release B supports 32 to 33 and stops reading 31. Expand, migrate, contract, spread over three releases and however many months the slowest customer needs.
+    **2. Treat schema migrations as a deployment constraint.** Validate that the target release's supported schema version range contains the environment's current schema version before the upgrade is even planned.
+
+    That is what makes a multi-release migration across a fleet you do not control possible: release A supports schema 31 to 32 and writes both, release B supports 32 to 33 and stops reading 31. Expand, migrate, contract, spread over three releases and however many months the slowest customer needs.
 
     **3. Pull, do not push.** Environments **subscribe** to release channels (development, release candidate, release) and upgrade during their own maintenance windows to the latest release satisfying all constraints. Promotion between channels is gated on soak duration, canary readiness and overall timeouts, with manual promotion available during incidents.
 
@@ -1330,7 +1493,11 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **Frame it as a cost-of-ownership question, not a purity question.** Every customization is a bet on how long you will be maintaining it and how many people will touch it. The right answer is almost never "no" and almost never "fork"; it is picking the cheapest mechanism that actually holds the customer's requirement, and being able to say out loud what that mechanism will cost to own in two years. Senior forward deployed postings write this in as an explicit responsibility: align early, in writing, on what should generalise, what stays customer-specific, and what "ready for handoff" concretely means for this piece of work.
+    **Frame it as a cost-of-ownership question, not a purity question.** Every customization is a bet on how long you will be maintaining it and how many people will touch it.
+
+    The right answer is almost never "no" and almost never "fork"; it is picking the cheapest mechanism that actually holds the customer's requirement, and being able to say out loud what that mechanism will cost to own in two years.
+
+    Senior forward deployed postings write this in as an explicit responsibility: align early, in writing, on what should generalise, what stays customer-specific, and what "ready for handoff" concretely means for this piece of work.
 
     **The escalation ladder, cheapest to most expensive.** Say where you would stop and why.
 
@@ -1375,9 +1542,13 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - Keep the polarity consistent: off means the existing or legacy behaviour, on means the new behaviour. Inverting this on one flag is how a rollback makes an incident worse.
     - The cost of ungoverned toggles is not hypothetical. [Martin Fowler's feature toggle article](https://martinfowler.com/articles/feature-toggles.html) points at Knight Capital, which it describes as "a $460 million dollar mistake."
 
-    **Decouple the customer's data model from your application.** A semantic layer is what stops a customer-specific rename from becoming a code change. The shape to build is a set of business objects with properties and links, defined once and mapped onto whatever the underlying tables happen to be called, plus a small set of named actions that write back through the same layer. Applications and user-facing workflows bind to the objects and actions, never to a source table, so the customer can restructure a source system without breaking the thing their staff use every day.
+    **Decouple the customer's data model from your application.** A semantic layer is what stops a customer-specific rename from becoming a code change. The shape to build is a set of business objects with properties and links, defined once and mapped onto whatever the underlying tables happen to be called, plus a small set of named actions that write back through the same layer.
 
-    **Package the customization so it is portable.** Aim for the customer-specific part to be a versioned artifact rather than a diff against your source tree: it declares its own dependencies, carries input presets for the values that differ per customer, installs into a fresh environment without modification, and can be rolled back on its own. When two customers' packages share content, extract the overlap into an upstream package that both depend on by version. That is the productization move: extract the overlap upstream, keep the presets per customer.
+    Applications and user-facing workflows bind to the objects and actions, never to a source table, so the customer can restructure a source system without breaking the thing their staff use every day.
+
+    **Package the customization so it is portable.** Aim for the customer-specific part to be a versioned artifact rather than a diff against your source tree: it declares its own dependencies, carries input presets for the values that differ per customer, installs into a fresh environment without modification, and can be rolled back on its own.
+
+    When two customers' packages share content, extract the overlap into an upstream package that both depend on by version. That is the productization move: extract the overlap upstream, keep the presets per customer.
 
     **On when to generalize, hold this line:** generalising too early is the more expensive mistake. The reusable share of what you build rises across successive engagements rather than appearing on the first, and the engagements that produce the most transferable insight are usually the ones that went deepest on one customer's specific problem. Solve it specifically first, then extract the pattern once you have seen it twice.
 
@@ -1412,7 +1583,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Make users wait less | Stream; chunk; show progress. Perceived latency is the one the customer reports |
     | Do not default to an LLM | Hardcoding, pre-computation or a traditional algorithm where it fits |
 
-    **Prompt caching is the highest-leverage cost lever, and it fails silently.** Cache reads cost 0.1x base input price; 5-minute cache writes cost 1.25x and 1-hour writes 2x; the default TTL is 5 minutes and is refreshed at no additional cost each time the cached content is used; there is a maximum of 4 cache breakpoints per request with a 20-block lookback; and the minimum cacheable prompt length varies by model from 512 to 4,096 tokens, with shorter prompts silently failing to cache and **no error returned**. Invalidation cascades tools, then system, then messages, so the cache breakpoint must sit on the last block whose prefix is identical across requests.
+    **Prompt caching is the highest-leverage cost lever, and it fails silently.**
+
+    - Cache reads cost 0.1x base input price; 5-minute cache writes cost 1.25x and 1-hour writes 2x.
+    - The default TTL is 5 minutes and is refreshed at no additional cost each time the cached content is used.
+    - There is a maximum of 4 cache breakpoints per request with a 20-block lookback.
+    - The minimum cacheable prompt length varies by model from 512 to 4,096 tokens, with shorter prompts silently failing to cache and **no error returned**.
+
+    Invalidation cascades tools, then system, then messages, so the cache breakpoint must sit on the last block whose prefix is identical across requests.
 
     ```python
     # Cheap instrumentation before any optimisation: attribute time and tokens per stage.
@@ -1474,7 +1652,8 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     **Compliance is a configuration, not a checkbox.** Get these distinctions right and you will be trusted in the room:
 
     - A **HIPAA BAA** covers a configured deployment, not a product, so "HIPAA-ready" is never a property of a model. The specific carve-out worth knowing, because candidates miss it, is that a BAA does not extend to web search functionality: if your architecture reaches the open web on behalf of a covered workflow, that path sits outside the agreement and has to be removed or replaced.
-    - **Regulated and government deployments run on their own authorization paths**, and those paths differ by vendor, by hosting platform and by region. Do not recite an authorization matrix from memory in a customer meeting. Name the constraint the customer actually has (a specific accreditation, a residency requirement, an export-control restriction) and then confirm the current authorization status and eligibility rules with the vendor in writing, because these change on their own schedule and being confidently wrong here is worse than saying you will check.
+    - **Regulated and government deployments run on their own authorization paths**, and those paths differ by vendor, by hosting platform and by region. Do not recite an authorization matrix from memory in a customer meeting.
+    - **Name the constraint the customer actually has** (a specific accreditation, a residency requirement, an export-control restriction), then confirm the current authorization status and eligibility rules with the vendor in writing, because these change on their own schedule and being confidently wrong here is worse than saying you will check.
     - **Residency has a price.** Regional endpoints, which you need for residency, carry a 10% premium over global endpoints on Bedrock. Say the number; do not present residency as free.
     - Assume the accreditation question drives your architecture rather than decorating it. Whether the workload can run on a shared endpoint at all determines your deployment target, which determines your available feature set, which determines the design. Ask it in week one.
 
@@ -1484,7 +1663,13 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - **Administrator-pinned settings.** The customer's platform team should be able to enforce telemetry configuration centrally, in a location an individual user cannot override, so a single engineer cannot turn on verbose logging in a regulated environment.
     - **A named export destination inside the customer's control.** Point collectors at the customer's own endpoint rather than at anything of yours, and be able to state on a whiteboard exactly which fields leave the boundary and where they land.
 
-    **Audit logging design, a question that shows up directly in these loops** (design an audit log for a platform used by government agencies where every action must be traceable, tamper-evident and queryable by regulators): append-only storage, hash chaining or write-once object storage for tamper evidence, actor plus subject plus resource plus decision plus reason on every entry, a defined retention period tied to the regulation rather than to your storage bill, separate access control for the audit log itself, and a query path a regulator can use without engineering help.
+    **Audit logging design, a question that shows up directly in these loops** (design an audit log for a platform used by government agencies where every action must be traceable, tamper-evident and queryable by regulators):
+
+    - Append-only storage, hash chaining or write-once object storage for tamper evidence
+    - Actor plus subject plus resource plus decision plus reason on every entry
+    - A defined retention period tied to the regulation rather than to your storage bill
+    - Separate access control for the audit log itself
+    - A query path a regulator can use without engineering help
 
     **Red flags:** saying "we're SOC 2 compliant" as if it answered a data-residency question; asserting an accreditation status from memory instead of confirming it; enabling verbose telemetry in a regulated environment without asking; treating the customer's security team as a gate to route around rather than a stakeholder to schedule.
 
@@ -1554,7 +1739,11 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
                       input_tokens=0, output_tokens=0)
     ```
 
-    **Where the data goes is a design constraint, not paperwork, and it has to be settled before you design.** The deployment target the customer's security team will accept determines which model features you are allowed to build on, and partner-operated platforms routinely lag the vendor's own API on batch APIs, file handling, connectors and payload size limits. Get the feature list for the specific target in writing in week one and design against that list, because discovering in week eight that the connector your architecture assumes is unavailable on the customer's chosen platform is a rewrite, not a config change. The same applies to retention: a zero-retention configuration can be a contractual prerequisite for a regulated customer, and it changes what you are able to log, which changes how you debug. Decide the logging design once you know the retention terms, never the other way round.
+    **Where the data goes is a design constraint, not paperwork, and it has to be settled before you design.** The deployment target the customer's security team will accept determines which model features you are allowed to build on, and partner-operated platforms routinely lag the vendor's own API on batch APIs, file handling, connectors and payload size limits.
+
+    Get the feature list for the specific target in writing in week one and design against that list, because discovering in week eight that the connector your architecture assumes is unavailable on the customer's chosen platform is a rewrite, not a config change.
+
+    **The same applies to retention:** a zero-retention configuration can be a contractual prerequisite for a regulated customer, and it changes what you are able to log, which changes how you debug. Decide the logging design once you know the retention terms, never the other way round.
 
     **Progressive autonomy beats a big-bang cutover.** The pattern to describe for a debug-and-triage agent is a staged rollout: advisory output the human acts on first, then drafted changes the human reviews and merges, then supervised automation with a human on the exception path. Each stage buys the evidence that justifies the next, and each gives the customer a defined place to stop without the engagement being a failure.
 
@@ -1589,7 +1778,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     {"item": {"question": "What is the lead time on part XR-9?", "correct_label": "14 days", "reason_contains": "supplier contract"}}
     ```
 
-    Grader types you should be able to name and choose between: **exact string checks** (equality, containment, a normalised match), **text similarity** for answers that are allowed to vary in wording, **code graders** for anything you can assert programmatically, and **model graders** (LLM as judge) for open-ended output where nothing cheaper works. Use the cheapest grader that can detect the failure you care about, and validate any model grader against human labels before you trust its numbers.
+    **Grader types you should be able to name and choose between:**
+
+    - **Exact string checks.** Equality, containment, a normalised match.
+    - **Text similarity.** For answers that are allowed to vary in wording.
+    - **Code graders.** For anything you can assert programmatically.
+    - **Model graders (LLM as judge).** For open-ended output where nothing cheaper works.
+
+    Use the cheapest grader that can detect the failure you care about, and validate any model grader against human labels before you trust its numbers.
 
     ```python
     from dataclasses import dataclass
@@ -1627,7 +1823,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **Slice by intent, never report one aggregate.** A customer-service deployment that grows from a handful of policies to hundreds only stays measurable if instructions are parameterised and every intent carries **its own eval set**. A global accuracy of 91% hides the one intent sitting at 40%, and that intent is the one the customer's executives will see first.
 
-    **Split deterministic from probabilistic and say so out loud.** In a supply-chain style deployment the division is stark: hard business constraints such as minimum supplier counts, lead times and material coverage are verified **in code**, on the model's output, rather than requested of the model in a prompt, while the model handles the open-ended business-intelligence questions and calls simulation or solver tools instead of attempting the optimisation itself. Never ask a probabilistic system to maintain a constraint that must hold.
+    **Split deterministic from probabilistic and say so out loud.** In a supply-chain style deployment the division is stark: hard business constraints such as minimum supplier counts, lead times and material coverage are verified **in code**, on the model's output, rather than requested of the model in a prompt.
+
+    The model handles the open-ended business-intelligence questions and calls simulation or solver tools instead of attempting the optimisation itself. Never ask a probabilistic system to maintain a constraint that must hold.
 
     **Close the loop.** Evals go in CI as a regression gate before any prompt, model or retrieval change ships. Every production incident becomes a new case. Name the customer-side person who signs off on the pass bar, because in an FDE engagement they, not you, own the threshold.
 
@@ -1788,7 +1986,12 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     6. **Make users wait less:** stream, chunk, show progress. Perceived latency is the one the customer complains about.
     7. **Do not default to a model at all:** hardcoding, pre-computation and traditional algorithms are frequently the right answer for a sub-step.
 
-    **Prompt caching economics, precisely.** Cache reads cost **0.1x** the base input price; 5-minute cache writes cost **1.25x** and 1-hour writes **2x**. Default TTL is 5 minutes, refreshed at no additional cost each time the cached content is used. Maximum **4 cache breakpoints** per request with a 20-block lookback. Minimum cacheable prompt length varies by model from **512 to 4,096 tokens**, and shorter prompts silently fail to cache with **no error returned**, which is the single most common reason a team believes caching is on when it is not.
+    **Prompt caching economics, precisely.**
+
+    - Cache reads cost **0.1x** the base input price; 5-minute cache writes cost **1.25x** and 1-hour writes **2x**.
+    - Default TTL is 5 minutes, refreshed at no additional cost each time the cached content is used.
+    - Maximum **4 cache breakpoints** per request with a 20-block lookback.
+    - Minimum cacheable prompt length varies by model from **512 to 4,096 tokens**, and shorter prompts silently fail to cache with **no error returned**, which is the single most common reason a team believes caching is on when it is not.
 
     Invalidation cascades **tools, then system, then messages**, so `cache_control` must sit on the last block whose prefix is identical across requests. Put the volatile user turn after the breakpoint, never before it.
 
@@ -1815,9 +2018,17 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
         return 1000 * (billed_in / 1e6 * p_in + out_tok / 1e6 * p_out)
     ```
 
-    **Worked example.** 500 volatile input tokens, a 6,000 token cached policy prefix, 400 output tokens, at $3 per million in and $15 per million out with a 90% hit rate. A miss bills 500 + 1.25 x 6,000 = 8,000 input tokens; a hit bills 500 + 0.1 x 6,000 = 1,100. Blended that is 1,790 input tokens per call, so **$11.37 per 1,000 calls**, or **$0.0114 per call**. Billing the miss at 1.0x instead would have quoted $10.92, understating the bill by about 4%, and the gap widens fast as the hit rate drops.
+    **Worked example.** 500 volatile input tokens, a 6,000 token cached policy prefix, 400 output tokens, at $3 per million in and $15 per million out with a 90% hit rate.
 
-    **Work the customer's budget backwards.** If finance says $40k per year for 2 million calls, that is **$0.02 per call**. Compute the per-call token budget from that number and design to it, rather than building first and discovering the bill. Then price the floor you cannot remove: guardrail classifiers, reranking calls, retries and the occasional escalation to a larger model all bill against the same $0.02, and a 3% retry rate on a three-call chain is a real line item rather than a rounding error. Quote the customer a cost per resolved task, never a cost per token, because the per-token number always looks affordable and the per-task number is the one finance renews on.
+    A miss bills 500 + 1.25 x 6,000 = 8,000 input tokens; a hit bills 500 + 0.1 x 6,000 = 1,100. Blended that is 1,790 input tokens per call, so **$11.37 per 1,000 calls**, or **$0.0114 per call**.
+
+    Billing the miss at 1.0x instead would have quoted $10.92, understating the bill by about 4%, and the gap widens fast as the hit rate drops.
+
+    **Work the customer's budget backwards.** If finance says $40k per year for 2 million calls, that is **$0.02 per call**. Compute the per-call token budget from that number and design to it, rather than building first and discovering the bill.
+
+    Then price the floor you cannot remove: guardrail classifiers, reranking calls, retries and the occasional escalation to a larger model all bill against the same $0.02, and a 3% retry rate on a three-call chain is a real line item rather than a rounding error.
+
+    Quote the customer a cost per resolved task, never a cost per token, because the per-token number always looks affordable and the per-task number is the one finance renews on.
 
     **Set a latency budget per stage** the same way you would for any serving system, then hold each stage to it:
 
@@ -1858,7 +2069,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Rules-based | Blocklists, input length limits, regex | Deterministic, zero latency variance |
     | Output validation | Schema, citations, forbidden claims | Runs after generation |
 
-    The motivation for screening with a cheap fast model before the expensive one runs is both cost and latency. Agent frameworks generally expose this as a tripwire: a guardrail that fires cancels the run and raises rather than returning a value. Know the trade-off in how you schedule them. Running input guardrails in parallel with the main call is better for latency but means the agent may already have burned tokens and executed a tool before the tripwire fires, while running them as a blocking pre-check costs a round trip and saves the spend. Output guardrails necessarily run after generation, so budget for the case where you generate an answer and then refuse to send it.
+    **Why screen with a cheap fast model before the expensive one runs?** Cost and latency. Agent frameworks generally expose this as a tripwire: a guardrail that fires cancels the run and raises rather than returning a value.
+
+    **Know the trade-off in how you schedule them:**
+
+    | Scheduling | What it buys | What it costs |
+    |---|---|---|
+    | Input guardrails in parallel with the main call | Better latency | The agent may already have burned tokens and executed a tool before the tripwire fires |
+    | Input guardrails as a blocking pre-check | Saves the spend | A round trip |
+    | Output guardrails, which necessarily run after generation | The only place to catch bad output | Budget for generating an answer and then refusing to send it |
 
     ```python
     class Refusal(Exception): ...
@@ -1915,7 +2134,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **First, justify the agent.** Workflows orchestrate models and tools through predefined code paths and offer predictability and consistency for well-defined tasks. Agents dynamically direct their own processes and are the better option when flexibility and model-driven decision making are needed at scale, particularly for open-ended problems where you cannot predict the required number of steps. Agentic systems often trade latency and cost for better task performance. Named patterns worth reaching for before full autonomy: **prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer**. If the customer's process has a fixed sequence, ship the workflow and keep the budget.
+    **First, justify the agent.** Workflows orchestrate models and tools through predefined code paths and offer predictability and consistency for well-defined tasks. Agents dynamically direct their own processes and are the better option when flexibility and model-driven decision making are needed at scale, particularly for open-ended problems where you cannot predict the required number of steps.
+
+    Agentic systems often trade latency and cost for better task performance. Named patterns worth reaching for before full autonomy: **prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer**. If the customer's process has a fixed sequence, ship the workflow and keep the budget.
 
     **The agent-computer interface is where deployments actually fail.** Concrete, testable rules:
 
@@ -1926,7 +2147,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - **Prompt-engineer your error responses.** Errors should clearly communicate specific and actionable improvements, not opaque codes or tracebacks. `Error: unknown field 'cust_id'. Valid fields: customer_id, customer_name.` recovers; `500 Internal Server Error` loops.
     - **Leave thinking room.** Give the model enough tokens to reason before it writes itself into a corner.
 
-    One more rule this page would add on top of that list, from deployment experience rather than from any vendor's guidance: **design the arguments so the wrong call cannot be expressed.** Prefer absolute identifiers over relative ones, closed enums over free strings, and a single required idempotency key over an optional one. Every ambiguity you leave in a schema becomes a class of production incident that no amount of prompt wording reliably prevents.
+    **One more rule this page would add, from deployment experience rather than from any vendor's guidance: design the arguments so the wrong call cannot be expressed.** Prefer absolute identifiers over relative ones, closed enums over free strings, and a single required idempotency key over an optional one.
+
+    Every ambiguity you leave in a schema becomes a class of production incident that no amount of prompt wording reliably prevents.
 
     ```python
     SCHEDULE_EVENT = {
@@ -2110,9 +2333,22 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **Why this is asked at all.** The forward deployed function is widely described as a market response to a growing AI value gap and widespread proof of concept failure. The frequently cited MIT NANDA figure that roughly 95% of enterprise generative AI pilots produce no measurable P&L impact should be quoted **with attribution and a hedge**, because it is contested and has been argued to be misrepresented. The safer and more defensible framing: traditional software delivery ends at launch, but AI systems are probabilistic and can degrade on production data, so forward deployed engineers are measured by whether the system keeps working and keeps adding value after go live.
+    **Why this is asked at all.** The forward deployed function is widely described as a market response to a growing AI value gap and widespread proof of concept failure.
 
-    **Most proofs of concept die because nobody ever wrote down what "in production" means.** A demo has an implicit definition of done that everyone in the room agrees with for as long as the demo is running. Production has an explicit one: which users, on which workflow, at what quality bar, monitored by whom, with whose budget paying for it. Agree those five in writing before the build starts and the PoC has a destination it can actually reach. Leave them implicit and the project ends the way most of them do, with a well-received demo, an enthusiastic email thread, and a quiet reorganisation two quarters later.
+    !!! warning "Quote the 95% figure carefully"
+        The frequently cited MIT NANDA figure that roughly 95% of enterprise generative AI pilots produce no measurable P&L impact should be quoted **with attribution and a hedge**, because it is contested and has been argued to be misrepresented.
+
+    **The safer and more defensible framing:** traditional software delivery ends at launch, but AI systems are probabilistic and can degrade on production data, so forward deployed engineers are measured by whether the system keeps working and keeps adding value after go live.
+
+    **Most proofs of concept die because nobody ever wrote down what "in production" means.** A demo has an implicit definition of done that everyone in the room agrees with for as long as the demo is running. Production has an explicit one:
+
+    - Which users
+    - On which workflow
+    - At what quality bar
+    - Monitored by whom
+    - With whose budget paying for it
+
+    Agree those five in writing before the build starts and the PoC has a destination it can actually reach. Leave them implicit and the project ends the way most of them do, with a well-received demo, an enthusiastic email thread, and a quiet reorganisation two quarters later.
 
     **The five reasons POCs die, and the countermeasure for each:**
 
@@ -2124,7 +2360,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Security review discovered late | Blocked in month 3 | Start the review in week 1, in parallel with the build |
     | No evals | Nobody can say if it regressed | Golden set plus per-intent evals before development is "done" |
 
-    **Eval driven delivery is the defining practice.** Build the evaluation set **with the customer's domain experts before significant development begins**. In a deep debugging workflow that means writing down the ordered sequence of actions a human engineer performs to take a failure from symptom to resolution, and treating that sequence as the label. Development is not complete until the evals verify efficacy. Start with evaluations rather than adding them once the build feels finished. The second-order benefit is political rather than technical: a customer who helped author the eval set has already agreed what good looks like, so the go-live conversation is a reading of a number rather than a negotiation about confidence.
+    **Eval driven delivery is the defining practice.** Build the evaluation set **with the customer's domain experts before significant development begins**. In a deep debugging workflow that means writing down the ordered sequence of actions a human engineer performs to take a failure from symptom to resolution, and treating that sequence as the label.
+
+    **Development is not complete until the evals verify efficacy.** Start with evaluations rather than adding them once the build feels finished. The second-order benefit is political rather than technical: a customer who helped author the eval set has already agreed what good looks like, so the go-live conversation is a reading of a number rather than a negotiation about confidence.
 
     **The production checklist, in the order you should actually work it:**
 
@@ -2148,9 +2386,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
              Pre/post measurement plan agreed with the sponsor
     ```
 
-    **Ship one workflow end to end rather than five workflows halfway.** The checklist above only works against a scope small enough to finish. A PoC covering one intent for one team, in production, with a measured before-and-after, buys the mandate for the next five. A PoC covering five intents at demo quality buys nothing, because there is no single number the sponsor can take to their own leadership. When a customer asks for breadth in the pilot, that is the moment to trade scope for a date rather than to accept both.
+    **Ship one workflow end to end rather than five workflows halfway.** The checklist above only works against a scope small enough to finish. A PoC covering one intent for one team, in production, with a measured before-and-after, buys the mandate for the next five.
 
-    **Design the engagement to end.** The practitioner guidance collected in Insight Partners' write-up on the role points the same way: guard the front door with entry criteria, exit criteria and kill triggers agreed before the build starts, and design every engagement to end, because once the outcome is proven, ownership transfers to the teams who productize and run it at scale. Rajkumar Irudayaraj, quoted in that write-up, states the purpose of the team: "The FDE should be a permanent learning loop for the company, not a permanent crutch." The FIS and Anthropic collaboration announced in May 2026, which brings agentic AI to financial-crime investigations, is publicly framed the same way: build the capability with the bank, then leave it running inside the bank's own systems.
+    A PoC covering five intents at demo quality buys nothing, because there is no single number the sponsor can take to their own leadership. When a customer asks for breadth in the pilot, that is the moment to trade scope for a date rather than to accept both.
+
+    **Design the engagement to end.** The practitioner guidance collected in Insight Partners' write-up on the role points the same way: guard the front door with entry criteria, exit criteria and kill triggers agreed before the build starts, and design every engagement to end, because once the outcome is proven, ownership transfers to the teams who productize and run it at scale.
+
+    Rajkumar Irudayaraj, quoted in that write-up, states the purpose of the team: "The FDE should be a permanent learning loop for the company, not a permanent crutch."
+
+    The FIS and Anthropic collaboration announced in May 2026, which brings agentic AI to financial-crime investigations, is publicly framed the same way: build the capability with the bank, then leave it running inside the bank's own systems.
 
     **Red flags:** treating go live as the finish line; no eval story ("we would monitor it" is the reported weak answer to the differentiating AI-lab question, "How do you know your AI system is actually working?"); no handoff plan; no kill trigger, which means the engagement can only end in success theatre or silence.
 
@@ -2171,7 +2415,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     1. **Say it in one sentence, without hedging.** "I don't know yet." Filling the silence with a guess is the failure mode. A guess that turns out wrong costs you the next six months of credibility.
     2. **Say what you do know and how confident you are.** "What I can tell you is the ingest job failed on the 04:00 run, it affected the EMEA partition only, and no downstream numbers were published from it."
     3. **Commit to a time, not an answer.** "I will have the root cause or a clear status by 3pm your time." Then hit that time even if the update is "still working, here is what I have ruled out."
-    4. **Give them something they can use now.** A workaround, a manual path, a scope of who is affected. Ramp's engineering blog illustrates the instinct well: a customer in onboarding was blocked by a feature gap the team estimated at about three days of engineering work, and rather than queue the build and leave the customer stalled, they got on a call and found a path around it that day. The habit to copy is that an unblocking answer beats a complete answer whenever the customer's clock is the binding constraint.
+    4. **Give them something they can use now.** A workaround, a manual path, a scope of who is affected. An unblocking answer beats a complete answer whenever the customer's clock is the binding constraint.
+
+        Ramp's engineering blog illustrates the instinct well: a customer in onboarding was blocked by a feature gap the team estimated at about three days of engineering work, and rather than queue the build and leave the customer stalled, they got on a call and found a path around it that day.
 
     **Pushing back is a different skill from apologising. The pattern is: agree with the goal, disagree with the method.**
 
@@ -2191,7 +2437,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | "Can you commit to that in the contract?" | Account team | Never commit live. Route it, in writing |
     | "Is this feature on the roadmap?" | Product, via you | Report what you know is public; do not speculate |
 
-    Practically: **you own the technical truth and the delivery commitment; you do not own pricing, contract scope or renewal.** The job family points the same way: FDE postings sit in engineering families rather than in quota-attached sales orgs, though how your own package is structured is a question for your recruiter rather than an industry constant. Either way, never negotiate commercials on a technical call, and never let a technical concession become a contractual one by accident.
+    **Practically: you own the technical truth and the delivery commitment. You do not own pricing, contract scope or renewal.** The job family points the same way: FDE postings sit in engineering families rather than in quota-attached sales orgs, though how your own package is structured is a question for your recruiter rather than an industry constant.
+
+    Either way, never negotiate commercials on a technical call, and never let a technical concession become a contractual one by accident.
 
     **The written follow-up is the part candidates forget.** Anything you said under pressure should exist in a two paragraph note within a few hours, addressed to the customer with the account team copied:
 
@@ -2263,7 +2511,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     - Loop the account team in the same message. They are the ones fielding the escalation you just created, and finding out about it from the customer rather than from you is how that relationship degrades.
     - Re-scope rather than slip where you can. Ramp's engineering blog reduces the discipline to two words worth quoting: "always be scoping". A week where you cut one deliverable in half and told the sponsor why beats a week where you slipped four things silently.
 
-    **Guard your own capacity honestly.** Travel bands of 25% to 50% are written into Palantir and OpenAI forward deployed postings, and Palantir's Deployment Strategist postings go to "25-75% required." Sustained travel at the top of those bands is the concern practitioners raise most often about the role. An answer that quietly assumes you will absorb everything by working nights is a weaker answer than one that says "here is what I dropped and who I told."
+    **Guard your own capacity honestly.** Travel bands of 25% to 50% are written into Palantir and OpenAI forward deployed postings, and Palantir's Deployment Strategist postings go to "25-75% required." Sustained travel at the top of those bands is the concern practitioners raise most often about the role.
+
+    An answer that quietly assumes you will absorb everything by working nights is a weaker answer than one that says "here is what I dropped and who I told."
 
     **Strong answer covers:** an explicit rubric rather than vibes; production incidents pre-empting everything; naming what you will **not** do this week; writing the trade-off down; and looking for the item that removes future work rather than the item that shouts loudest.
 
@@ -2275,7 +2525,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **The word "fork" is the interviewer's trap, and the answer is that a fork is a decision about maintenance, not about the feature.** A fork is cheap on the day you cut it and expensive every day after: two upgrade paths, two security patch queues, and a guarantee that every fix you make upstream never reaches this customer. So the answer is not "yes" or "no" to the feature, it is a walk down the ladder of mechanisms until you find the cheapest one that genuinely holds the requirement, with the fork itself sitting at the bottom as the option you are arguing against. Senior forward deployed postings write the underlying expectation in plainly: turn ambiguous feedback, failures and escalations into durable product requirements and reusable platform capabilities, rather than into an accumulating pile of one-off fixes.
+    **The word "fork" is the interviewer's trap, and the answer is that a fork is a decision about maintenance, not about the feature.** A fork is cheap on the day you cut it and expensive every day after:
+
+    - Two upgrade paths
+    - Two security patch queues
+    - A guarantee that every fix you make upstream never reaches this customer
+
+    So the answer is not "yes" or "no" to the feature, it is a walk down the ladder of mechanisms until you find the cheapest one that genuinely holds the requirement, with the fork itself sitting at the bottom as the option you are arguing against.
+
+    Senior forward deployed postings write the underlying expectation in plainly: turn ambiguous feedback, failures and escalations into durable product requirements and reusable platform capabilities, rather than into an accumulating pile of one-off fixes.
 
     **Step 1: separate the request from the problem.** "We need a custom scoring rule per business unit" is a request. The problem may be that one business unit's data is labelled differently. Do not architect against a request you have not traced to a workflow. Three questions get you there:
 
@@ -2297,7 +2555,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | 6 | Vertically partitioned deployment | Permanent | Isolation or regulation demands a separate stamp |
     | 7 | Fork | Forever, and it is forever | Almost never. This is the answer to reject |
 
-    Feature flag hygiene matters and interviewers notice it: manage toggle configuration through source control and re-deployment where the nature of the flag allows it, treat toggles as inventory to be paid down with an owner and a removal date, and do not try to test the combinatorial explosion. Test the expected production configuration plus all toggles off. The convention that keeps you safe is that off means existing or legacy behaviour and on means the new behaviour, consistently, on every flag. Ungoverned toggles have a famous price tag: Martin Fowler's feature toggle article points at Knight Capital, which it calls "a $460 million dollar mistake."
+    **Feature flag hygiene matters, and interviewers notice it:**
+
+    - Manage toggle configuration through source control and re-deployment where the nature of the flag allows it.
+    - Treat toggles as inventory to be paid down, with an owner and a removal date.
+    - Do not try to test the combinatorial explosion. Test the expected production configuration plus all toggles off.
+    - Keep one convention on every flag: off means existing or legacy behaviour, on means the new behaviour.
+
+    !!! warning "Ungoverned toggles have a famous price tag"
+        Martin Fowler's feature toggle article points at Knight Capital, which it calls "a $460 million dollar mistake."
 
     **What rungs 1 and 5 look like in practice.** The shape you are aiming for is one code path with a customer-supplied policy object, not two code paths:
 
@@ -2328,13 +2594,33 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     The rule of thumb: a customer-specific **class** in the shared repository, covered by the shared test suite, is maintainable. A customer-specific **branch** is not, because nothing you fix upstream ever reaches it.
 
-    **Step 3: if it must be customer specific, make it portable rather than forked.** The property to insist on is that the customer-specific part is a versioned, deployable *artifact* rather than a diff against your source tree: it declares its own dependencies, it carries its own presets, it can be rolled back to the previous version on its own, and installing it does not require modifying the shared code it runs on. Ask yourself whether a colleague could deploy this customer's configuration into a fresh environment tomorrow without reading your commit history. If the answer is no, you have a fork with better branding.
+    **Step 3: if it must be customer specific, make it portable rather than forked.** The property to insist on is that the customer-specific part is a versioned, deployable *artifact* rather than a diff against your source tree:
 
-    **Step 4: if the driver is isolation rather than logic, use the tenancy vocabulary.** Isolation is a spectrum, not a binary, and different tiers of one architecture can sit at different points. Single tenant deployments give data isolation, avoid noisy neighbours, and let updates roll out progressively across tenants, which reduces the likelihood of a system-wide outage. The cost line to say out loud: per-tenant infrastructure cost scales close to linearly, so 100 tenants means roughly 100 copies of the bill. The sentence that scores points: **your codebase has to be designed to support both multitenant and single-tenant deployments**, plus a migration path from shared to dedicated and deliberate isolation testing via fault injection rather than assertion.
+    - It declares its own dependencies
+    - It carries its own presets
+    - It can be rolled back to the previous version on its own
+    - Installing it does not require modifying the shared code it runs on
 
-    **Step 5: solve the customer's problem now, and let generalisation follow.** Do not moralise about technical debt in this round. Refusing a customer-specific need in order to protect an abstraction you have not yet earned is the failure mode on the other side, and interviewers watch for it as closely as they watch for the fork. Generalising too early is the more expensive of the two mistakes, because a framework built on one example fits nobody and still has to be maintained. Solve it specifically, keep the specific thing contained and reviewable, and extract the shared piece once the same need has shown up at a second and third customer.
+    Ask yourself whether a colleague could deploy this customer's configuration into a fresh environment tomorrow without reading your commit history. If the answer is no, you have a fork with better branding.
 
-    **Step 6: close the loop back into the product.** This is what makes the job R&D rather than consulting. The forward deployed engineer is the first line of sight on what the platform is missing, and the discipline is to route that observation into the product rather than hard-wiring it into another bespoke application. Concretely: write down the observed need, how often it has appeared, what your bespoke version does, and what the smallest generalizable primitive would be, then own that document until someone accepts or rejects it. Ankit Sobti, quoted in Insight Partners' write-up on the role, goes further on how central the motion is: "if I were starting a B2B business today, I would think about an FDE motion as my primary engineering motion."
+    **Step 4: if the driver is isolation rather than logic, use the tenancy vocabulary.** Isolation is a spectrum, not a binary, and different tiers of one architecture can sit at different points. Single tenant deployments give data isolation, avoid noisy neighbours, and let updates roll out progressively across tenants, which reduces the likelihood of a system-wide outage.
+
+    The cost line to say out loud: per-tenant infrastructure cost scales close to linearly, so 100 tenants means roughly 100 copies of the bill. The sentence that scores points: **your codebase has to be designed to support both multitenant and single-tenant deployments**, plus a migration path from shared to dedicated and deliberate isolation testing via fault injection rather than assertion.
+
+    **Step 5: solve the customer's problem now, and let generalisation follow.** Do not moralise about technical debt in this round. Refusing a customer-specific need in order to protect an abstraction you have not yet earned is the failure mode on the other side, and interviewers watch for it as closely as they watch for the fork.
+
+    Generalising too early is the more expensive of the two mistakes, because a framework built on one example fits nobody and still has to be maintained. Solve it specifically, keep the specific thing contained and reviewable, and extract the shared piece once the same need has shown up at a second and third customer.
+
+    **Step 6: close the loop back into the product.** This is what makes the job R&D rather than consulting. The forward deployed engineer is the first line of sight on what the platform is missing, and the discipline is to route that observation into the product rather than hard-wiring it into another bespoke application.
+
+    Concretely, write down four things, then own that document until someone accepts or rejects it:
+
+    - The observed need
+    - How often it has appeared
+    - What your bespoke version does
+    - What the smallest generalizable primitive would be
+
+    Ankit Sobti, quoted in Insight Partners' write-up on the role, goes further on how central the motion is: "if I were starting a B2B business today, I would think about an FDE motion as my primary engineering motion."
 
     **Red flags:** agreeing to a fork to save a renewal; refusing all customisation on purity grounds while the customer's problem goes unsolved; not knowing the difference between configuration, a flag, a deployment stamp and a fork; and having no story for how the learning gets back into the product.
 
@@ -2346,7 +2632,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 ??? success "View Answer"
 
-    **Do not treat presentation rounds as fluff.** Publicly shared interview accounts describe Cognition running an executive pitch to a panel role playing company executives plus a timed simulated customer call; LangChain opening with a 20 minute presentation explaining a product such as LangSmith or LangGraph to a **non-technical** audience; Sierra asking candidates to present a technical topic of their choice to a non-technical audience; and OpenAI asking for a recorded video walkthrough of the take-home. The common thread is that FDEs present to customers every day. The bar these rounds are measuring is the ability to move fluidly between a strategic conversation with a senior stakeholder and a hands-on debugging session with their engineers, sometimes within the same hour.
+    **Do not treat presentation rounds as fluff.** Publicly shared interview accounts describe:
+
+    - **Cognition:** an executive pitch to a panel role playing company executives, plus a timed simulated customer call
+    - **LangChain:** a 20 minute opening presentation explaining a product such as LangSmith or LangGraph to a **non-technical** audience
+    - **Sierra:** presenting a technical topic of your choice to a non-technical audience
+    - **OpenAI:** a recorded video walkthrough of the take-home
+
+    The common thread is that FDEs present to customers every day. The bar these rounds are measuring is the ability to move fluidly between a strategic conversation with a senior stakeholder and a hands-on debugging session with their engineers, sometimes within the same hour.
 
     **Before the demo, buy yourself options:**
 
@@ -2370,7 +2663,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
                          and whether it affects the delivery date. Same day.
     ```
 
-    **What executives actually read from a broken demo.** Not "the product is fragile," usually. They read your composure, which forward deployed job descriptions list as a hiring criterion in plain words: stay calm and exercise judgement when the stakes are high. A candidate who debugs live for six silent minutes fails; a candidate who switches to the recording, keeps the room, and sends a root cause note that afternoon often ends the meeting in a stronger position than a clean run would have.
+    **What executives actually read from a broken demo.** Not "the product is fragile," usually. They read your composure, which forward deployed job descriptions list as a hiring criterion in plain words: stay calm and exercise judgement when the stakes are high.
+
+    A candidate who debugs live for six silent minutes fails. A candidate who switches to the recording, keeps the room, and sends a root cause note that afternoon often ends the meeting in a stronger position than a clean run would have.
 
     **Do not fake it.** If the failure is real and material (the retrieval is returning wrong documents rather than a laptop dropping Wi-Fi), say so and reframe the meeting around what you learned. Faking a result that a customer engineer later reproduces is unrecoverable, and it is exactly the behaviour that lets a room dismiss the whole engagement.
 
@@ -2401,7 +2696,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **What the interviewer is actually probing:**
 
-    Whether you can be trusted alone in a room with a customer. FDE behavioral questions are not a culture-fit formality; candidates consistently report that at Palantir they are embedded inside the technical rounds, roughly 15 to 20 minutes of each 60-minute round, rather than run as a separate stage. That means your story has to land in two to three minutes, in the middle of a coding or decomposition conversation, without a warm-up.
+    Whether you can be trusted alone in a room with a customer.
+
+    **These are not a culture-fit formality.** Candidates consistently report that at Palantir they are embedded inside the technical rounds, roughly 15 to 20 minutes of each 60-minute round, rather than run as a separate stage. That means your story has to land in two to three minutes, in the middle of a coding or decomposition conversation, without a warm-up.
 
     **Standard STAR is not enough. Use STAR plus two FDE beats:**
 
@@ -2414,7 +2711,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | **C**arryover | (missing) | What generalized: a pattern, a tool, a product requirement |
     | **D**ebt | (missing) | What you knowingly left broken, and why that was correct |
 
-    The last two beats are where FDE answers separate from generic SWE answers. If your story ends at "we shipped it," you have described a feature rather than a deployment, and the interviewer learns nothing about whether you can be left alone with a customer. The Debt beat is the one candidates omit out of nervousness, and omitting it costs more than admitting it: forward deployed work legitimately produces fast, ugly code under customer pressure, so naming what you knowingly left broken and why that was the right call that week reads as judgement. Pretending the engagement produced only clean code reads as inexperience.
+    **The last two beats are where FDE answers separate from generic SWE answers.** If your story ends at "we shipped it," you have described a feature rather than a deployment, and the interviewer learns nothing about whether you can be left alone with a customer.
+
+    **The Debt beat is the one candidates omit out of nervousness, and omitting it costs more than admitting it.** Forward deployed work legitimately produces fast, ugly code under customer pressure, so naming what you knowingly left broken and why that was the right call that week reads as judgement. Pretending the engagement produced only clean code reads as inexperience.
 
     **A timing budget that survives a compressed round:**
 
@@ -2531,7 +2830,13 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     Avoid: a failure caused by someone else, a failure that resolves into a compliment, and anything where the lesson is "communicate more."
 
-    **The adoption failure is the highest-value story in this role, and it is the hardest one to tell well.** The temptation is to narrate it as a user-education problem, which reads as blaming the customer. Tell it structurally instead: name the assumption you made about how people worked (usually that they would change a habit because your version was better), name the evidence that would have falsified it (a shadowing session, a usage cohort at week four, a single question asked of a sceptic rather than of the sponsor), and name why you did not go looking for that evidence until it was late. An interviewer who has run deployments will recognise the shape immediately, because they have lived it.
+    **The adoption failure is the highest-value story in this role, and it is the hardest one to tell well.** The temptation is to narrate it as a user-education problem, which reads as blaming the customer. Tell it structurally instead, naming three things:
+
+    - **The assumption you made about how people worked**, usually that they would change a habit because your version was better
+    - **The evidence that would have falsified it:** a shadowing session, a usage cohort at week four, a single question asked of a sceptic rather than of the sponsor
+    - **Why you did not go looking for that evidence** until it was late
+
+    An interviewer who has run deployments will recognise the shape immediately, because they have lived it.
 
     **Structure the answer as a post-mortem, not a confession:**
 
@@ -2549,7 +2854,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **The mechanism beat is what separates senior answers.** Insight Partners' practitioner write-up gives you the vocabulary, in Rajkumar Irudayaraj's words: "Interest is not the same as readiness. Define entry criteria, exit criteria, and kill triggers before the build starts." The article's companion instruction is to design every engagement to end. If your lesson is a process someone else can now run without you, it counts. If it is a personal resolution, it does not.
 
-    **AI-lab loops want the eval version of this story.** Forward deployed postings at these companies require evaluation frameworks by name and describe success in terms of eval-driven feedback rather than delivery milestones. A failure story where you discovered too late that you had no way to tell whether the system was getting better or worse is directly on target, and the mechanism beat writes itself: you now build the eval set with the customer's experts before development rather than after.
+    **AI-lab loops want the eval version of this story.** Forward deployed postings at these companies require evaluation frameworks by name and describe success in terms of eval-driven feedback rather than delivery milestones.
+
+    A failure story where you discovered too late that you had no way to tell whether the system was getting better or worse is directly on target, and the mechanism beat writes itself: you now build the eval set with the customer's experts before development rather than after.
 
     **Also acceptable, and unusually well-regarded: the generalization failure.** Building the abstraction first is a real and common error, and the engagements that produce genuinely reusable insight are usually the ones that went deepest on one customer's specific problem without setting out to generalise. Telling a story where you built the framework first and it fit nobody is a credible senior failure.
 
@@ -2571,9 +2878,13 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **What the interviewer is actually probing:**
 
-    The two failure modes that end FDE engagements: the engineer who freezes waiting for a spec, and the engineer who charges ahead and breaks something that mattered. Expect prompts about a time the business problem was not clearly defined, and about a bold decision you made and had to defend. Palantir's new-grad FDE posting names **Agency** as one of its five values, meaning you learn continuously, make decisions with incomplete information and do not wait to be told what to do next, alongside embracing the ambiguity. Candidate accounts describe Databricks running a whole Decomposition round built from a vague business goal.
+    The two failure modes that end FDE engagements: the engineer who freezes waiting for a spec, and the engineer who charges ahead and breaks something that mattered.
 
-    This is also the everyday reality of the job. You will work in a great deal of ambiguity, and what the customer described during scoping will routinely fail to match the data and systems you find once you have access.
+    **Where the pressure shows up:**
+
+    - **In the loop.** Expect prompts about a time the business problem was not clearly defined, and about a bold decision you made and had to defend. Candidate accounts describe Databricks running a whole Decomposition round built from a vague business goal.
+    - **In the values bar.** Palantir's new-grad FDE posting names **Agency** as one of its five values, meaning you learn continuously, make decisions with incomplete information and do not wait to be told what to do next, alongside embracing the ambiguity.
+    - **In the day job.** You will work in a great deal of ambiguity, and what the customer described during scoping will routinely fail to match the data and systems you find once you have access.
 
     **A four-move framework you can narrate under pressure:**
 
@@ -2590,7 +2901,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     That last row is what makes "bold" safe. The strong version of this answer names the guardrail you deliberately did not cross. The layered access-control vocabulary is useful here: organizational boundaries that silo groups of users and resources, mandatory data markings that propagate through provenance and lineage, and attribute-based row-level and column-level controls. Nobody is impressed by an FDE who exercised agency over a data marking.
 
-    **3. Ship a concrete first cut, fast.** The line to internalise for open-ended problems is that you need something that works before you have the time to make it perfect. Articulate the alternatives and the trade-offs, then be pragmatic enough to arrive at a concrete approach, deliver a functioning version, and expand it afterwards. Prototypes beat specifications with a customer who cannot articulate requirements, because people reject a concrete thing far more precisely than they describe an abstract one.
+    **3. Ship a concrete first cut, fast.** The line to internalise for open-ended problems is that you need something that works before you have the time to make it perfect. Articulate the alternatives and the trade-offs, then be pragmatic enough to arrive at a concrete approach, deliver a functioning version, and expand it afterwards.
+
+    Prototypes beat specifications with a customer who cannot articulate requirements, because people reject a concrete thing far more precisely than they describe an abstract one.
 
     **4. Write the decision down so it is auditable later.** A short decision record turns "he went rogue" into "he made a documented call under time pressure." Keep it to something you can produce in five minutes:
 
@@ -2638,9 +2951,10 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **What the interviewer is actually probing:**
 
-    Candidates report being asked this directly in a Databricks values round, in the form of a prompt about pushing back on a customer to protect the outcome. Customer-simulation prompts push the same nerve, for example a customer demanding a feature that compromises data governance. What the interviewer wants to see is that you have a spine and a relationship at the same time, and that you know which disagreements are worth spending credibility on.
+    Whether you have a spine and a relationship at the same time, and whether you know which disagreements are worth spending credibility on.
 
-    Candidates almost always prepare only the external half. The internal half, disagreeing with your own product or research team, is where senior FDEs are actually tested, because the whole role sits on that seam.
+    - **Asked directly.** Candidates report being asked this in a Databricks values round, in the form of a prompt about pushing back on a customer to protect the outcome. Customer-simulation prompts push the same nerve, for example a customer demanding a feature that compromises data governance.
+    - **The half candidates skip.** Almost everyone prepares only the external version. The internal one, disagreeing with your own product or research team, is where senior FDEs are actually tested, because the whole role sits on that seam.
 
     **These are two different playbooks. Do not use one for the other.**
 
@@ -2652,11 +2966,15 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Acceptable loss | They overrule you; you document the risk | "Keep it bespoke"; you write down why |
     | Never acceptable | Silently building it anyway | Calling the roadmap team blockers |
 
-    **External: reframe, price, then hold one line.** When a customer demands the wrong thing, argue about the outcome, not the feature. Ask what they will do differently once it exists. Then price two paths honestly, including the one you disagree with, and name the single constraint you will not trade: data governance, an access marking, an eval pass rate, a security review. Everything else is negotiable. Ramp's engineering blog illustrates the productive version of this: a customer in onboarding was blocked by a feature gap the team sized at roughly three days of engineering work, and rather than queue the build they got on a call and worked out a path around it. Pushback and unblocking are the same conversation when done well.
+    **External: reframe, price, then hold one line.** When a customer demands the wrong thing, argue about the outcome, not the feature. Ask what they will do differently once it exists. Then price two paths honestly, including the one you disagree with, and name the single constraint you will not trade: data governance, an access marking, an eval pass rate, a security review. Everything else is negotiable.
+
+    Ramp's engineering blog illustrates the productive version of this: a customer in onboarding was blocked by a feature gap the team sized at roughly three days of engineering work, and rather than queue the build they got on a call and worked out a path around it. Pushback and unblocking are the same conversation when done well.
 
     If they overrule you, you build it and you write down the risk you flagged and the date you flagged it. That record is what makes you credible the next time, and it is the difference between an engineer with judgement and one who sulks.
 
-    **Internal: pushing a customer-specific need into someone else's roadmap is the harder half.** Your leverage here is not that this customer is important, because every account team says that and the roadmap team has heard it from all of them. Your leverage is frequency evidence across accounts, plus a working bespoke version that proves the need is real and shows exactly how small the generalizable piece is. The ask that lands is the smallest primitive, not the feature you already built.
+    **Internal: pushing a customer-specific need into someone else's roadmap is the harder half.** Your leverage here is not that this customer is important, because every account team says that and the roadmap team has heard it from all of them.
+
+    Your leverage is frequency evidence across accounts, plus a working bespoke version that proves the need is real and shows exactly how small the generalizable piece is. The ask that lands is the smallest primitive, not the feature you already built.
 
     So when you push a customer-specific need toward the product team, bring the loop, not a request:
 
@@ -2673,7 +2991,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
                  at 5 accounts. Here is the doc so nobody rebuilds it.
     ```
 
-    Senior forward deployed postings encode this expectation as a responsibility: align early on what should generalise, what stays customer-specific and what "ready for handoff" means, then turn ambiguous feedback, failures and escalations into durable product requirements rather than one-off fixes. The shape to describe is that reuse compounds: almost nothing carries forward from a first engagement, and a meaningful share does once the same problem has appeared two or three times. Saying that out loud tells the interviewer you understand what you are feeding.
+    **Senior forward deployed postings encode this expectation as a responsibility:** align early on what should generalise, what stays customer-specific and what "ready for handoff" means, then turn ambiguous feedback, failures and escalations into durable product requirements rather than one-off fixes.
+
+    The shape to describe is that reuse compounds: almost nothing carries forward from a first engagement, and a meaningful share does once the same problem has appeared two or three times. Saying that out loud tells the interviewer you understand what you are feeding.
 
     **Know the counter-argument too.** Aggressive scoping genuinely does conflict with the instinct to generalise, because good interfaces and platforms are what make software scale in the first place. Saying out loud that this is a judgement call rather than a rule is a maturity signal.
 
@@ -2695,7 +3015,12 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **What the interviewer is actually probing:**
 
-    Whether you can be put in front of an executive unsupervised. This gets tested with unusual directness in FDE loops. Candidate write-ups on Cognition's Deployed Engineer process describe an executive pitch to a panel role-playing company executives and a timed case-study simulated customer call. Deployment-facing loops ask flat out how you handle a situation where you do not have the answer and the client is waiting. The target these rounds are calibrated against is executive presence: moving fluidly between a strategic conversation with senior stakeholders and a hands-on debugging session with their engineers.
+    Whether you can be put in front of an executive unsupervised. This gets tested with unusual directness in FDE loops.
+
+    - Candidate write-ups on Cognition's Deployed Engineer process describe an executive pitch to a panel role-playing company executives, and a timed case-study simulated customer call.
+    - Deployment-facing loops ask flat out how you handle a situation where you do not have the answer and the client is waiting.
+
+    The target these rounds are calibrated against is executive presence: moving fluidly between a strategic conversation with senior stakeholders and a hands-on debugging session with their engineers.
 
     **Rule one: they hear it from you, early, or your credibility is the thing that slipped.** A date you flag three weeks out is a project management problem. The same date discovered by the customer two days before launch is a trust problem, and trust is the FDE's only real asset.
 
@@ -2720,7 +3045,9 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
                    shipping the batch-load version on the 14th instead."
     ```
 
-    **Always bring the de-scoped option.** The strongest move is to protect the original date with reduced scope, and let the sponsor choose. "You can have the full thing on the 28th, or the read-only version on the 14th" is a decision. "It will be late" is a complaint. Forward deployed job descriptions name this exact skill as a hiring criterion: making explicit trade-offs between scope, speed and quality, and adjusting the plan to protect delivery.
+    **Always bring the de-scoped option.** The strongest move is to protect the original date with reduced scope, and let the sponsor choose. "You can have the full thing on the 28th, or the read-only version on the 14th" is a decision. "It will be late" is a complaint.
+
+    Forward deployed job descriptions name this exact skill as a hiring criterion: making explicit trade-offs between scope, speed and quality, and adjusting the plan to protect delivery.
 
     **Re-forecast once, with padding you can defend.** Slipping twice costs more than slipping once by double. If you cannot commit to a date, commit to a date for the date: "I will know by Thursday whether the 28th holds, and I will tell you Thursday either way."
 
@@ -2732,7 +3059,20 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | Impossible here | Blocked by their environment, policy or data | Name the blocker and who owns it on their side |
     | Impossible ever | Physics, compliance, or model capability | Say no clearly, then redirect to the outcome |
 
-    The third case is where candidates flinch. A common simulation prompt is explaining to a non-technical VP why a retrieval system cannot guarantee 100% accuracy. The good answer does not apologise for probabilistic systems; it converts the demand into a measurable one. Anthropic's published retrieval results give you concrete language: a baseline top-20 retrieval failure rate of 5.7% drops to 3.7% with contextual embeddings, 2.9% adding contextual BM25, and 1.9% with reranking, a 67% reduction overall. That reframes "is it accurate" into "what failure rate is acceptable for this workflow, how do we measure it, and what do we do on the residual." Pair it with an escalation design: rate each tool by risk on read-only versus write access, reversibility, the account permissions it needs and its financial impact, then route the high-risk actions to a human.
+    **The third case is where candidates flinch.** A common simulation prompt is explaining to a non-technical VP why a retrieval system cannot guarantee 100% accuracy. The good answer does not apologise for probabilistic systems; it converts the demand into a measurable one.
+
+    Anthropic's published retrieval results give you concrete language:
+
+    | Retrieval setup | Top-20 retrieval failure rate |
+    |---|---|
+    | Baseline | 5.7% |
+    | Contextual embeddings | 3.7% |
+    | Adding contextual BM25 | 2.9% |
+    | Adding reranking | 1.9%, a 67% reduction overall |
+
+    That reframes "is it accurate" into "what failure rate is acceptable for this workflow, how do we measure it, and what do we do on the residual."
+
+    **Pair it with an escalation design.** Rate each tool by risk on read-only versus write access, reversibility, the account permissions it needs and its financial impact, then route the high-risk actions to a human.
 
     **Strong answers cover:**
 
@@ -2761,7 +3101,11 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
     **What the interviewer is actually probing:**
 
-    Attrition risk. Travel is the one constant across every version of this role, and hiring teams have watched people burn out. Ex-Palantir FDE Piotr Kraus, speaking to [LeadDev](https://leaddev.com/hiring/the-rise-of-the-forward-deployed-engineer) about postings that carry up to 50% travel, says the constant travel makes the role prone to burnout earlier than most engineering jobs, and in the same interview he says the title "might have become a little bit frothy." That is one practitioner's read rather than a published attrition rate, but it is the concern hiring teams are screening for. Recruiters ask a soft version of it, for example what you pursue outside work, or why you left your last role.
+    Attrition risk. Travel is the one constant across every version of this role, and hiring teams have watched people burn out.
+
+    **The read they are screening against.** Ex-Palantir FDE Piotr Kraus, speaking to [LeadDev](https://leaddev.com/hiring/the-rise-of-the-forward-deployed-engineer) about postings that carry up to 50% travel, says the constant travel makes the role prone to burnout earlier than most engineering jobs, and in the same interview he says the title "might have become a little bit frothy." That is one practitioner's read rather than a published attrition rate, but it is the concern hiring teams are screening for.
+
+    **How it actually reaches you.** Recruiters ask a soft version of it, for example what you pursue outside work, or why you left your last role.
 
     **Know the real numbers before you answer:**
 
@@ -2772,9 +3116,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
     | OpenAI Forward Deployed Software Engineer | travel up to 50% required |
     | Anduril, Air Defense FDE | "up to two months at a time (up to 80% of the year)" |
 
-    Two things follow. First, hardware and defense-facing forward deployed roles carry substantially heavier travel than software-facing ones, so read the band rather than assuming the 25-50% norm. Second, bands move between postings and between teams inside the same company, so the number written into the specific job description you applied to is the only one that matters; do not argue from a table someone else compiled, including this one.
+    **Two things follow:**
 
-    Relocation for the length of an engagement is a documented pattern rather than an edge case. Nabeel Qureshi's account of the original Palantir model describes his first engagement as a year spent living in Toulouse and working inside the Airbus A350 factory alongside the manufacturing staff. Read that as the upper bound of what "travel" can mean in this role, and ask early whether any engagement on the team you are joining is structured that way, because a year-long relocation is a different life decision from a two-day-a-week commute.
+    - Hardware and defense-facing forward deployed roles carry substantially heavier travel than software-facing ones, so read the band rather than assuming the 25-50% norm.
+    - Bands move between postings and between teams inside the same company. The number written into the specific job description you applied to is the only one that matters, so do not argue from a table someone else compiled, including this one.
+
+    **Relocation for the length of an engagement is a documented pattern rather than an edge case.** Nabeel Qureshi's account of the original Palantir model describes his first engagement as a year spent living in Toulouse and working inside the Airbus A350 factory alongside the manufacturing staff.
+
+    Read that as the upper bound of what "travel" can mean in this role. Ask early whether any engagement on the team you are joining is structured that way, because a year-long relocation is a different life decision from a two-day-a-week commute.
 
     **How to answer the travel question without lying or hedging:**
 
@@ -2923,7 +3272,14 @@ Selectivity is real and self-reported aggregator data is only indicative: Taro's
 
 Two weeks is enough if you spend it on the rounds that actually fail people rather than on the ones that feel productive. Grinding algorithms is necessary but far from sufficient here: the reported coding bar is LeetCode easy to medium with an emphasis on tests and completeness, while Decomposition, Learning and the eval question are where candidates are eliminated.
 
-**Before day one, do the two-minute triage that saves the whole plan.** Confirm with your recruiter which exact title you are interviewing for. Candidates report that Palantir runs Forward Deployed Software Engineer (Delta) and Deployment Strategist (Echo) as different loops with different rounds. OpenAI posts more than one forward deployed family side by side, with experience bars ranging from 5+ years on its Forward Deployed Engineer, Gov posting to 7+ years on its Forward Deployed Software Engineer posting, and it also runs neighbouring customer-facing engineering titles that candidates routinely confuse with FDE. Anthropic's careers board, as of mid-2026, listed its customer-facing engineering under Applied AI rather than Forward Deployed Engineer. Anduril's and Applied Intuition's forward deployed roles are defense field and hardware jobs with clearance requirements. Preparing for the wrong variant is the most expensive mistake available.
+**Before day one, do the two-minute triage that saves the whole plan.** Confirm with your recruiter which exact title you are interviewing for, because the loops differ by company and by variant.
+
+- **Palantir:** candidates report that Forward Deployed Software Engineer (Delta) and Deployment Strategist (Echo) are different loops with different rounds
+- **OpenAI:** posts more than one forward deployed family side by side, with experience bars ranging from 5+ years on its Forward Deployed Engineer, Gov posting to 7+ years on its Forward Deployed Software Engineer posting, and it also runs neighbouring customer-facing engineering titles that candidates routinely confuse with FDE
+- **Anthropic:** its careers board, as of mid-2026, listed customer-facing engineering under Applied AI rather than Forward Deployed Engineer
+- **Anduril and Applied Intuition:** forward deployed roles here are defense field and hardware jobs with clearance requirements
+
+Preparing for the wrong variant is the most expensive mistake available.
 
 **Week 1: the technical surface**
 
@@ -2951,7 +3307,9 @@ Two weeks is enough if you spend it on the rounds that actually fail people rath
 
 **Daily throughout:** 45 to 60 minutes of coding practice at easy to medium difficulty, always writing tests, always finishing. Use a mainstream imperative language you are genuinely fluent in (Python, Java, C/C++, C#, JavaScript, TypeScript, Go or Rust), because these loops are not the place to demonstrate an exotic one, and be ready to code on a whiteboard onsite.
 
-**Read the primary sources, not the listicles.** Palantir publishes its own hiring-process guidance on its careers site, and the topics it covers map closely onto its round names. Read the current set yourself rather than trusting anyone's summary of it, including this one. Read the job description of the exact role you applied to and mine it for case prompts; Palantir's FDSE posting literally lists "Why are we delaying so many flights?" and "How can we better identify instances of money laundering?"
+**Read the primary sources, not the listicles.** Palantir publishes its own hiring-process guidance on its careers site, and the topics it covers map closely onto its round names. Read the current set yourself rather than trusting anyone's summary of it, including this one.
+
+Then read the job description of the exact role you applied to and mine it for case prompts. Palantir's FDSE posting literally lists "Why are we delaying so many flights?" and "How can we better identify instances of money laundering?"
 
 **The pitfalls worth rehearsing away:** jumping to a solution before scoping; treating Decomposition like a FAANG system design round; enumerating trade-offs forever without landing on a concrete approach; going silent while thinking; the rewrite instinct in a debugging round; hand-waving evaluation; generic "why this company" answers; and saying "we" when the interviewer is trying to work out what you personally did.
 
