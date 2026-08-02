@@ -197,6 +197,16 @@ nav:
 
   - 📅 Suggested Learning Paths: Suggested-Learning-Paths.md
 
+  - 🎓 Grokking Interviews:
+      - Overview and Shared Framework: Grokking/index.md
+      - Modern System Design: Grokking/modern-system-design.md
+      - Machine Learning System Design: Grokking/ml-system-design.md
+      - Generative AI System Design: Grokking/generative-ai-system-design.md
+      - Mobile System Design: Grokking/mobile-system-design.md
+      - Frontend System Design: Grokking/frontend-system-design.md
+      - Product Architecture: Grokking/product-architecture.md
+      - System Design Fast-Track (48 Hours): Grokking/system-design-fast-track.md
+
   - 👨🏿‍🏫 Interview Questions:
       - 📇 Flashcards: flashcards.md
       # - 👨🏿‍🏫 Interview Questions: Interview-Questions/Interview-Questions.md
