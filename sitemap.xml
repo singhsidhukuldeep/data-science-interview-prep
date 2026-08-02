@@ -2,258 +2,290 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dsprep.com/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Contribute/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Introduction/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Suggested-Learning-Paths/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/contact/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/flashcards/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/privacy/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/projects/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Django/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Flask/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Hypothesis-Tests/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Keras/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/LangChain-LangGraph/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/NumPy/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Pandas/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/PySpark/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/PyTorch/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Python/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/RegEx/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/SQL/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/Sk-learn/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Cheat-Sheets/tensorflow/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Deploying-ML-models/deploying-ml-models/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/frontend-system-design/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/generative-ai-system-design/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/ml-system-design/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/mobile-system-design/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/modern-system-design/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/product-architecture/</loc>
+         <lastmod>2026-08-02</lastmod>
+    </url>
+    <url>
+         <loc>https://dsprep.com/Grokking/system-design-fast-track/</loc>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/AB-testing/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Forward-Deployed-Engineer/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Interview-Question-Resources/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Interview-Questions/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/LangChain/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/LangGraph/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Machine-Learning/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Natural-Language-Processing/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/NumPy/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Pandas/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Probability/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/PyTorch/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Python/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/SQL-Interview-Questions/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Scikit-Learn/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/System-design/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/TensorFlow/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/Transformers/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Interview-Questions/data-structures-algorithms/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/ARIMA/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Activation%20functions/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Collaborative%20Filtering/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Confusion%20Matrix/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/DBSCAN/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Decision%20Trees/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Gradient%20Boosting/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/K-means%20clustering/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Linear%20Regression/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Logistic%20Regression/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Loss%20Function%20MAE%2C%20RMSE/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Neural%20Networks/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Normal%20Distribution/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Normalization%20Regularisation/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Overfitting%2C%20Underfitting/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/PCA/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Random%20Forest/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Support%20Vector%20Machines/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/Unbalanced%2C%20Skewed%20data/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Machine-Learning/kNN/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Online-Material/Online-Material-for-Learning/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
     <url>
          <loc>https://dsprep.com/Online-Material/popular-resources/</loc>
-         <lastmod>2026-08-01</lastmod>
+         <lastmod>2026-08-02</lastmod>
     </url>
 </urlset>
