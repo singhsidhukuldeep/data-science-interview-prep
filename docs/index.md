@@ -70,26 +70,20 @@ hide:
         - [Forward Deployed Engineer (FDE)](Interview-Questions/Forward-Deployed-Engineer.md)
         - [Interview Question Resources](Interview-Questions/Interview-Question-Resources.md) - **Community-curated sources for all topics**
 
--   ??? cheat-sheet ":octicons-arrow-right-24: __Cheat Sheets__"
+-   ??? grokking ":octicons-arrow-right-24: __Grokking Interviews__"
 
         ---
 
-        Distilled down important concepts for your quick reference
+        Free in-depth courses with worked examples, case studies and self-assessment
 
-        * [Django](Cheat-Sheets/Django.md)
-        * [Flask](Cheat-Sheets/Flask.md)
-        * [Hypothesis-Tests](Cheat-Sheets/Hypothesis-Tests.md)
-        * [Keras](Cheat-Sheets/Keras.md)
-        * [LangChain-LangGraph](Cheat-Sheets/LangChain-LangGraph.md)
-        * [NumPy](Cheat-Sheets/NumPy.ipynb)
-        * [Pandas](Cheat-Sheets/Pandas.ipynb)
-        * [PySpark](Cheat-Sheets/PySpark.md)
-        * [PyTorch](Cheat-Sheets/PyTorch.md)
-        * [Python](Cheat-Sheets/Python.md)
-        * [RegEx](Cheat-Sheets/RegEx.md)
-        * [Sk-learn](Cheat-Sheets/Sk-learn.md)
-        * [SQL](Cheat-Sheets/SQL.md)
-        * [tensorflow](Cheat-Sheets/tensorflow.md)
+        - [Overview and Shared Framework](Grokking/index.md){: .glowing-link }
+        - [Modern System Design](Grokking/modern-system-design.md)
+        - [Machine Learning System Design](Grokking/ml-system-design.md)
+        - [Generative AI System Design](Grokking/generative-ai-system-design.md)
+        - [Mobile System Design](Grokking/mobile-system-design.md)
+        - [Frontend System Design](Grokking/frontend-system-design.md)
+        - [Product Architecture](Grokking/product-architecture.md)
+        - [System Design Fast-Track (48 Hours)](Grokking/system-design-fast-track.md)
 
 -   ??? ml-algo ":octicons-arrow-right-24: __ML Algorithms__"
 
@@ -118,14 +112,26 @@ hide:
         - [Unbalanced, Skewed data](Machine-Learning/Unbalanced,%20Skewed%20data.md)
         - [kNN](Machine-Learning/kNN.md)
 
--   ??? online-resources ":octicons-arrow-right-24: __Online Resources__"
+-   ??? cheat-sheet ":octicons-arrow-right-24: __Cheat Sheets__"
 
         ---
 
-        Most popular and commonly referred online resources
+        Distilled down important concepts for your quick reference
 
-        - [Online Study Material](Online-Material/Online-Material-for-Learning.md)
-        - [Popular Blogs](Online-Material/popular-resources.md)
+        * [Django](Cheat-Sheets/Django.md)
+        * [Flask](Cheat-Sheets/Flask.md)
+        * [Hypothesis-Tests](Cheat-Sheets/Hypothesis-Tests.md)
+        * [Keras](Cheat-Sheets/Keras.md)
+        * [LangChain-LangGraph](Cheat-Sheets/LangChain-LangGraph.md)
+        * [NumPy](Cheat-Sheets/NumPy.ipynb)
+        * [Pandas](Cheat-Sheets/Pandas.ipynb)
+        * [PySpark](Cheat-Sheets/PySpark.md)
+        * [PyTorch](Cheat-Sheets/PyTorch.md)
+        * [Python](Cheat-Sheets/Python.md)
+        * [RegEx](Cheat-Sheets/RegEx.md)
+        * [Sk-learn](Cheat-Sheets/Sk-learn.md)
+        * [SQL](Cheat-Sheets/SQL.md)
+        * [tensorflow](Cheat-Sheets/tensorflow.md)
 
 </div>
 
