@@ -1,7 +1,7 @@
 ---
 title: Modern System Design Interview Course
 description: A free course on deriving a distributed system from its stated constraints, naming the number at which it breaks, and defending the simplest design.
-last_reviewed: 2026-08-01
+last_reviewed: 2026-08-02
 ---
 
 # Modern System Design Interview
@@ -70,8 +70,8 @@ Seniority is a poor readiness signal. Prerequisite mastery is a good one. Answer
 | Modules 1 to 5, framing and properties | 2.9 to 3.7 h | 1.5 to 2.0 h | included below |
 | Modules 6 to 9, building blocks | 4.3 to 5.5 h | 2.0 to 3.0 h | included below |
 | Modules 10 to 16, hard parts and judgement | 4.8 to 5.8 h | 1.5 to 2.5 h | included below |
-| Eight case studies and both practice sets | included above | 5.0 to 8.5 h | included below |
-| Five review sessions on days 1, 3, 7, 21 and 60 | 0 | 0 | 4.0 to 5.0 h |
+| Eight case studies and both practice sets | included above | 5.1 to 8.25 h | included below |
+| Five review sessions on days 1, 3, 7, 21 and 60 | 0 | 0 | 3.75 to 5.0 h |
 | **Total** | **12 to 15 h** | **10 to 16 h** | **4 to 5 h** |
 
 !!! note "How these were computed, so you can argue with them"
@@ -80,7 +80,7 @@ Seniority is a poor readiness signal. Prerequisite mastery is a good one. Answer
 
     Practice assumes 20 to 30 minutes attempting each of the 8 case studies before reading the arc, which is 160 to 240 minutes, plus the 11 practice problems at the minutes each set states: 5 to 15 for each of the five blocked problems and 20 to 30 for each of the six interleaved, which is 145 to 255 minutes.
 
-    Those two lines sum to 305 to 495 minutes, the 5.0 to 8.5 hours in the case-study row. Timed self-mock work is the day 7, 21 and 60 review sessions, counted in the review column rather than twice.
+    Those two lines sum to 305 to 495 minutes, the 5.1 to 8.25 hours in the case-study row. Timed self-mock work is the day 7, 21 and 60 review sessions, counted in the review column rather than twice.
 
     Review assumes five sessions of 45 to 60 minutes. Every per-item figure above is padded by roughly 15 percent, because self-estimates of study time run optimistic.
 
@@ -122,7 +122,7 @@ Three to five minutes. Answer out loud or in writing before opening anything. Re
 
 ??? note "Show answer"
 
-    It cannot give you a live interviewer who adapts follow-ups to your specific weak answer, and it cannot give you calibrated human judgement of your delivery. The substitutes are public four-criterion rubrics on every practice problem, interviewer script packs you can hand to a friend, timed drills, and level deltas that show what a staff answer added. Substitutes, not replacements. Do at least one mock with a human.
+    It cannot give you a live interviewer who adapts follow-ups to your specific weak answer, and it cannot give you calibrated human judgement of your delivery. The substitutes are public four-criterion rubrics on every practice problem, [interviewer script packs](index.md#interviewer-script-packs) you can hand to a friend, timed drills, and level deltas that show what a staff answer added. Substitutes, not replacements. Do at least one mock with a human.
 
 ---
 
@@ -177,7 +177,7 @@ dependent; nothing points backwards.
 | M11 The failure library | Name a production symptom's failure class and the design change that removes it | 50 to 60 min | Never skip. This is the highest-yield module for senior candidates |
 | M12 Observability and operability | Ship SLIs, alerts and trace propagation as part of the design, and keep metric cardinality bounded | 40 to 50 min | You have written an SLO document that survived a review |
 | M13 Cost as a constraint | Attach a cost per million requests to an architectural choice and argue it without sounding cheap | 30 to 40 min | You already do capacity and cost planning for a service |
-| M14 Simplicity | Defend a single-node answer with a threshold, and delete a box you cannot justify | 45 to 55 min | Never skip. Interviewers report this as the rarest strong signal |
+| M14 Simplicity | Defend a single-node answer with a threshold, and delete a box you cannot justify | 45 to 55 min | Never skip. This page's position: defending a small design is the hardest thing on this list to do well |
 | M15 Brownfield design | Plan dual writes, shadow traffic, backfill order, deprecation and blast radius for a running system | 45 to 55 min | You are interviewing at mid level only, and the loop is greenfield |
 | M16 Level calibration | Say what your answer is missing to read one level higher | 25 to 30 min | Never skip if you are targeting senior or above |
 
@@ -189,7 +189,7 @@ Method note for the Time column: it is reading only, computed per module at 120 
 
 ## The delivery clock for this round
 
-Most candidates who fail a design round did not lack a fact. They ran out of minutes with no design on the board, or they filled 45 minutes with breadth and never went deep enough for the interviewer to grade anything. The clock is a budget, not a script.
+This page's position, and the reason the tables below exist: a design round is lost on time allocation far more often than on missing knowledge. Two failure shapes account for most of it. Running out of minutes with no design on the board leaves nothing to grade, and spreading 45 minutes evenly across every topic leaves nothing deep enough to grade either. The clock is a budget, not a script.
 
 ### The 45 minute round
 
@@ -204,6 +204,12 @@ Most candidates who fail a design round did not lack a fact. They ran out of min
 | 40 to 45 | Failure modes, what you would measure first, what you skipped | An explicit list of what you did not cover and why |
 
 The phases sum to 45 by construction: 2 plus 6 plus 4 plus 8 plus 10 plus 10 plus 5.
+
+**Where these minute counts come from.** They are this page's allocation, not a measured average of real rounds, and there is no dataset behind them.
+
+One rule generates them: give each phase the smallest block in which its output can actually be produced, then spend whatever is left on depth, because depth is the only phase whose value keeps rising with time.
+
+Treat the row boundaries as soft and the totals as hard. If your own timed mocks say you need eight minutes on requirements, take them from the deep dive and know that you did.
 
 ### The 60 minute round
 
@@ -227,7 +233,7 @@ Say four sentences, in this order. Rehearse them once so they are automatic and 
 1. "Let me restate it: you want X for roughly Y users, and the part that matters most is Z." (Restate, and put a number in it even if you invented the number.)
 2. "I am going to spend about five minutes on requirements, then draw the simplest thing that works, then break it on purpose." (You just told them your clock, which reads as control.)
 3. "Two things I will optimise for: A and B. I will trade away C to get them." (Naming what you sacrifice is the single cheapest senior signal available.)
-4. "Stop me if you want depth somewhere specific rather than coverage." (This is an invitation, and interviewers take it more often than candidates expect.)
+4. "Stop me if you want depth somewhere specific rather than coverage." (It costs one sentence, and if it is taken you get to spend the round where the grading is.)
 
 ### Declaring what you are skipping
 
@@ -258,11 +264,11 @@ The difference is that a weak check-in asks for approval and a strong one offers
 | Deep dives | One, chosen by interviewer | Two, one chosen by the candidate and defended | Two, plus the migration path to get there from today |
 | Failure and operability | Mentioned at the end | A real section with alerts and SLIs | Woven throughout, plus blast radius and rollback |
 
-The rough shape: mid level spends its minutes proving the design is correct, senior spends them proving the trade-off was chosen, staff spends them proving the design is reachable, operable and affordable.
+The rough shape, stated as this page's position rather than as a report on what happens in real loops: mid level spends its minutes proving the design is correct, senior spends them proving the trade-off was chosen, staff spends them proving the design is reachable, operable and affordable. It follows from what each level is accountable for once hired, which is the only defensible basis for a claim like this.
 
 !!! tip "One note on frameworks, made once"
 
-    Educative's paid courses use acronym spines: RESHADED in the modern course, SCADET in mobile, REDCAAP in generative AI. Those are theirs, not ours. The problem is not the letters, it is that applying the same acronym identically to nine prompts produces an answer that sounds recited, and interviewers now screen for exactly that tell. The clock above is a time budget, not a spine. It never appears as a heading in any case study on this page, and Module 2 teaches when to abandon it.
+    Educative's paid courses use acronym spines: RESHADED in the modern course, SCADET in mobile, REDCAAP in generative AI. Those are theirs, not ours. The problem is not the letters, it is that applying the same acronym identically to nine prompts produces an answer that sounds recited, and a recited answer gives a grader nothing to grade. The clock above is a time budget, not a spine. It never appears as a heading in any case study on this page, and Module 2 teaches when to abandon it.
 
 !!! danger "When to break this clock"
 
@@ -494,7 +500,7 @@ A 45 minute slot is not 45 minutes of design. Subtract the parts you do not cont
 | Slot overhead | Minutes | Why |
 |---|---|---|
 | Greeting and introductions | 2 | Standard and unavoidable |
-| Your questions at the end | 5 | Interviewers protect this and cutting it looks incurious |
+| Your questions at the end | 5 | It is the only part of the hour you control, and skipping it wastes it |
 | **Working minutes left** | **38** | 45 minus 7 |
 
 The same subtraction on a 60 minute slot leaves 52 working minutes (60 minus 2 minus 6, where the longer slot usually gets a slightly longer question block).
@@ -532,7 +538,7 @@ Allocate the working minutes to phases that produce score. Each figure below is 
 
 !!! tip "The one acronym note in this course"
 
-    Paid courses in this category sell a memorised sequence, usually as an acronym such as RESHADED or SCADET, and then apply it identically to every prompt. Two problems. First, interviewers now screen for the recited-template tell, and a candidate who runs the same eight headings on a rate limiter and on a video platform sounds like a form being filled in.
+    Paid courses in this category sell a memorised sequence, usually as an acronym such as RESHADED or SCADET, and then apply it identically to every prompt. Two problems. First, a spine applied identically to every prompt is audible as a spine, and a candidate who runs the same eight headings on a rate limiter and on a video platform sounds like a form being filled in.
 
     Second, an acronym encodes an order but not a budget, so it does not tell you what to cut when you are eleven minutes behind. We teach a budget and then teach when to break it.
 
@@ -696,11 +702,11 @@ A candidate produced this requirements list in the first five minutes of a round
     | 6 | Yes | 40 million followers on one account is the single most design-changing fact on the list |
     | 7 | Yes | Residency forces regional partitioning of storage and constrains where the write goes |
 
-    Four of seven earn their place. Requirement 6 is the one most candidates never ask for, and it is the one that decides the architecture.
+    Four of seven earn their place. Requirement 6 is the easiest one to skip and the one that decides the architecture.
 
 ### The fork test
 
-A clarifying question is worth asking only if two plausible answers produce two different drawings. Everything else is a checklist recital, and interviewers recognise it instantly.
+A clarifying question is worth asking only if two plausible answers produce two different drawings. Everything else is a checklist recital, and it consumes minutes that the design phase needs.
 
 Ask this before every question: **if the answer is A I draw X, if the answer is B I draw Y.** If you cannot fill both halves, do not ask.
 
@@ -719,7 +725,7 @@ Ask this before every question: **if the answer is A I draw X, if the answer is 
 | Client | Can every client be upgraded | Yes: evolve freely | No: version skew, compatibility windows, server-side shaping |
 | Degradation | What does a user see when a dependency is down | Blank or error acceptable: simple | Must degrade gracefully: defaults, cached fallbacks, fail open |
 
-**Turning an adjective into a mechanism.** Interviewers state adjectives. Your job is to convert.
+**Turning an adjective into a mechanism.** Prompts arrive as adjectives. Your job is to convert.
 
 | They said | You say back | The design consequence |
 |---|---|---|
@@ -826,7 +832,7 @@ I say: "I am not designing the alerting or triggering logic, I am not designing 
 
     Block 4, the deliberate cut and the degradation rule: "I am not designing coupon issuance or fraud scoring. I am designing redemption as a conditional decrement with an idempotency key per checkout attempt, and because you said checkout must proceed if we are down, I will make the coupon service fail open with the discount omitted rather than fail closed. That means over-redemption is impossible but under-redemption is possible, and I would rather explain a missed discount than a negative balance."
 
-    Naming which direction the system fails in is the senior move here. Most candidates say "it should be highly available" and never state which error they prefer.
+    Naming which direction the system fails in is the senior move here. "It should be highly available" is not an answer until you say which error you prefer.
 
 ### 3f. Check yourself
 
@@ -900,7 +906,7 @@ Figure a typical estimation block with nine computed numbers
 | 1 gigabit per second | 125 megabytes per second | Divide by 8 |
 | Requests per day to per second | Divide by 100,000 | 1 million per day is 10 per second |
 
-The last row is the single most useful fact in this module. **One million events per day is ten per second.** Most candidates who cannot estimate under pressure simply do not have this anchored.
+The last row is the single most useful fact in this module. **One million events per day is ten per second.** Estimation under pressure gets much easier once that one conversion is automatic.
 
 **The three quantities worth computing, and nothing else.**
 
@@ -989,7 +995,9 @@ Now the elimination that matters. Reads are point lookups on a 15 terabyte datas
 
 **Block 4. PURPOSE: size the cache, and use the size to eliminate a whole tier.**
 
-Assume link traffic is heavily skewed and that 80 percent of reads hit links created in the last 30 days, and within those, 10 percent of the links serve most of the traffic. Links in 30 days: 500 million. Ten percent is 50 million. At 150 bytes per cached entry, that is 7.5 gigabytes.
+Assume link traffic is heavily skewed and that 80 percent of reads hit links created in the last 30 days, and within those, 10 percent of the links serve most of the traffic. Links in 30 days: 500 million. Ten percent is 50 million.
+
+A cached entry is not a stored row, and mixing the two is the arithmetic error to avoid here. The row was 500 bytes because it carried five fields plus two indexes plus per-row overhead. A cache entry carries only what the redirect needs: the 7 byte code as key and the 100 byte URL as value, which is 107 bytes, plus an assumed 43 bytes for the hash slot, the pointer and the expiry stamp. Call it 150 bytes. So 50 million entries times 150 bytes is 7.5 gigabytes.
 
 Eliminated by that number: a distributed cache tier. 7.5 gigabytes fits in memory on a single cache node with room to spare, so I start with a small replicated cache, not a sharded one. I state the skew as an assumption and name the metric that would falsify it: cache hit ratio below about 80 percent in production means the skew assumption was wrong and the tier gets revisited.
 
@@ -1101,7 +1109,7 @@ Two things fall out immediately. First, 99.99 percent means you cannot afford a 
 | A depends on B depends on C | multiply the availabilities | Every added hop on the critical path lowers the ceiling |
 | Two independent replicas, either suffices | 1 minus the product of the failure rates | Two 99 percent replicas give 99.99 percent if failures are independent |
 
-**Independence is the assumption that fails.** Replicas share a control plane, a configuration push, a deployment pipeline, a certificate, a DNS zone and often a region. A shared dependency turns a parallel calculation back into a serial one. Treat the parallel formula as an upper bound and say so, because interviewers probe exactly here.
+**Independence is the assumption that fails.** Replicas share a control plane, a configuration push, a deployment pipeline, a certificate, a DNS zone and often a region. A shared dependency turns a parallel calculation back into a serial one. Treat the parallel formula as an upper bound and say so, because the gap between the formula and reality is the whole content of this section.
 
 **The design move is dependency reduction.** For each dependency on the critical path, ask: can it be removed, cached, defaulted, or made asynchronous?
 
@@ -1124,7 +1132,7 @@ A system can be highly durable and frequently unavailable, or highly available a
 
 ### The consistency spectrum, with the mechanism that buys each level
 
-Strong versus eventual is not a spectrum, it is a two item list, and it is the reason so many candidates cannot answer a follow-up. Here is the usable version, ordered from strongest.
+Strong versus eventual is not a spectrum, it is a two item list, and treating it as a spectrum is what makes the follow-up unanswerable. Here is the usable version, ordered from strongest.
 
 | Level | What a client observes | Mechanism that provides it | What it costs |
 |---|---|---|---|
@@ -1170,7 +1178,7 @@ You cannot design against a failure you have not named. Use these five and say w
 | Partition | Two halves are alive and cannot talk | Choose which side keeps serving, and say so |
 | Gray or limping | A node is alive, slow, and passing health checks | Latency-based ejection, outlier detection, request hedging |
 
-Gray failure is the one candidates forget and the one that causes the worst incidents, because every automated system believes the node is healthy while every user experiences it as broken.
+Gray failure is the easiest class to leave out of a design and the one that causes the worst incidents, because every automated system believes the node is healthy while every user experiences it as broken.
 
 ### The availability chain, drawn
 
@@ -1298,7 +1306,7 @@ Saying "linearizable here, eventual there, and here is why" is the difference be
 
     It depends entirely on the product, which is the point: a single availability number does not capture user experience. For a batch or back office system, thirty daily blips are almost invisible and one long outage is a serious incident. For an interactive consumer product, a daily failure trains users to distrust the product, while a single monthly outage is forgivable.
 
-    The design response is to specify frequency and duration separately, and to say which of the two the design optimises. Interviewers rate this observation highly because it shows you have operated something.
+    The design response is to specify frequency and duration separately, and to say which of the two the design optimises. The distinction only surfaces once you have run something through an incident, which is why it is worth stating explicitly.
 
 ### 5g. When not to use this
 
@@ -1450,7 +1458,7 @@ Assume a limit of 1,000 requests per minute per key and 5 million active keys.
 
 The sliding log row is the whole argument. Exactness costs three orders of magnitude more memory than the approximation, which is why almost nobody runs it above trivial limits. Stripe published a description of running token bucket and concurrency limiting in a shared cache in production (<https://stripe.com/blog/rate-limiters>, 2017).
 
-**Coordination cost is the second axis, and the one candidates forget.**
+**Coordination cost is the second axis, and the one usually left out.**
 
 | Placement | Accuracy | Cost |
 |---|---|---|
@@ -1669,7 +1677,7 @@ The third row is the default worth defending in a round. It buys a recovery poin
 | 3 | 1 | 3 | Fast writes | 0 nodes down for reads |
 | 5 | 3 | 3 | Overlap guaranteed | 2 nodes down |
 
-The caveat interviewers probe: overlap guarantees that a read touches a node that saw the write, not that the read returns the newest value, unless the client resolves versions. Concurrent writes still need a conflict rule. The design that popularised this configuration space, along with virtual nodes and version vectors, is DeCandia and others, "Dynamo: Amazon's Highly Available Key-value Store", SOSP 2007 (<https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf>).
+The caveat that follows immediately: overlap guarantees that a read touches a node that saw the write, not that the read returns the newest value, unless the client resolves versions. Concurrent writes still need a conflict rule. The design that popularised this configuration space, along with virtual nodes and version vectors, is DeCandia and others, "Dynamo: Amazon's Highly Available Key-value Store", SOSP 2007 (<https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf>).
 
 **Replication lag, as a number you can compute.** If a replica falls behind during an incident, catch-up time is backlog divided by the surplus apply rate.
 
@@ -1694,7 +1702,7 @@ If instead the apply rate were 2,500 per second, catch-up would be 2,400 seconds
 | Local, partitioned by the same key as the data | Beside the data | Must query every partition and merge, so cost grows with partition count | One local write |
 | Global, partitioned by the indexed value | Somewhere else | One partition | A second write in a different partition, which is a distributed write with its own failure modes |
 
-The interview sentence: a global secondary index converts every insert into a multi-partition write, so either you accept that the index is eventually consistent with the row, or you buy a transaction. Most systems choose the former and most candidates never say it.
+The interview sentence: a global secondary index converts every insert into a multi-partition write, so either you accept that the index is eventually consistent with the row, or you buy a transaction. Most systems choose the former, and saying which one you chose is the whole point.
 
 **Rebalancing.** Never partition by hash modulo the node count. Adding one node to N changes the destination of almost every key. Two workable options:
 
@@ -1845,7 +1853,7 @@ The one invalidation case is deletion or a takedown, which is rare and can affor
 
     Name the cost in write-path terms: every insert becomes a write in two partitions, so the write path gains a second failure mode and either becomes eventually consistent with the row or requires a cross-partition transaction. Then compare frequencies: the index is paid on every write and used a few times a day.
 
-    The cheaper answer is an asynchronously maintained read model, or accepting a slow scan for a query nobody waits on. Trading a permanent write-path tax for a rare read is the exact shape of decision interviewers want you to refuse.
+    The cheaper answer is an asynchronously maintained read model, or accepting a slow scan for a query nobody waits on. Trading a permanent write-path tax for a rare read is the exact shape of decision to refuse.
 
 **Q2.** Your replicas are asynchronous and a user reports that their own edit disappeared after saving. What happened, and what is the smallest fix?
 
@@ -2115,7 +2123,7 @@ Marketing messages get no deduplication store, because the volume would be 40 ti
 
     The fix is partitions, not instances. Going to 32 partitions gives 64,000 per second of capacity, a surplus of 24,000 per second, so 14.4 million clears in 600 seconds, about 10 minutes.
 
-    The risk of the fix is the part most candidates miss. Increasing partition count changes which partition a key hashes to, so events for the same video can appear in two partitions during and after the change. Any per-key ordering guarantee is broken across that boundary, and a per-key aggregation that assumed one partition per key can now double count or split counts.
+    The risk of the fix is the part that is easy to miss. Increasing partition count changes which partition a key hashes to, so events for the same video can appear in two partitions during and after the change. Any per-key ordering guarantee is broken across that boundary, and a per-key aggregation that assumed one partition per key can now double count or split counts.
 
     The safe versions are to over-provision partitions at creation time, or to run a new topic alongside the old one and cut over consumers once the old topic is drained.
 
@@ -2191,7 +2199,7 @@ Marketing messages get no deduplication store, because the volume would be 40 ti
 
 **Coordination** means getting more than one machine to agree on one fact when
 machines die and messages arrive late. It is the most over-reached-for building
-block in the interview and the one candidates describe most vaguely.
+block in the interview and the easiest one to describe vaguely.
 
 ### 9a. Pre-question
 
@@ -2879,7 +2887,7 @@ Total marginal storage and transfer is under $1,000 per month, which reframes
 the conversation: the cost of this project is engineering time and operational
 complexity, not infrastructure. Saying that out loud is a senior move.
 
-Failure rehearsal, which is the block candidates skip:
+Failure rehearsal, which is the block that gets skipped when time runs short:
 
 - eu-west loses its database primary. EU users cannot write. US users are
   unaffected because they are homed elsewhere. Blast radius is 18% of write
@@ -3062,8 +3070,8 @@ its own at t=6 min?
 | Amplified overload | Usually | Wait plus capacity |
 | Metastable | No | Shed load below the recovery threshold, then restore |
 
-Only the third class needs a kill switch, and it is the class candidates never
-name. The formal treatment is Bronson et al., *Metastable Failures in
+Only the third class needs a kill switch, and it is the class that is hardest to
+name under pressure. The formal treatment is Bronson et al., *Metastable Failures in
 Distributed Systems*, HotOS 2021
 ([paper](https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s11.pdf),
 accessed August 2026).
@@ -3889,9 +3897,9 @@ avoided backend work exceeds the cache's own bill.
 So a 94% hit rate saves about $541 of database CPU and costs $468. On money
 alone it is roughly break-even, and the honest conclusion is that caches are
 almost never justified by cost. They are justified by latency and by protecting
-a backend that cannot be scaled horizontally. Saying this correctly separates
-you from candidates who add a cache reflexively and from candidates who claim it
-saves money it does not save.
+a backend that cannot be scaled horizontally. Saying this correctly is what separates a
+cache you can defend from a cache added reflexively, or one claimed to save
+money it does not save.
 
 **Derivation: retention as the dominant storage lever.** 500 GB of new data per
 day, 3 replicas, block storage at $0.08 per GB-month.
@@ -4206,8 +4214,9 @@ estimate it.
 
 ## Module 14. Simplicity and scale thresholds
 
-Interviewers report that their favourite moment is a candidate removing a box.
-No vendor teaches restraint, because complexity fills pages. This module gives
+Removing a box is the move this page rates most highly, because it is the one
+that cannot be faked without the arithmetic. No vendor teaches restraint,
+because complexity fills pages. This module gives
 you the thresholds that make restraint defensible rather than lazy.
 
 ### 14a. Pre-question
@@ -4725,8 +4734,8 @@ that never finishes. What actually works:
 4. When one caller remains, go and do their migration for them. It is cheaper
    than another quarter of carrying the old path.
 
-**Buying time is a legitimate first move.** Interviewers reward a candidate who
-separates the cheap reversible relief from the expensive terminal change.
+**Buying time is a legitimate first move.** Separating the cheap reversible
+relief from the expensive terminal change is the whole skill here.
 
 | Relief | Typical effort | Typical headroom bought |
 |---|---|---|
@@ -5021,8 +5030,8 @@ backfill. What do you do, and what does the plan's design give you?
 
 ## Module 16. Level calibration
 
-The single most requested thing candidates ask for, and the thing paid courses
-do not supply, is what a staff answer adds. This module answers it as observable
+What a staff answer adds is the question this page gets asked most, and the
+thing paid courses leave implicit. This module answers it as observable
 behaviour rather than as vocabulary, then makes you produce the three versions
 yourself.
 
@@ -5343,9 +5352,9 @@ the unique constraint, the reframing and the cost model read as evasion.
 **Fade 2: level up an answer to "how would you monitor this system?"** Last two
 blocks blank.
 
-- Block A, level signature and base arithmetic: the honest observation is that
-  most candidates answer this with a tool list, so the differentiator is deriving
-  the alerts from an SLO rather than naming dashboards.
+- Block A, level signature and base arithmetic: the honest observation is that a
+  tool list is the path of least resistance here, so the differentiator is
+  deriving the alerts from an SLO rather than naming dashboards.
 - Block B, mid answer and its ceiling: metrics for rate, errors and duration;
   logs; traces; dashboards per service; alert on error rate and on high latency.
   Correct and complete as a list. Ceiling: no thresholds derived from anything,
@@ -5403,7 +5412,7 @@ and one queue. Give two reasons that is a correct scoring decision.
 
 **Q2.** You are interviewing at senior level and you finish your design with 12
 minutes left. Name the highest-value thing to do with those minutes, and the
-common thing candidates do instead.
+low-value thing that fills them by default.
 
 ??? note "Show answer"
 
@@ -5414,7 +5423,7 @@ common thing candidates do instead.
     and then do it. Volunteering the dive is itself the senior signal, because
     the alternative is waiting to be asked.
 
-    What candidates do instead: recap the design, or add components. The recap
+    What fills those minutes by default: a recap of the design, or more components. The recap
     adds no information the interviewer lacks, and adding components at minute 45
     means adding them without the derivation you had time for earlier, which
     lowers rather than raises the score.
@@ -5442,7 +5451,7 @@ common thing candidates do instead.
 | Question | Answer |
 |---|---|
 | Measurement that justifies it | You are preparing, and you want to see the same problem from three altitudes to find your own ceiling |
-| Threshold below which it is harmful | In the live round. Announcing "and here is the staff-level view" is the memorised-template tell that interviewers now screen for |
+| Threshold below which it is harmful | In the live round. Announcing "and here is the staff-level view" narrates the label instead of demonstrating it |
 | Cheaper alternative | Let the level show through behaviour: volunteer a threshold, price one trade-off, name one thing you are not doing. Never narrate the level itself |
 
 !!! note "Why the eight case studies share their section headings"
@@ -5465,7 +5474,7 @@ Ask these because each answer changes a box on the whiteboard. Do not recite the
 
 | Question worth asking | If the answer is A the design becomes | If the answer is B the design becomes |
 |---|---|---|
-| Are short codes user-chosen, or system-generated? | System-generated: you own the whole key space and can pick a bijection over a counter | User-chosen aliases allowed: you need a uniqueness check, a reserved-word blocklist, and a shared namespace with generated codes |
+| Are short codes user-chosen, or system-generated? | System-generated: you own the whole key space and can encrypt a counter into it | User-chosen aliases allowed: you need a uniqueness check, a reserved-word blocklist, and a shared namespace with generated codes |
 | Do links expire or get deleted? | Never expire: keys are write-once and you never reclaim key space | Expire or delete: you need a reclaim policy, tombstones, and a rule about whether a reclaimed code may be reissued |
 | Is per-click analytics a product feature? | No analytics: you can return HTTP 301 and let browsers cache the redirect away | Yes analytics: you must return 302 or 307 so every click reaches you, which multiplies your read traffic |
 | Is the same long URL allowed to produce two different short codes? | Deduplicate: one row per long URL, so you need an index on a hash of the long URL | Do not deduplicate: writes are pure inserts, no read-before-write, and per-user analytics stay separable |
@@ -5491,12 +5500,26 @@ Non-functional:
 | Redirect availability | 99.99 percent monthly | GIVEN in the prompt framing; a dead redirect breaks every page that embeds it |
 | Redirect latency, server side | under 50 ms at p99 | ASSUMED; the redirect is a hop the user did not ask for, so it should be invisible next to page load |
 | Link retention | 5 years minimum | ASSUMED; links get embedded in printed material and archived pages |
+| Click popularity distribution | Zipf-like, exponent s = 1 | ASSUMED; see the sizing note below for why s = 1 is the conservative choice and how to falsify it |
 | Redirect requests per second at peak | 35,000 | DERIVED below |
 | Total stored rows after 5 years | 18 billion | DERIVED below |
+
+**Why the distribution is a stated requirement and not a footnote.** Cache sizing is the only decision here that depends on the shape of the traffic rather than its volume, and the shape changes the answer by a factor of three.
+
+Writing the exponent down as an assumption makes the later arithmetic checkable, and gives you one sentence to say in the room: "I am assuming s equals 1, which is the pessimistic end; if your measured hit ratio beats my derived number, s is above 1 and everything downstream gets cheaper."
 
 ### Numbers that eliminate options (shortener)
 
 Every line below ends with the option it kills. If a number kills nothing, it does not belong in the answer.
+
+**Two byte sizes, stated once so the rest of the page agrees with itself.** They are different quantities and the difference is the whole reason a cache is cheaper than a database.
+
+| Quantity | Fields counted | Size |
+|---|---|---|
+| Stored row on disk | 7 byte code, an assumed 100 byte average destination URL, 8 byte owner id, 8 byte created timestamp, 8 byte expiry, so 131 bytes of payload, times an assumed factor of just under 4 for the primary key index, the owner index and per-row overhead | 500 bytes |
+| Cache entry in memory | 7 byte code as key and the same 100 byte URL as value, so 107 bytes, plus an assumed 43 bytes for the hash slot, the pointer and the expiry stamp | 150 bytes |
+
+The 100 byte average URL is the assumption to challenge first, because it moves both numbers proportionally. It is reasonable because a shortener's input is overwhelmingly campaign links with query parameters, not bare domains, and you can measure it from one day of create traffic.
 
 | Calculation | Result | What it rules out |
 |---|---|---|
@@ -5505,13 +5528,22 @@ Every line below ends with the option it kills. If a number kills nothing, it do
 | 10,000,000 per day times 365 times 5 years | 18.25 billion rows | Rules out an in-memory-only store and rules out a single unpartitioned table for the long term |
 | 18.25 billion rows times 500 bytes per row | 9.1 TB | Rules out holding the full mapping in RAM, so the design needs a disk-backed store with a cache in front |
 | 62 to the power 6 equals 5.68e10; 18.25e9 divided by that | 32 percent of the key space consumed | Rules out 6-character codes: at one third occupancy, random generation collides constantly and even a counter leaks how close you are to exhaustion |
-| 62 to the power 7 equals 3.52e12; 18.25e9 divided by that | 0.52 percent of the key space consumed | Rules out 8 characters as needless length. 7 characters is the answer |
+| 62 to the power 7 equals 3.52e12; 18.25e9 divided by that | 0.52 percent of the key space consumed | Rules out 8 characters as needless length, given that the stated requirements never ask for unguessable codes. If they did, the eighth character is exactly what you would be buying: see the first deep dive |
 | 35,000 redirects per second times 500 bytes of response | 17.5 MB per second, about 140 Mbps | Rules out a CDN justified on bandwidth. If you want a CDN here, justify it on geographic latency instead, and say so |
-| Hottest 100 million codes times 250 bytes cached | 25 GB of cache | Rules out a large cache cluster. Two nodes plus a replica hold the working set |
+| Hottest 100 million codes times 150 bytes per cache entry | 15 GB of cache | Rules out a large cache cluster. Two nodes plus a replica hold the working set |
+| Zipf s = 1 over 18.25e9 codes: the top 100 million take (ln 1e8 + 0.577) divided by (ln 1.825e10 + 0.577), which is 19.0 divided by 24.2 | 78.5 percent of clicks | Rules out the claim that a cache of any affordable size gets you to 90 percent. See the derivation below before you quote a hit ratio |
 
 !!! tip "Say this out loud in the room"
 
     "Three hundred fifty writes per second means I am not going to shard the write path, and I want to be explicit that I checked rather than assumed."
+
+**The hit-ratio formula, derived once and reused everywhere below.** Under Zipf with exponent s = 1 over N items, the probability of rank i is proportional to 1/i, so the share of traffic taken by the top K items is the ratio of two harmonic numbers, H(K) over H(N), and H(n) is approximately ln n plus 0.577. That gives a cache of K entries a hit ratio of (ln K + 0.577) divided by (ln N + 0.577). Three consequences worth saying out loud:
+
+- The hit ratio grows with the logarithm of cache size, so a tenfold larger cache buys ln 10 divided by H(N), which is 2.303 divided by 24.2, or 9.5 percentage points. Not more.
+- Reaching 90 percent needs K such that ln K + 0.577 is 0.9 times 24.2, which is K of about 1.6 billion entries, or 240 GB at 150 bytes each. That is a real option, but it is a decision with a price, not a rounding assumption.
+- This formula describes a perfect cache holding exactly the K most popular codes. LRU under the same distribution lands a few points below it, so treat every hit ratio derived here as an optimistic bound and hold budget back accordingly.
+
+**Why s = 1 and not something friendlier.** s = 1 is the pessimistic end of the plausible range for link popularity, and pessimistic is the right default when the number decides how much hardware you buy. The falsifier is direct: instrument the production cache, plot hit ratio against cache size on a log x-axis, and read the slope. A slope steeper than 9.5 points per decade means s is above 1 and every number below improves.
 
 ### V0: the smallest design that meets the requirements (shortener)
 
@@ -5538,8 +5570,22 @@ Every line below ends with the option it kills. If a number kills nothing, it do
 Why this is correct at the stated scale:
 
 - Writes are 350 per second at peak. A single Postgres primary with one unique index does this without effort.
-- Reads are 35,000 per second at peak. Under the Zipf-like click distribution assumed above (a small head of links takes most clicks, which is what link sharing produces), a 200,000-entry in-process cache absorbs roughly 90 percent, leaving 3,500 primary-key lookups per second on the primary. That is within one primary's range for point reads on a hot index.
-- Short codes come from a Postgres sequence, passed through a bijection so they are not sequential in the output. Details in the first deep dive.
+- Reads are 35,000 per second at peak. Apply the formula above to the 200,000-entry in-process cache: (ln 200,000 + 0.577) divided by (ln 1.825e10 + 0.577) is 12.78 divided by 24.20, which is 52.8 percent. So the cache absorbs about half the reads, not most of them, and the primary sees 35,000 times 0.472, which is 16,500 primary-key lookups per second.
+- Whether one primary survives 16,500 point lookups per second is the load-bearing check, and it needs two ceilings rather than one.
+- Storage ceiling: ASSUME the code index is a four-level B-tree whose upper levels stay resident, so a miss costs one random read, and ASSUME the NVMe volume sustains 60,000 random reads per second. 16,500 is 28 percent of that, so storage is not the binding resource.
+- CPU ceiling: ASSUME 0.5 ms of CPU per lookup across connection handling, parse, plan, execute and result encoding, which is deliberately pessimistic for a primary-key read. A 16 core primary held at 60 percent utilisation gives 9.6 core-seconds per second, so the ceiling is 9.6 divided by 0.0005, about 19,200 lookups per second. CPU binds first.
+- So V0 meets the requirement with 16,500 against a ceiling of 19,200, which is 14 percent of headroom. It fits, and it fits narrowly. Both ceilings are load-test questions rather than facts, and I would say that out loud before drawing the next box.
+- Short codes come from a Postgres sequence, passed through a keyed pseudorandom permutation so the issue order carries no information. Details in the first deep dive.
+
+!!! danger "The number that used to be asserted here, and what fixing it changed"
+
+    An earlier version of this page claimed the 200,000-entry cache absorbed 90 percent of reads and left 3,500 lookups per second on the primary. That figure was asserted, not derived. The derivation above puts it at 52.8 percent and 16,500.
+
+    The V0 shape survives, because 16,500 still sits under the 19,200 ceiling. The conclusion drawn from it does not.
+
+    At 3,500 lookups per second the primary had five times its load in headroom, and the shared cache tier read as a growth optimisation for later. At 16,500 it has 14 percent, which is less than the error in the assumptions.
+
+    So the shared tier is not optional, and V1 is not a future version: it is what you deploy before the first traffic spike above the modelled peak. Two of the thresholds below moved with it.
 
 !!! warning "When not to use even this much"
 
@@ -5547,7 +5593,9 @@ Why this is correct at the stated scale:
 
 ### Breaking points, and what each version adds (shortener)
 
-**Breaking point one: the deploy cliff, at any traffic above roughly 8,000 reads per second.**
+**Breaking point one: the deploy cliff, at any traffic above roughly 19,000 reads per second.**
+
+The threshold is the primary's derived ceiling, because a cold cache turns every read into a lookup. Above 19,200 reads per second the primary is over its CPU ceiling for as long as the caches stay cold, and the stated peak of 35,000 is 1.8 times over it.
 
 What fails: the in-process cache is per instance and per process lifetime. A rolling deploy replaces every instance, every cache starts empty, and for the next thirty seconds the full 35,000 reads per second lands on the primary. Connection pool wait time goes vertical, and redirect p99 goes from 8 ms to multiple seconds.
 
@@ -5557,7 +5605,7 @@ How you observe it: cache hit ratio plotted against deploy markers, and database
 +---------+   +-------------+   +-----------+   +-------------+
 | Browser |-->| App server  |-->| Shared    |-->| Postgres    |
 |         |   | local LRU   |   | cache     |   | primary     |
-+---------+   | 1 sec TTL   |   | 25 GB     |   +-------------+
++---------+   | 1 sec TTL   |   | 15 GB     |   +-------------+
               +-------------+   +-----------+          |
                      |                                 v
                      v                          +-------------+
@@ -5569,11 +5617,17 @@ How you observe it: cache hit ratio plotted against deploy markers, and database
 
 **Caption.** V1 keeps the tiny local cache but puts a shared cache tier behind it, moves reads to replicas, and moves click events onto a queue instead of a local file.
 
+**What the shared tier is worth, derived.** It holds the hottest 100 million codes at 150 bytes each, so 15 GB. Because it is a superset of the local caches, the combined hit ratio is just its own: (ln 1e8 + 0.577) divided by 24.20, which is 19.0 divided by 24.20, or 78.5 percent.
+
+The primary then sees 35,000 times 0.215, which is 7,500 lookups per second against the 19,200 ceiling, so headroom goes from 14 percent to 61 percent. That is the argument for the tier, and it is a better one than the deploy cliff alone.
+
+If you want more, the same formula prices it: 1 billion entries is 150 GB and buys 88 percent, leaving 4,200 lookups per second. Each decade of cache costs ten times the memory and returns 9.5 points. Say that ratio out loud and the question of how big the cache should be stops being a matter of taste.
+
 V1 changes, each with the observation that justified it:
 
 | Change | Justified by | Cost you accept |
 |---|---|---|
-| Shared cache tier, 25 GB | Cache hit ratio collapsing at deploys | A new component that can fail, and cache and database can now disagree |
+| Shared cache tier, 15 GB | 16,500 lookups per second against a 19,200 ceiling in V0, plus hit ratio collapsing at deploys | A new component that can fail, and cache and database can now disagree |
 | Local cache kept, with a 1 second TTL | Hot-key protection, see deep dive two | Up to 1 second of staleness on link edits |
 | Read replicas | Primary CPU dominated by point reads | Replication lag means a link can 404 for a second after creation. Fix by writing the new code into the cache on create |
 | Click events onto a queue | Local log files are lost when an instance is replaced | Click counts become eventually consistent, which is fine, and you should say so before the interviewer asks |
@@ -5604,7 +5658,8 @@ This is the dive that the one-lesson version skips, and it is where a senior ans
 |---|---|---|---|---|
 | Hash the URL, truncate to 7 base62 chars | Collides badly, see arithmetic below | None | No | Needs a shared uniqueness check anyway |
 | Global counter, base62 encoded | Never collides | One allocator | Yes, codes are sequential and enumerable | Yes, with a shared unique index |
-| Counter plus a bijective scramble | Never collides | One allocator | No, output looks random | Yes, same index |
+| Counter times an odd constant modulo 62 to the 7 | Never collides | One allocator | Yes, and it looks like it does not. This is the trap dissected below | Yes, same index |
+| Counter through a keyed pseudorandom permutation | Never collides | One allocator, plus key custody | No, while the key stays secret | Yes, same index |
 | Random 7 chars with a uniqueness check | Rare collisions, retried | None | No | Yes |
 | Pre-generated key pool handed out in blocks | Never collides | A key service | No | Yes |
 | Snowflake-style 64-bit ID | Never collides | Node ID assignment | Time ordering leaks | Encodes to 11 chars, too long |
@@ -5613,28 +5668,68 @@ This is the dive that the one-lesson version skips, and it is where a senior ans
 
 **The design I would defend.** A single allocator row hands out blocks of 100,000 consecutive counter values. Each app instance holds a block in memory and consumes it locally. Fleet-wide at 350 writes per second, the allocator sees one allocation every 285 seconds, so it is nowhere near a bottleneck and a brief allocator outage is survivable because instances still hold unconsumed blocks.
 
-The raw counter is then passed through a bijection over the 7-character space before it is shown to anyone. Multiply the counter by a fixed odd constant modulo 62 to the 7, or run a small Feistel network over the same domain. Both are reversible, both preserve the never-collides property, and both make consecutive counters produce codes that share no visible structure.
+The raw counter is then passed through a permutation of the 7-character space before anyone sees it, so that the issue order carries no information. Choosing that permutation is where this dive earns its place, because the version people reach for first does not work.
+
+**The wrong answer, and the exact reason it is wrong.** The common suggestion is to multiply the counter by a fixed odd constant modulo 62 to the 7. Write it as code(n) = a times n, modulo M, with M equal to 62 to the 7 and a chosen coprime to M. It is a bijection, so it never collides, and to a human two consecutive codes do look unrelated. It hides nothing from a machine. The map is affine, so:
+
+- code(n + 1) minus code(n) equals a, modulo M, for every n without exception. The difference is a constant, not a scramble.
+- An attacker creates two links back to back, subtracts one code from the other, and now holds a. From any known code, repeatedly adding a walks the entire issued range in order.
+- Adding an offset does not help. For code(n) = a times n plus b, the difference is still a. Two consecutive codes recover a, and a third recovers b.
+- Inverting the map needs only the modular inverse of a, which is one line of arithmetic. Reversible was never the hard part.
+
+The general statement is the one to carry into any interview: an affine map preserves differences and is trivially invertible, so it obscures the output only from an observer who is not looking. Unpredictability is a property of keyed functions, not of bijections.
+
+**The property you actually need.** The map must be a keyed pseudorandom permutation over the code space: given any number of counter-to-code pairs, an attacker without the key must not be able to predict the code for a counter they have not seen. Three ways to get that, priced honestly.
+
+| Approach | How it works | What it costs |
+|---|---|---|
+| Small-domain block cipher | Encrypt the counter under a secret key with a balanced Feistel network of at least six rounds, or with format-preserving encryption. 62 to the 7 is 3.52e12, just under 2 to the 42 which is 4.40e12, so encrypt on 42 bits and cycle-walk: re-encrypt any output at or above 62 to the 7. Expected encryptions per code is 4.40e12 divided by 3.52e12, which is 1.25 | Key custody, and a key in the write path. The construction and the cycle-walking trick are in Black and Rogaway, "Ciphers with Arbitrary Finite Domains", CT-RSA 2002 (<https://web.cs.ucdavis.edu/~rogaway/papers/subset.pdf>, accessed August 2026). NIST SP 800-38G (March 2016) specifies FF1 and FF3 for the same job, and its Revision 1 draft (February 2019) replaces FF3 with FF3-1 and sets a minimum domain size of one million, which 3.52e12 clears comfortably (<https://csrc.nist.gov/pubs/sp/800/38/g/r1/ipd>, accessed August 2026) |
+| Pre-generated, shuffled key pool | A key service generates codes, shuffles them, and hands out blocks. Issue order carries no information because the pool order is random, and there is no function from counter to code to attack | A stateful service, a refill job, and storage for unissued codes. One billion spare codes at 7 bytes is 7 GB, which is cheap. The outage of this service stops every write, which is not |
+| No obscurity at all | Issue the counter in base62 and defend the read path directly: an authorisation check on any non-public link, per-IP and per-network rate limits on resolve, and negative-result caching so probes are cheap | You concede that anyone can enumerate the public link set. Correct only if no link is confidential, which for a shortener embedded in emails is usually false |
+
+**The caveat that survives the fix.** A correct pseudorandom permutation raises the cost of discovery. It is not access control. A short code is a bearer token, so anyone who obtains it can use it, and confidential destinations need an authorisation check on resolve regardless of how the code was made.
+
+Four practical notes follow:
+
+- Because the issued code is stored in the row, you never need to invert the permutation, so you can rotate the key whenever you like and only future codes change.
+- The space is dense, which brute force exploits. 1.825e10 issued codes in 3.52e12 slots is 0.52 percent occupancy, so a random 7-character probe lands on a live link about once every 192 tries. A keyed permutation stops arithmetic enumeration. It does nothing about guessing.
+- If unguessability is a real requirement rather than a preference, buy it with length, because each extra character divides the hit rate by 62. At 8 characters the same 1.825e10 codes occupy 0.0084 percent of the space, so a probe succeeds about once every 11,900 tries. That is the trade the clarifier table flagged: unguessable costs a character.
+- Rate limiting and negative caching are needed in all three options above, which means the third option is not as far from the first as it looks.
 
 What each property buys you:
 
 | Property | Mechanism | What it prevents |
 |---|---|---|
-| Never collides | Counter is the source of truth, bijection is one-to-one | Retry loops on insert, and the read-before-write they force |
-| Not enumerable | Bijection scrambles adjacency | A scraper walking your entire link set by incrementing a code |
+| Never collides | Counter is the source of truth, and a permutation is one-to-one | Retry loops on insert, and the read-before-write they force |
+| Not predictable | A keyed pseudorandom permutation, specifically not an affine map | A scraper who obtains two codes and derives the rest by arithmetic |
 | Gaps are harmless | Unconsumed block values are simply lost on restart | Any need to make block allocation transactional with the insert |
 | Custom aliases coexist | Same table, same unique index on code | Two users being handed the same code by different paths |
 
 **Keep the unique index even though the counter guarantees uniqueness.** If the allocator ever splits its brain and hands the same block to two instances, the index turns a silent data-corruption incident into a visible insert error. The index costs you nothing on a workload of 350 inserts per second, and it is the difference between a page and a postmortem.
 
-**The blocklist.** A 7-character base62 space will generate offensive strings. Filter generated codes against a blocklist before issuing them, and skip forward when one hits. This is a real product requirement that almost no candidate mentions, and mentioning it reads as experience.
+**The blocklist.** A 7-character base62 space will generate offensive strings. Filter generated codes against a blocklist before issuing them, and skip forward when one hits. This is a real product requirement, and it is the kind of detail that only shows up once you have shipped one.
 
 !!! warning "When not to use a key allocation service"
 
-    Below roughly 50 writes per second on a single database, use the database sequence directly plus the bijection. A separate key service adds a component whose outage stops every write, in exchange for removing a bottleneck you do not have. The measurement that justifies the split is sequence contention appearing in your database wait-event profile.
+    Below roughly 50 writes per second on a single database, use the database sequence directly plus the permutation. A separate key service adds a component whose outage stops every write, in exchange for removing a bottleneck you do not have. The measurement that justifies the split is sequence contention appearing in your database wait-event profile.
 
 ### Deep dive two: the read path under a Zipf distribution
 
 The dives on this page vary by problem. Here the read path is interesting because a single link can go viral, which is a hot-key problem that does not arise in the crawler or the chat system.
+
+**What the distribution actually buys, at each tier.** All three lines use the same formula from the sizing section, hit ratio equals (ln K + 0.577) divided by (ln 1.825e10 + 0.577), with the denominator 24.20.
+
+| Tier | Entries K | Derived hit ratio | Lookups reaching the primary at 35,000 reads per second |
+|---|---|---|---|
+| Local in-process cache | 200,000 | 12.78 / 24.20 = 52.8 percent | 16,500 |
+| Shared cache tier, 15 GB | 100,000,000 | 19.00 / 24.20 = 78.5 percent | 7,500 |
+| Shared cache tier, 150 GB | 1,000,000,000 | 21.30 / 24.20 = 88.0 percent | 4,200 |
+
+The shape of that table is the point, and it is the sentence to say in the room: under s = 1 the hit ratio is logarithmic in cache size, so memory buys 9.5 points per decade and no affordable cache reaches 95 percent.
+
+If your production hit ratio is far above the derived line, your traffic is more skewed than s = 1, and you should re-derive with the measured exponent rather than keep a lucky number.
+
+Sensitivity runs the other way too. At s = 1.2 the same 200,000-entry local cache would take about 92 percent, so one tenth on the exponent is worth more than a hundredfold of memory.
 
 **Hot key.** One link in a widely shared post can take most of your 35,000 reads per second. In a hash-partitioned cache, one key lives on one node, so that node absorbs the whole spike while its peers idle.
 
@@ -5688,7 +5783,7 @@ Re-checking against the non-functional requirements:
 | Requirement | Does V2 meet it? |
 |---|---|
 | 99.99 percent redirect availability | Yes, provided the read path degrades to serving stale cache entries when the store is unavailable. State that degradation explicitly |
-| Redirect p99 under 50 ms | Yes at a 90 percent-plus cache hit ratio; the miss path is a single point lookup |
+| Redirect p99 under 50 ms | Yes at the derived 78.5 percent combined hit ratio, which leaves 7,500 point lookups per second against a 19,200 ceiling. Not yes in V0, where 16,500 against 19,200 leaves no room for the p99 tail |
 | 35,000 reads per second at peak | Yes, and the local cache tier means the number could grow tenfold without a shape change |
 | 5 year retention, 9.1 TB | Yes in the partitioned store; no in a single primary, which is why V2 exists |
 
@@ -5704,9 +5799,9 @@ Re-checking against the non-functional requirements:
 
 | Dimension | Mid level | Senior | Staff |
 |---|---|---|---|
-| Key generation | Base62 encoding of an auto-increment ID | Counter plus a bijection, and explains why hash-truncate needs a uniqueness check anyway | Adds block allocation, the blocklist, and keeps the unique index specifically as a corruption tripwire |
+| Key generation | Base62 encoding of an auto-increment ID | Counter through a scrambling map, and explains why hash-truncate needs a uniqueness check anyway | Rejects multiply-modulo because differences are constant, uses a keyed permutation instead, adds block allocation and the blocklist, keeps the unique index as a corruption tripwire, and says that unguessable is still not authorisation |
 | Estimation | Produces numbers | Produces numbers and uses each to remove an option | Notices that 350 writes per second means the write path needs no design at all, and reallocates the remaining time to the read path |
-| Cache | Proposes a cache | Sizes it at 25 GB from the working set, and picks an eviction policy | Adds the local tier with a derived per-key ceiling, and names the staleness ticket it will generate |
+| Cache | Proposes a cache | Sizes it at 15 GB from the working set, and picks an eviction policy | Derives the hit ratio from the assumed exponent instead of asserting 90 percent, adds the local tier with a derived per-key ceiling, and names the staleness ticket it will generate |
 | Failure handling | Mentions retries | Names thundering herd and cache stampede with mitigations | Names metastable failure and states the load-shedding rule that stops it |
 | Redirect code | Says 301 or 302 without a reason | Picks 302 because analytics is a requirement | Points out that this one choice sets the read traffic for the whole system, and offers 301 as a cost lever if analytics is dropped |
 | Scope discipline | Adds components when unsure | Justifies each component with a measurement | Removes the CDN after showing bandwidth is 140 Mbps, and says a CDN would need a latency argument instead |
@@ -5892,7 +5987,7 @@ This two-level shape (a priority-ordered intake feeding per-host queues) is the 
 
 The multiplier is a single tunable, and the mechanism is self-correcting: a host you are hurting slows down, which slows you down further. That feedback loop is the whole point.
 
-**robots.txt handling, precisely.** RFC 9309 (September 2022) standardised the exclusion protocol. Two operational points candidates usually miss:
+**robots.txt handling, precisely.** RFC 9309 (September 2022) standardised the exclusion protocol. Two operational points that are easy to miss:
 
 - The 24 hour cache ceiling means robots fetches are themselves a traffic source. At 1 million active domains, that is 1 million fetches per day, which is 11.6 per second, about 3 percent of your crawl budget. Derivable, and worth stating.
 - A robots fetch that fails with a server error is not permission to crawl. Treat 5xx as "disallow, retry later"; treat 404 as "allow". Getting this backwards is how crawlers earn bans.
@@ -7250,7 +7345,7 @@ Functional: given a prefix, return the top 10 suggestions by score; ingest query
    **Eliminates** the claim that we are done: even with debounce we are above the 100,000 budget at average, so the client must also stop requesting past a prefix length where the suggestion set has converged.
 3. Corpus: ASSUME the top 10,000,000 distinct queries cover 90 percent of volume, because search query distributions are heavily skewed with a very long tail; measure the coverage curve on your own logs. Extending to 100,000,000 covers the useful tail across locales. **Eliminates** indexing every distinct query string ever seen, which is unbounded and mostly typos.
 4. Index memory: ASSUME 8 trie nodes per suggestion after prefix sharing, and 70 bytes per node made up of 40 bytes for ten 4 byte identifiers, roughly 24 bytes of amortised child references and a 4 byte score. That is 100,000,000 times 8 times 70 bytes, about 56 GB. **Eliminates** a single-machine index, and therefore forces partitioning.
-5. Query CPU: ASSUME 20 microseconds per lookup, a walk of a handful of nodes plus copying ten identifiers. A 16 core node at 60 percent gives 9.6 core-seconds per second, so 9.6 divided by 0.00002 is about 480,000 queries per second per node. **Eliminates** partitioning for throughput. One node could serve the entire query budget if the index fitted. Partitioning here is purely a memory decision, and saying that out loud separates you from candidates who shard reflexively.
+5. Query CPU: ASSUME 20 microseconds per lookup, a walk of a handful of nodes plus copying ten identifiers. A 16 core node at 60 percent gives 9.6 core-seconds per second, so 9.6 divided by 0.00002 is about 480,000 queries per second per node. **Eliminates** partitioning for throughput. One node could serve the entire query budget if the index fitted. Partitioning here is purely a memory decision, and saying that out loud is the difference between a sharding decision and a sharding reflex.
 6. Counting pipeline: 5,000,000,000 divided by 86,400 is about 58,000 events per second into the aggregation. **Eliminates** exact per-key counters in a transactional store, and points at a streaming aggregate or a sketch.
 7. Rebuild transfer: a 56 GB artefact rebuilt every 15 minutes is 56 GB per 900 seconds per replica, about 62 MB per second continuously per replica. **Eliminates** meeting the 15 minute freshness target by rebuilding. The base index rebuilds nightly, and freshness comes from somewhere else.
 8. Delta size: ASSUME 100,000 trending terms per 15 minute window at 100 bytes each is 10 MB, which distributed to 30 replicas is 300 MB per window, about 0.3 MB per second. **Eliminates** any concern about delta distribution cost, which is why the delta layer is the right answer to point 7.
@@ -7676,7 +7771,7 @@ Score each problem on all four. Two Strongs and two Adequates is a passing senio
 
     At 300 requests per second on a primary-key lookup, Postgres is already serving this from its own buffer cache. What I would do instead is confirm where the 40 milliseconds actually goes with a trace, because if the query is 3 milliseconds then 37 milliseconds is somewhere else and that is where the win is. I would revisit the cache when the database shows sustained CPU above roughly 60 percent attributable to this query, or when read volume grows about tenfold.
 
-    Wrong answer: designing the cache as asked, competently. Reveals that the candidate optimises what they are pointed at. Interviewers use this prompt specifically to see whether you will push back with numbers.
+    Wrong answer: designing the cache as asked, competently. Reveals that the candidate optimises what they are pointed at. The prompt is only interesting if you push back with numbers.
 
     Wrong answer: "No, caching is premature optimisation." Reveals the right instinct with no evidence. A refusal without arithmetic scores the same as compliance without arithmetic.
 
@@ -7853,7 +7948,7 @@ Seven short-answer items, one per learning objective from Section 4. Write your 
 
 Technical mistakes cost you a follow-up. Delivery mistakes cost you the round. The last four rows are the ones that show up in debrief notes.
 
-| The mistake | Why candidates make it | What the interviewer concludes | What to say instead |
+| The mistake | Why it is tempting | What it signals | What to say instead |
 |---|---|---|---|
 | Adding a cache before showing a read bottleneck | Caching is the most rehearsed move in every prep resource | Reaches for components by habit, will add cost and staleness to production for no measured reason | "Reads are 3 milliseconds today, so a cache buys under 8 percent of tail. I would add one when database CPU attributable to this query passes about 60 percent" |
 | Sharding in the first five minutes | Sharding signals sophistication and the prompt said "scale" | Cannot tell a hundred writes per second from a hundred thousand | "One primary handles this write rate. Here is the number at which it stops, and here is what I would do at that point" |
@@ -8080,7 +8175,7 @@ If you can do all three in twenty minutes without notes, the material is retriev
 | Access is by a single entity id and no ranges | Hash of the id | Range scans become scatter-gather |
 | Access is by entity plus a time range | Composite: entity for placement, time for ordering | Old partitions go cold and uneven |
 | One key produces a large share of writes | Composite with a bucket, applied to that key only | That key's reads become an N-way merge |
-| Data volume fits one node and will for two years | Do not partition | None, and this is the answer more often than candidates say |
+| Data volume fits one node and will for two years | Do not partition | None, and this is the right answer more often than it is given |
 
 **Delivery semantics**
 
@@ -8292,6 +8387,7 @@ Naming our limits is cheaper than pretending we have none, and it saves you from
 
 | Date | Change |
 |---|---|
+| August 2026 | Shortener corrections: the counter-times-a-constant key scheme was replaced with a keyed pseudorandom permutation, because an affine map preserves differences and is trivially enumerable; the asserted 90 percent cache hit ratio was replaced with one derived from the stated Zipf exponent, which is 52.8 percent locally and 78.5 percent with the shared tier; row and cache-entry byte sizes were derived once and made consistent; and appeals to what unnamed interviewers or candidates reportedly do were rewritten as this page's own reasoned positions |
 | August 2026 | First publication of the full sixteen-module course with eight case studies, public rubrics for every practice problem, and the level delta blocks |
 | August 2026 | Reference block split out from the teaching sections after review, so returning readers do not have to scroll through prose to reach a decision table |
 | August 2026 | Every figure in Sections 10 and 16 re-derived from stated inputs, and inputs that could not be derived were relabelled as assumptions with the reason they are reasonable |

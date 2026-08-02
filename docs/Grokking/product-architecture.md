@@ -36,7 +36,7 @@ last_reviewed: 2026-08-01
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Seniority is a weak readiness signal for this round in particular, because plenty of staff engineers have never owned an interface they could not change on Monday. Prerequisite mastery is the signal that works. Answer every Quick check in under a minute. Two or more misses means start with the linked material rather than with Module 1.
 
@@ -64,7 +64,7 @@ Seniority is a weak readiness signal for this round in particular, because plent
 
 ---
 
-## 3. Time budget
+## Time budget
 
 | Part of the course | Reading | Practice | Spaced review |
 |---|---|---|---|
@@ -90,7 +90,7 @@ Seniority is a weak readiness signal for this round in particular, because plent
 
 ---
 
-## 4. Learning objectives
+## Learning objectives
 
 Each objective is tested by exactly one numbered item in the mastery check, and the numbering matches: objective 1 is tested by mastery item 1.
 
@@ -104,7 +104,7 @@ Each objective is tested by exactly one numbered item in the mastery check, and 
 
 ---
 
-## 5. Warm-up retrieval
+## Warm-up retrieval
 
 Three to five minutes. Answer out loud or in writing before opening anything else. Retrieval beats rereading, and a visible answer converts one into the other.
 
@@ -132,7 +132,7 @@ Three to five minutes. Answer out loud or in writing before opening anything els
 
 ---
 
-## 6. Module map
+## Module map
 
 ```
 +---------------------------------------------------------+
@@ -212,7 +212,7 @@ Low ends total 480 minutes, high ends total 600. That is the 8 to 10 reading hou
 
 ---
 
-## 7. The delivery clock for this round
+## The delivery clock for this round
 
 Most candidates who fail a contract round did not miss a component. They drew a service diagram, listed six endpoint paths, and never said what a client receives when a call times out, arrives twice, or is written against last year's schema. This clock is a budget rather than a script, and it is shaped differently from a generalist one: modelling and semantics take the minutes that a distributed systems round spends on capacity and topology.
 

@@ -253,7 +253,7 @@ Say four sentences, in this order. Rehearse them once so they are automatic and 
 1. "Let me restate it: you want X over roughly Y documents for Z users, and the part that decides the design is whether a wrong answer is embarrassing or expensive." (Restate, and put both a volume and a stakes dimension in it.)
 2. "I am going to spend about four minutes on requirements, then say what a good answer means and how I would measure it, then draw the simplest thing that works and break it on purpose." (You just told them your clock, and you told them evaluation is not an afterthought.)
 3. "Two things I will optimise for: groundedness and time to first token. I will trade away breadth of coverage to get them." (Naming the sacrifice is the cheapest senior signal available, and in this round the sacrifice is almost always recall or freshness.)
-4. "Stop me if you want depth somewhere specific rather than coverage." (An invitation, and interviewers take it more often than candidates expect.)
+4. "Stop me if you want depth somewhere specific rather than coverage." (An invitation. It costs one sentence, and it replaces your guess about what the panel wants with an answer.)
 
 ### Declaring what you are skipping
 
@@ -291,7 +291,9 @@ The rough shape: mid level spends its minutes proving the pipeline works, senior
 
 !!! tip "One note on frameworks, made once"
 
-    If a course hands you an acronym spine, a fixed sequence of letters to recite in every answer, the problem is not the letters. It is that applying the same acronym identically to eight prompts produces an answer that sounds recited, and interviewers now screen for exactly that tell. The clock above is a time budget, not a spine. It never appears as a heading in any case study on this page, and Module 1 covers the moment to abandon it.
+    If a course hands you an acronym spine, a fixed sequence of letters to recite in every answer, the problem is not the letters. It is that applying the same acronym identically to eight prompts produces an answer that could have been given for any of the eight, which is exactly the evidence that you did not read this one.
+
+    The clock above is a time budget, not a spine. It never appears as a heading in any case study on this page, and Module 1 covers the moment to abandon it.
 
 !!! danger "When to break this clock"
 
@@ -303,7 +305,7 @@ The rough shape: mid level spends its minutes proving the pipeline works, senior
 
     **3. The system already exists.** A brownfield prompt fixes the requirements and moves the interesting minutes elsewhere. Replace the requirements and v0 phases with: what does the current feature do, which quality or cost number is failing and by how much, what is the smallest change that moves it, and how do you ship it without regressing the answers that already work. Drawing a greenfield pipeline over a running feature is the most common way to fail a staff round here.
 
-    A fourth, quieter one: if you notice yourself quoting a specific model version, a benchmark score or a context window size, stop. Those age within months and interviewers know it. Name the capability class, name the measurement that would confirm it on your data, and move on. That substitution costs you nothing and protects you from being wrong about a number the interviewer read last week.
+    A fourth, quieter one: if you notice yourself quoting a specific model version, a benchmark score or a context window size, stop. Those age within months, so the number is a liability with a short shelf life and no upside: it does not make the design better and it can be wrong by the time you say it. Name the capability class, name the measurement that would confirm it on your data, and move on. That substitution costs nothing.
 
 ---
 
@@ -2155,18 +2157,22 @@ Figure an index configuration that fails on two independent counts
 
     Prediction asked for: which two constraints does this violate, and which one is fatal?
 
-    **Memory, and it is fatal.** Bytes per vector are `dimension x 4` for the vector, plus the graph. The graph stores about `M x 2` neighbour ids at the bottom layer plus roughly 15 percent more for the upper layers, at 4 bytes each, so `64 x 2 x 4 x 1.15`, which is 589 bytes.
+    **Memory, and it is fatal.** Bytes per vector are `dimension x 4` for the vector, plus the graph. The graph term is pure connectivity: HNSW reserves a fixed neighbour slot array per node per layer, `2 x M` slots at layer 0 and `M` slots on each higher layer the node reaches, holding 4 byte neighbour ids.
+
+    The layer 0 slots dominate. Under the standard level generator about `1 / M` of nodes reach layer 1 and `1 / M^2` reach layer 2, so the expected slots above layer 0 sum to `M / (M - 1)`, which is about one slot at `M` of 64. The hierarchy is cheap; the links at the bottom are not.
 
     ```
-    per vector = 4,096 + 589 = 4,685 bytes
-    total      = 20,000,000 x 4,685 = 93.7 GB
+    slots per node = 2 x 64 + 1        = 129
+    graph bytes    = 129 x 4           = 516
+    per vector     = 4,096 + 516       = 4,612 bytes
+    total          = 20,000,000 x 4,612 = 92.2 GB
     ```
 
-    93.7 GB does not fit in 64 GB. Nothing else about the configuration matters until this is fixed.
+    92.2 GB does not fit in 64 GB. Nothing else about the configuration matters until this is fixed.
 
     **Search depth, and it is expensive.** `efSearch` of 512 means the traversal keeps a candidate list five times longer than a typical starting point of 100, and query time rises roughly with `efSearch` in this range. Whether 512 is needed is an empirical question that the configuration has not asked.
 
-    The instructive part is which lever fixes the memory. Dropping `M` from 64 to 16 saves `442` bytes per vector, so 8.8 GB, which is not close to enough. The vectors are 87 percent of the footprint, so the fix has to be quantization or sharding, not graph tuning.
+    The instructive part is which lever fixes the memory. Dropping `M` from 64 to 16 takes the graph from 129 slots to `2 x 16 + 1`, so 33 slots and 132 bytes, saving 384 bytes per vector or 7.7 GB. Not close to enough. The vectors are 89 percent of the footprint, so the fix has to be quantization or sharding, not graph tuning.
 
 ### Start with brute force, because it is often the answer
 
@@ -2179,9 +2185,30 @@ Exact search over `N` vectors reads `N x dim x bytes` from memory and computes t
 | 1,000,000 | 4.1 GB | 82 ms |
 | 20,000,000 | 81.9 GB | 1,638 ms |
 
-**The threshold, stated as a rule you can defend.** Against a 20 millisecond retrieval budget at 1,024 dimensions in float32, exact search is viable up to roughly 250,000 vectors on one node. At 384 dimensions it is viable to roughly 650,000. Below that threshold, building an approximate index adds build time, tuning, a recall regression and an extra failure mode in exchange for nothing.
+**The threshold, derived once and reused everywhere on this page.** Rearranging
+the same formula gives the largest corpus a scan covers inside a budget:
 
-Say this in the round: "At two hundred thousand vectors I would not build an approximate index at all. The scan is twenty milliseconds and it is exact."
+```
+N_max = (scan budget x bandwidth) / (dim x bytes per component)
+```
+
+| Scan budget | Dimensions, format | Bytes per vector | N_max |
+|---|---|---|---|
+| 20 ms | 1,024, float32 | 4,096 | 244,000, call it 250,000 |
+| 20 ms | 768, float32 | 3,072 | 326,000 |
+| 20 ms | 384, float32 | 1,536 | 651,000, call it 650,000 |
+| 60 ms | 768, float32 | 3,072 | 977,000, call it 1,000,000 |
+
+All four rows assume the same 50 GB per second of usable bandwidth, so each is
+`budget x 50e9` divided by the bytes column. Note what the table refuses to
+give you: there is no single vector count that means "too big". There is a
+latency budget and a row width, and the threshold moves with both.
+
+Below the threshold your own two inputs give you, building an approximate index
+adds build time, tuning, a recall regression and an extra failure mode in
+exchange for nothing. Say it in the round with the arithmetic attached: "At two
+hundred thousand vectors of 1,024 dimensions the scan is twenty milliseconds
+and it is exact, so I would not build an index at all."
 
 ### HNSW, and what each parameter buys
 
@@ -2195,19 +2222,23 @@ The hierarchical navigable small world graph, described in Malkov and Yashunin's
 
 **The asymmetry is the useful part.** `efSearch` is a runtime knob you can change per query without rebuilding, so it is the correct place to trade recall against latency. `M` and `efConstruction` require a rebuild, so choose them once, generously, and tune `efSearch` afterwards.
 
-**Memory formula, which you should be able to write from memory.**
+**Memory formula, which you should be able to write from memory.** The second
+term is the graph and nothing else: neighbour slots per node, at 4 bytes per
+neighbour id.
 
 ```
-bytes per vector = dim x bytes_per_element + M x 2 x 4 x 1.15
+slots per node   = 2 x M          (layer 0, the reserved array)
+                 + M / (M - 1)    (expected slots on layers above)
+bytes per vector = dim x bytes_per_element + slots per node x 4
 ```
 
-| Configuration | Per vector | 20 million vectors |
-|---|---|---|
-| dim 1,024, float32, M 16 | 4,096 + 147 = 4,243 | 84.9 GB |
-| dim 1,024, float32, M 32 | 4,096 + 294 = 4,390 | 87.8 GB |
-| dim 1,024, int8, M 32 | 1,024 + 294 = 1,318 | 26.4 GB |
-| dim 384, float32, M 32 | 1,536 + 294 = 1,830 | 36.6 GB |
-| dim 384, int8, M 32 | 384 + 294 = 678 | 13.6 GB |
+| Configuration | Slots per node | Per vector | 20 million vectors |
+|---|---|---|---|
+| dim 1,024, float32, M 16 | 33 | 4,096 + 132 = 4,228 | 84.6 GB |
+| dim 1,024, float32, M 32 | 65 | 4,096 + 260 = 4,356 | 87.1 GB |
+| dim 1,024, int8, M 32 | 65 | 1,024 + 260 = 1,284 | 25.7 GB |
+| dim 384, float32, M 32 | 65 | 1,536 + 260 = 1,796 | 35.9 GB |
+| dim 384, int8, M 32 | 65 | 384 + 260 = 644 | 12.9 GB |
 
 **Read row 3 against row 2: scalar quantization to int8 cut memory by 70 percent and the graph was untouched.** The recall cost is small but not zero, and the standard repair is to rerank the top 100 approximate results using full precision vectors kept on disk, which costs one sequential read and restores most of the loss.
 
@@ -2233,7 +2264,7 @@ That is 61 times smaller than the float32 HNSW configuration. The price is recal
 
 | Situation | Choose | Because |
 |---|---|---|
-| Under about 250,000 vectors | Exact | Twenty milliseconds, no tuning, no recall loss |
+| Under about 250,000 vectors at 1,024 dimensions | Exact | Twenty milliseconds by the `N_max` table above, no tuning, no recall loss |
 | Fits in memory with room to spare | HNSW | Best recall per millisecond, and `efSearch` is a live knob |
 | Does not fit in memory | HNSW with int8, then IVF-PQ | Try quantization before changing index family |
 | Billions of vectors, or memory is the binding cost | IVF-PQ with a full precision rerank stage | The only family whose footprint is measured in bytes rather than kilobytes per vector |
@@ -2241,7 +2272,7 @@ That is 61 times smaller than the float32 HNSW configuration. The price is recal
 
 ### Measuring the recall versus latency curve
 
-This is the part most teams skip and every strong candidate mentions.
+This is the part that gets skipped, and it is the only part that turns an index configuration from a preference into a measurement.
 
 1. **Build ground truth.** Take 1,000 real queries from traffic, not synthetic ones. Compute exact top 100 for each by brute force. At 1.6 seconds per query single-threaded, that is 27 minutes on one machine, or minutes across cores. It is a one-off cost.
 2. **Sweep the runtime knob.** For `efSearch` in 32, 64, 128, 256, 512, measure recall at 10 against the ground truth and p95 latency under a realistic concurrency, not one query at a time.
@@ -2270,7 +2301,7 @@ Filter-aware graph traversal keeps a candidate list of `efSearch` entries but on
 
 ### Sharding, rebuild and hot swap
 
-**Shard when memory forces you to, not before.** At 87.8 GB on 64 GB nodes you need 2 shards. Query fans out to both, each returns its top `k`, and the merge takes the global top `k`. Correct, because distances are comparable across shards of the same vector space.
+**Shard when memory forces you to, not before.** At 87.1 GB on 64 GB nodes you need 2 shards. Query fans out to both, each returns its top `k`, and the merge takes the global top `k`. Correct, because distances are comparable across shards of the same vector space.
 
 **Fan-out amplifies tail latency, and the arithmetic is worth knowing.** If each shard's latency is independent with a p95 of `L`, then the probability that both finish within `L` is `0.95 x 0.95`, which is 0.9025. So the fan-out query's p95 sits at roughly the single shard's p97.5, not its p95. With 4 shards, `0.95^4` is 0.814, so the fan-out p95 is near the single shard p98.7. Sharding for memory therefore costs tail latency, and hedged requests or a shard-level timeout with partial results is the standard mitigation.
 
@@ -2280,12 +2311,18 @@ Filter-aware graph traversal keeps a candidate list of `efSearch` entries but on
 
 | Situation | Use | Reason |
 |---|---|---|
-| Under about 1 million vectors, already using Postgres | Postgres with a vector extension | One system, transactional consistency between the row and its vector, and no second thing to operate. The scan and the index both fit comfortably |
+| Under about 1 million vectors, already using Postgres | Postgres with a vector extension | One system, transactional consistency between the row and its vector, and no second thing to operate. At 1,024 dimensions that is 4.1 GB of vectors plus a 0.3 GB graph, which any ordinary instance holds |
 | Queries are 80 percent lexical with a vector assist | Lucene-based search engine with a vector field | You already need BM25 from module 5, and one engine doing both removes the fusion plumbing |
 | You need filters, joins and vectors in one query | Relational database with a vector index | A dedicated vector store makes you re-implement joins in application code |
 | Billions of vectors, or vector search is the product | Dedicated vector database | This is where specialised memory layouts and quantization support earn their operational cost |
 
 **The threshold to state out loud: below roughly one million vectors, adding a dedicated vector database is a second system to operate for a workload that fits in the database you already have.** That is the highest-value restraint in this module, and module 3's Atlas sizing of 2.4 million chunks sits just above it, which is exactly the interesting case.
+
+Keep the two thresholds apart, because they answer different questions and they
+are derived from different inputs. The `N_max` table decides whether you need an
+approximate index at all, and it comes from a latency budget and a row width.
+This one decides whose process holds the index, and it comes from a memory
+footprint: 1 million vectors at 1,024 dimensions is 4.4 GB with its graph.
 
 ### The index decision, drawn
 
@@ -6622,7 +6659,7 @@ measuring.
 
 | Behaviour | Why it does not help |
 |---|---|
-| Naming more components | Every unjustified box is a liability. Interviewers report that removing a box is a positive signal |
+| Naming more components | Every unjustified box is a liability: something to operate, something to page on, and something to defend. Removing one produces a cheaper system with fewer failure modes, which is the whole argument |
 | More vendor and product names | It substitutes recognition for reasoning, and it dates badly |
 | Larger numbers | A design for 100 times the stated traffic answers a question nobody asked |
 | Faster answering | The clock rewards structure, not speed. Answering before clarifying is the most common single-cause failure |
@@ -7892,7 +7929,7 @@ Non-functional:
 | Graph adjacency at M equals 16, so 32 links at layer 0 times 4 bytes per link | 128 bytes per vector, 25.6 GB | Rules out ignoring graph overhead: it is larger than the compressed vectors themselves, and it is the term people forget |
 | Codes plus graph | about 45 GB per full index copy | Rules out sizing nodes at 64 GB, because deep dive two needs room for two versions at once |
 | 1,737 peak queries per second divided by an assumed 400 queries per second per node at the target recall | 5 replicas needed | Rules out conflating shards with replicas. Memory says one shard is enough; throughput says five copies of it. These are different axes and mixing them is the most common error here |
-| Brute force over 1,000,000 vectors at 768 dimensions is about 1.5 billion multiply-add operations | tens of milliseconds on one modern core | Rules out an approximate index below roughly a million vectors. Exact search is simpler, has perfect recall, and handles filters natively |
+| Brute force over 1,000,000 vectors at 768 dimensions in float32 reads 1,000,000 x 768 x 4 bytes | 3.07 GB, so 61 milliseconds at an assumed 50 GB per second, which is the 60 millisecond scan slice this budget allows | Rules out an approximate index below roughly a million vectors at this dimension. Exact search is simpler, has perfect recall, and handles filters natively |
 | 200,000,000 items times an assumed 300 tokens each equals 60 billion tokens, at an assumed 0.02 dollars per million | about 1,200 dollars for a full re-embed | Rules out cost as the reason not to change embedding models |
 | 200,000,000 items divided by an assumed 5,000 items per second of aggregate embedding throughput | about 11 hours | Rules out doing a re-embed in a maintenance window, which forces the online migration in deep dive two |
 | 200,000,000 items times an assumed 2 percent daily change rate, divided by 86,400 | 46 updates per second | Rules out nightly rebuild if the freshness requirement is 15 minutes, and rules out the claim that incremental upsert is exotic: 46 per second is a small stream |
@@ -7921,7 +7958,7 @@ Why this is the right first version:
 
 !!! warning "When not to build a vector index"
 
-    Below roughly 1,000,000 vectors, do not build an approximate index: exact search over 1.5 billion multiply-adds is tens of milliseconds and gives perfect recall with native filtering. Below a measured 5 percent zero-result rate on tail queries, do not build a vector index at all: fix the analyser and the synonym list, which is cheaper and does not add a system.
+    Below roughly 1,000,000 vectors at 768 dimensions, do not build an approximate index: the scan reads 3.07 GB, which is about 60 milliseconds at an assumed 50 GB per second and fits inside the 150 millisecond retrieval budget with room for filtering and fusion. It gives perfect recall with native filtering. Below a measured 5 percent zero-result rate on tail queries, do not build a vector index at all: fix the analyser and the synonym list, which is cheaper and does not add a system.
 
     The measurement that justifies the whole project is a relevance evaluation showing that dense retrieval recovers results the lexical index misses, on your queries, not on a public benchmark.
 
@@ -9419,7 +9456,7 @@ You have 4,000,000 chunks embedded at 1,024 dimensions in float32. Your retrieva
 
     The threshold that falls out of the same formula: brute force fits a 100 millisecond budget up to N x 1,024 / 8e9 = 0.1, so N is about 780,000 chunks on one core, and higher if you parallelise. Below roughly the high hundreds of thousands of chunks, a dedicated vector index is over-engineering and a scan inside your existing database is the cheaper answer with one fewer system to operate.
 
-    Sizing the index you did justify. Raw vectors: 4e6 x 1,024 x 4 bytes = 1.64e10 bytes, about 16.4 GB. Graph overhead for a proximity graph with 32 neighbours per node stored as 4 byte identifiers: 4e6 x 32 x 4 = 5.12e8, about 0.51 GB at the base layer, plus roughly ten percent for upper layers, so call it 0.6 GB. Metadata at 200 bytes per chunk: 0.8 GB. Total about 17.8 GB.
+    Sizing the index you did justify. Raw vectors: 4e6 x 1,024 x 4 bytes = 1.64e10 bytes, about 16.4 GB. Graph overhead is connectivity: 32 reserved neighbour slots per node at layer 0, stored as 4 byte identifiers, so 4e6 x 32 x 4 = 5.12e8, about 0.51 GB. The layers above hold about one more slot per node, taking it to 0.53 GB, and I round to 0.6 GB to cover per-node bookkeeping. Metadata at 200 bytes per chunk: 0.8 GB. Total about 17.8 GB.
 
     What that eliminates: a sharded distributed vector database. 17.8 GB is resident on one ordinary 64 GB machine, and the same arithmetic says you reach 64 GB at roughly 12 million chunks, so a single node carries you through a threefold corpus increase. Sharding before then buys a routing layer, a rebuild orchestration problem and a fan-out on every query, for nothing.
 
@@ -9968,7 +10005,7 @@ DRAW IN THIS ORDER. WITHHOLD THE ITEMS ON THE NOT YET LINE.
  Caption: six boxes to draw first, six things to withhold.
 ```
 
-Draw the evaluation and tracing box early, in minute six, not at the end. It is the box that says you have designed a system rather than a prompt, and candidates who leave it until minute forty usually run out of time and never draw it.
+Draw the evaluation and tracing box early, in minute six, not at the end. It is the box that says you have designed a system rather than a prompt, and at minute forty it competes with the wrap-up for the time it needs, so it is the box that gets dropped.
 
 **Three recovery scripts**
 

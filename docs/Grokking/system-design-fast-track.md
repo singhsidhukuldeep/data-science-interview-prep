@@ -53,7 +53,7 @@ This is the most useful table on the page, so it comes first rather than last. E
 | Six of the eight flagship case studies: web crawler, video platform, ride hailing, proximity search, typeahead, plus both extra dives per prompt | Three prompts practised to a breaking point beat eight prompts read passively | [Modern, case studies](modern-system-design.md#case-study-2-web-crawler) |
 | The full trade-off atlas, twenty-two decisions | The sprint carries eight of them. The rest are reference you can read after the round | [Hub, trade-off atlas](index.md#the-trade-off-atlas) |
 | The full failure library, fifteen classes with triggers and preventions | The sprint meets classes as they arise inside three case studies and two drills, never as a catalogue you study, so coverage is uneven and the classes your three prompts never raise stay unknown to you | [Hub, failure library](index.md#the-failure-library) |
-| Interviewer script packs and a second and third self-mock | Requires a willing human and more hours than remain | [Modern, section 15](modern-system-design.md#15-study-schedule-and-spaced-review) |
+| Interviewer script packs and a second and third self-mock | Requires a willing human and more hours than remain | [Hub, interviewer script packs](index.md#interviewer-script-packs) |
 
 !!! warning "What the omissions actually cost you"
 

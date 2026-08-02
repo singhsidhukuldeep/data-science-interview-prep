@@ -1,7 +1,7 @@
 ---
 title: "Grokking Interviews: Free In-Depth Interview Courses"
 description: Seven free design interview courses with public rubrics, graded practice, level deltas and full case studies. No account, no email wall, nothing gated.
-last_reviewed: 2026-08-01
+last_reviewed: 2026-08-02
 ---
 
 # Grokking Interviews
@@ -16,7 +16,7 @@ Seven free paths, one per design round companies actually run. No account, no em
 - [Product Architecture](product-architecture.md): domain models, contracts, error semantics.
 - [Fast-Track](system-design-fast-track.md): an hour-by-hour plan when the round is days away.
 
-One honest limit: this does not replace a human mock interviewer, and we will not pretend otherwise. Instead we ship the apparatus a coach carries: a four-criterion rubric on every open problem, interviewer script packs a friend can read aloud, timed drills against a stated clock, and a level delta per case study showing what mid, senior and staff answers each added.
+One honest limit: this does not replace a human mock interviewer, and we will not pretend otherwise. Instead we ship the apparatus a coach carries: a four-criterion rubric on every open problem, [interviewer script packs](#interviewer-script-packs) a friend with no domain knowledge can read aloud, timed drills against a stated clock, and a level delta per case study showing what mid, senior and staff answers each added.
 
 ## Pick your path
 
@@ -77,15 +77,18 @@ Two follow-ups worth sending the recruiter before you pick, because both change 
 
 ## The naming confusion, explained
 
-"Grokking" is not one product line. The verb comes from Robert A. Heinlein's 1961 novel *Stranger in a Strange Land*, and at least three publishers now use it as a title prefix. Searching the phrase returns near-identical course titles from different companies, which is the single most common source of buyer confusion in this category. Here is the factual picture, with each claim sourced to the publisher's own page, checked 1 August 2026.
+"Grokking" is not one product line. The verb comes from Robert A. Heinlein's 1961 novel *Stranger in a Strange Land*, and at least three publishers now use it as a title prefix. Searching the phrase returns near-identical course titles from different companies, and that overlap is what makes the category hard to buy in. Here is the factual picture, with each claim sourced to the publisher's own page, checked 2 August 2026.
 
-| Publisher | What it publishes under the name | Source, checked 1 August 2026 |
+| Publisher | What it publishes under the name | Source, checked 2 August 2026 |
 |---|---|---|
 | Manning Publications | A long-running book series, for example *Grokking Algorithms, Second Edition* by Aditya Y. Bhargava (2024) | [manning.com](https://www.manning.com/books/grokking-algorithms-second-edition) |
-| Design Gurus | A catalogue of more than twenty courses prefixed "Grokking", including *Grokking the System Design Interview*, which the page describes as the original and calls DesignGurus.io "the birthplace of the Grokking interview methodology" | [designgurus.io/courses](https://www.designgurus.io/courses) |
-| Educative | A family of in-house interview courses, including *Grokking Modern System Design Interview*, *Grokking the Mobile System Design Interview* (81 lessons per its own page) and *Grokking the Product Architecture Interview* (whose page still carries the earlier API Design Interview wording) | [educative.io](https://www.educative.io/courses/grokking-the-system-design-interview) |
+| Design Gurus | A broad catalogue of courses prefixed "Grokking", spanning system design, coding patterns, behavioural rounds, databases and AI. Its own catalogue page groups them into eight categories, so the headline count depends on whether you count roadmaps and non-Grokking titles | [designgurus.io/courses](https://www.designgurus.io/courses) |
+| Design Gurus, *Grokking the System Design Interview* | The course page states: "DesignGurus.io is the birthplace of the 'Grokking' interview methodology." It also claims authorship of the frameworks it says defined modern system design preparation | [designgurus.io course page](https://www.designgurus.io/course/grokking-the-system-design-interview) |
+| Educative | A family of in-house interview courses, including *Grokking Modern System Design Interview* (204 lessons per its own page) and *Grokking the Product Architecture Interview* | [educative.io](https://www.educative.io/courses/grokking-the-system-design-interview) |
 
 The detail that trips people up: the Educative URL ending `grokking-the-system-design-interview` today serves a course whose on-page title is *Grokking Modern System Design Interview*, credited to Educative co-founder Fahim ul Haq. A link saved from a blog post or a Reddit thread years ago therefore does not necessarily open the course that post was describing.
+
+Two counts that circulate in reviews of this category did not survive checking on 2 August 2026, so we do not repeat them. A "more than twenty courses" figure for the Design Gurus catalogue is not something the catalogue page states, and the lesson count often quoted for a Grokking mobile system design course points at an Educative URL that now returns 404. Where we cannot open the page ourselves, we describe the catalogue instead of quoting a number.
 
 None of this is a scandal, and we are not calling anyone dishonest. Both companies are real publishers shipping real courses, and a shared title prefix is a branding outcome, not a defect. It does mean the burden of checking falls on you.
 
@@ -131,7 +134,7 @@ Every course page in this section follows the same eighteen-section anatomy. The
 
 | Choice | What it looks like on the page | Why |
 |---|---|---|
-| V0 before V1 | The first diagram in a case study is the fewest boxes the stated requirements permit. You are told what breaks, at what number, and how you would observe it, before a box is added | A finished architecture revealed in one move teaches the answer, not the derivation. Interviewers report that removing a box is a strong signal, and no page that starts complex can teach that |
+| V0 before V1 | The first diagram in a case study is the fewest boxes the stated requirements permit. You are told what breaks, at what number, and how you would observe it, before a box is added | A finished architecture revealed in one move teaches the answer, not the derivation. Removing a box under a stated constraint is a skill that only a page starting from the smallest design can rehearse |
 | When-not-to-use on every component | Every pattern carries the measurement that would justify it and the scale threshold below which it is over-engineering | The common failure is a candidate adding a cache and a queue with no bottleneck in evidence. Restraint has to be taught explicitly, because complexity is easier to write |
 | Level deltas | Every case study closes by answering the same prompt at mid, senior and staff level, side by side, annotating exactly what each level added | Most material serves one band and never says which. If you are targeting a promotion band, the delta is the part you actually need |
 | Every answer collapsed | Checks, pre-questions, practice items and mastery items hide their answers in a disclosure block | A visible answer converts retrieval practice into rereading, which feels productive and is not |
@@ -149,7 +152,9 @@ Three things are shared. The delivery clock below. The estimation discipline in 
 
     The paid Grokking courses each ship an acronym spine (RESHADED, SCADET, SCALED, REDCAAP are theirs, one per course) and apply it identically to every case study. That is their choice, and it is the one thing we deliberately do not copy.
 
-    Interviewers at companies that ask these questions weekly now screen for the recited-template tell, because a candidate who narrates phase names is easy to mistake for a candidate who cannot think. We give you a clock and then teach you when to break it. There is nothing here to recite.
+    A candidate who narrates phase names spends round time on labels rather than on decisions, and the transcript that results is hard to distinguish from one produced without thinking. We give you a clock and then teach you when to break it.
+
+    To be exact about what we do and do not offer: these pages do follow a consistent structure by design, and the eighteen-section anatomy above is that structure. What we do not ship is a mnemonic to recite in the room. The structure is how the material is organised for study; it is not a script to narrate at an interviewer.
 
 ### The clock
 
@@ -181,7 +186,7 @@ The shape matters more than the numbers. More than half the clock sits after the
 
 ### How the split moves by level
 
-Same 52 working minutes, allocated differently. The deltas below are what interviewers report rewarding at each bar, expressed as a reallocation rather than extra time, because nobody gets extra time.
+Same 52 working minutes, allocated differently. The splits below are our assumption about where each band should spend its budget, derived from what the level deltas in the case studies say each band adds. They are expressed as a reallocation rather than extra time, because nobody gets extra time.
 
 | Phase | Mid | Senior | Staff |
 |---|---|---|---|
@@ -259,9 +264,124 @@ Two check-ins in a 45 minute round is about right: one after V0, one before the 
 
 ---
 
+## Interviewer script packs
+
+Hand one of these to a friend, a partner or a flatmate. They need no engineering background: everything they say is written out, every probe carries the trigger that tells them when to use it, and the scoring sheet is ticked on observable behaviour rather than on whether the answer was correct.
+
+How to run one:
+
+- Give the reader the pack, a clock and nothing else. They do not prepare.
+- The reader reads the opening prompt verbatim, then stays quiet.
+- The reader uses a probe only when its trigger fires, and reads it as written.
+- The reader introduces each curveball at the stated minute, whatever is happening.
+- At the end the reader ticks four boxes and reads the tallies back. That is the whole feedback loop.
+
+Each pack fits one screen so you can print it. Minutes are elapsed working minutes, counted from the moment the prompt is read.
+
+### Pack 1: general system design
+
+**Read this out loud, then stop talking.**
+
+> "Design a service that turns a long web link into a short one, and sends
+> anyone who opens the short one to the original. Assume a hundred million
+> of those redirects a day. Take about forty minutes. Start wherever you want."
+
+| Read this probe | Only when this trigger fires |
+|---|---|
+| "Before the boxes: what are you assuming about how many of these there are a day, and how big each one is?" | They start drawing within the first two minutes |
+| "You said a number a moment ago. What did that number rule out?" | They state any figure and then never refer to it again |
+| "If I told you the traffic was a hundred times smaller, which of those boxes would you delete?" | Their drawing reaches four or more boxes |
+| "Pick the piece most likely to break first. What does a user see when it does?" | Nothing about failure has been said by minute 25 |
+| "What are you deliberately not covering, and why that one?" | They go quiet, repeat themselves, or drift |
+
+| Minute | Curveball, read as written |
+|---|---|
+| 12 | "One single link is now getting almost all of the traffic. Does anything in your design change?" |
+| 22 | "Overnight you lose a whole datacentre. What stops working, and what keeps working?" |
+| 32 | "Five minutes left. Tell me the part you skipped, and why you skipped it." |
+
+| Tick the box if you saw this | Yes or no |
+|---|---|
+| They asked you at least one question before they started designing | |
+| They said a number out loud and then used it to decide something | |
+| They named something that could break, not just something that works | |
+| They said what they were leaving out and gave a reason | |
+
+Time-keeping: call out "ten minutes gone", "twenty", "thirty", then stop them at forty and do not grant extra time.
+
+### Pack 2: machine learning system design
+
+**Read this out loud, then stop talking.**
+
+> "Design the system that picks which items to show a shopping app user on
+> their home screen, using a machine learning model. About fifty million
+> people open the app each day. Take about forty minutes."
+
+| Read this probe | Only when this trigger fires |
+|---|---|
+| "What exactly is the model predicting, and where does one example of the right answer come from?" | They name a model, an algorithm or a framework before saying what it predicts |
+| "If that measurement went up but sales went down, which one would you believe?" | They mention any accuracy, score or metric |
+| "Walk me through what happens in the seconds between the user opening the app and seeing the list." | They describe training but have not described serving |
+| "How many of these predictions per second, and how did you get that number?" | No figure of any kind has been stated by minute 15 |
+| "What tells you it is time to update the model, and who notices if that stops happening?" | They say the model will be retrained or refreshed |
+
+| Minute | Curveball, read as written |
+|---|---|
+| 14 | "Most of the examples you learn from come from what the old system already chose to show people. Is that a problem?" |
+| 24 | "The model takes four hundred milliseconds and the screen has to be up in two hundred. What changes?" |
+| 32 | "After a launch, one group of users got a much worse experience. How would you have caught that before launching?" |
+
+| Tick the box if you saw this | Yes or no |
+|---|---|
+| They asked you at least one question before they started designing | |
+| They said a number out loud and then used it to decide something | |
+| They named something that could break, not just something that works | |
+| They said what they were leaving out and gave a reason | |
+
+Time-keeping: call out "ten minutes gone", "twenty", "thirty", then stop them at forty and do not grant extra time.
+
+### Pack 3: generative AI system design
+
+**Read this out loud, then stop talking.**
+
+> "Design an assistant that answers employee questions by reading the
+> company's own internal documents. Ten thousand employees, and the
+> documents change every day. Take about forty minutes."
+
+| Read this probe | Only when this trigger fires |
+|---|---|
+| "At the moment the model runs, what text is in front of it, and where did each piece of that text come from?" | They say they will use a language model without saying what it is given |
+| "What happens when the document with the real answer is not one of the ones you fetched?" | They mention search, retrieval or looking documents up |
+| "Who or what decides an answer was good, and how many answers get checked?" | They say the system will be evaluated, tested or measured |
+| "What does one answer cost, and what did you multiply together to get that?" | No cost or latency figure has been stated by minute 18 |
+| "Give me one question this thing must refuse, and tell me where the refusal happens." | They mention safety, guardrails, filtering or abuse |
+
+| Minute | Curveball, read as written |
+|---|---|
+| 12 | "Some of those documents may only be read by some employees. Does anything in your design move?" |
+| 22 | "The model provider gets slower: every answer now takes three seconds. Redesign the part the user sees." |
+| 30 | "Someone proves it confidently invented a company policy that does not exist. What in your design catches that next time?" |
+
+| Tick the box if you saw this | Yes or no |
+|---|---|
+| They asked you at least one question before they started designing | |
+| They said a number out loud and then used it to decide something | |
+| They named something that could break, not just something that works | |
+| They said what they were leaving out and gave a reason | |
+
+Time-keeping: call out "ten minutes gone", "twenty", "thirty", then stop them at forty and do not grant extra time.
+
+??? note "Show answer: what a score of four out of four does and does not tell you"
+
+    Four ticks means you did the four things visible to someone who cannot judge the content: you scoped before designing, you used a figure rather than merely producing one, you named a failure, and you made your omissions explicit. That is the delivery half of the round.
+
+    It says nothing about whether the design was any good. For that, take the same prompt to the matching case study and grade yourself against its four-criterion rubric. Then run the pack again a week later with a different friend, so the prompt is still cold.
+
+---
+
 ## Capacity estimation that earns its place
 
-Practising interviewers describe course-taught capacity math as arithmetic on invented numbers, and they are right about the version they see. The fix is not better arithmetic. It is a rule about when a number is allowed to exist.
+Most capacity math taught in interview courses is arithmetic on invented inputs, and the arithmetic is usually correct while the answer changes nothing. The fix is not better arithmetic. It is a rule about when a number is allowed to exist.
 
 !!! tip "The hard rule"
 
@@ -275,7 +395,7 @@ When the prompt does not turn on volume, say this and move on:
 
 > "I can size this if it will drive a decision. Right now I think the thing deciding the design is the consistency requirement, not the request rate. Want me to run the numbers anyway?"
 
-Interviewers accept this far more often than candidates expect. It reads as judgement, and the offer protects you if the interviewer did want the math.
+The sentence costs about eight seconds and does two jobs: it names what you think decides the design, and it hands the choice back, so you are covered if the interviewer did want the math.
 
 ### Anchors worth memorising
 
@@ -359,7 +479,7 @@ This is the reference the paid replacement dropped: the Design Gurus original ca
 | **A: strong consistency. B: eventual** | Two users act on the same row and a stale read costs money or safety | The reader tolerates a bounded stale window and can be shown that it is stale | Perceivable staleness window in seconds, against the cross-region round trip you would pay per write | Strong across regions adds a network round trip to every write. Eventual under a uniqueness constraint creates duplicate accounts |
 | **A: synchronous write path. B: asynchronous** | The caller cannot proceed correctly without the result, or durability must precede the response | The caller needs only an acknowledgement and the work completes within a stated delay | Endpoint tail latency budget, against the p99 of the work you would inline | Sync inlining a slow dependency exports its outage to your API. Async hides failure until a user asks where their thing went |
 | **A: cache-aside. B: write-through** | Reads are skewed, the cache is often cold, and a miss is cheap to serve | The same rows are read immediately after being written and a miss is expensive | Fraction of writes read back within the TTL | Cache-aside without single-flight gives a stampede. Write-through fills the cache with rows nobody reads and evicts the ones people do |
-| **A: push fan-out at write. B: pull at read** | Producers have small audiences and readers are many | A small number of producers have very large audiences | Followers per producer at p99, times write rate. Assume push stops paying above roughly 100,000 followers for one producer | Pure push turns one celebrity write into a million-row job. Pure pull turns every feed read into a scatter-gather over hundreds of producers |
+| **A: push fan-out at write. B: pull at read** | Producers have small audiences and readers are many | A small number of producers have very large audiences | Freshness budget in seconds, times the per-author fan-out insert rate. At a 30 second budget and 20,000 inserts per second per author, push stops paying above 600,000 followers, [derived in the feed case study](modern-system-design.md#numbers-that-eliminate-options-feed). Recompute it with your own two inputs rather than carrying the 600,000 | Pure push turns one celebrity write into a million-row job. Pure pull turns every feed read into a scatter-gather over hundreds of producers |
 | **A: monolith. B: services** | One team, one deploy cadence, and feature velocity is the bottleneck | Independent scaling or independent failure domains are required, and teams block each other on releases | Number of teams that must coordinate one release, and the peak-load ratio between the noisiest and quietest component | Splitting early converts function calls into network calls with no transaction. Splitting late means one bad deploy stops everything |
 | **A: REST. B: RPC. C: events** | Public or partner-facing, cacheable resource reads, many clients you do not control | RPC for internal, latency-sensitive, high-volume calls with a schema both ends own. Events when the producer must not know its consumers and consumers may lag | Consumer count you control, plus per-call payload size and rate | Events for a request that needs an answer creates a correlation-id maze. REST between two internal services pays serialisation cost for nothing |
 | **A: single region. B: multi region** | Users are geographically concentrated and an hours-long regional outage is survivable | A regulator requires data residency, or the recovery time objective is minutes | Recovery time objective in minutes, and cross-region round trip in ms against the write latency budget | Multi-region without a decided write model produces silent divergence. Single region turns one provider incident into your entire outage |
@@ -513,12 +633,13 @@ Terms used across more than one track, defined once here. Course pages link to t
 
 ## Provenance
 
-**Last reviewed:** 1 August 2026. Any page in this section whose last-reviewed date passes nine months is flagged for review rather than quietly left in place.
+**Last reviewed:** 2 August 2026. Any page in this section whose last-reviewed date passes nine months is flagged for review rather than quietly left in place.
 
 **Changelog, most recent first**
 
 | Date | Change |
 |---|---|
+| 2 August 2026 | Interviewer script packs published, so the promise made in the header is now an artifact on this page. Competitor claims rechecked against the publishers' own pages: the "birthplace" quotation moved to the course page that carries it, a disputed course count replaced with a qualitative description, and a lesson count whose source now returns 404 removed. The fan-out threshold in the trade-off atlas restated as the derivation used in the feed case study |
 | August 2026 | First publication of the hub: the seven-path router, the shared delivery clock, the estimation anchors, the trade-off atlas, the failure library and the glossary |
 | August 2026 | Cross-cutting material moved off the individual course pages and onto this hub, so the clock and the anchors are stated once and linked rather than repeated seven times |
 | August 2026 | Every figure on this page re-derived from inputs stated in the same section, and anything not derivable relabelled as an assumption with the reason it is reasonable |

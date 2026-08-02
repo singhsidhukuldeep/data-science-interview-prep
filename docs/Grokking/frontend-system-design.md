@@ -35,7 +35,7 @@ last_reviewed: 2026-08-01
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Seniority is a weak readiness signal in this round, because frontend experience varies enormously in what it touched: two engineers with the same years can have shipped very different surfaces. Prerequisite mastery is the signal that works. Answer every Quick check in under a minute. Two or more misses means start with the linked material rather than with Module 1.
 
@@ -63,7 +63,7 @@ Seniority is a weak readiness signal in this round, because frontend experience 
 
 ---
 
-## 3. Time budget
+## Time budget
 
 | Part of the course | Reading | Practice | Spaced review |
 |---|---|---|---|
@@ -73,10 +73,10 @@ Seniority is a weak readiness signal in this round, because frontend experience 
 | Modules 8 to 10, state, caching and delivery, real-time | 110 to 146 min | 20 to 30 min | included below |
 | Modules 11 to 13, performance, design systems, micro-frontends | 95 to 128 min | 20 to 30 min | included below |
 | Modules 14 to 18, security, locales, testing, observability, levels | 115 to 154 min | 18 to 32 min | included below |
-| Twelve case studies, attempted before reading each arc | included above | 180 to 240 min | included below |
+| Eight case studies, attempted before reading each arc | included above | 120 to 160 min | included below |
 | Both practice sets, eleven problems | included above | 195 to 250 min | included below |
 | Five review sessions on days 1, 3, 7, 21 and 60 | 0 | 0 | 180 to 240 min |
-| **Total** | **540 to 720 min, so 9 to 12 h** | **483 to 652 min, so 8 to 11 h** | **180 to 240 min, so 3 to 4 h** |
+| **Total** | **540 to 720 min, so 9 to 12 h** | **423 to 572 min, so 7 to 10 h** | **180 to 240 min, so 3 to 4 h** |
 
 !!! note "How these were computed, so you can argue with them"
 
@@ -85,16 +85,16 @@ Seniority is a weak readiness signal in this round, because frontend experience 
     Practice itemises to three components that sum to the total:
 
     - Faded examples inside the eighteen modules, 6 to 9 minutes each, so 108 to 162 minutes. That is the six module rows above.
-    - Twelve case studies, 15 to 20 minutes attempting each before reading its arc, so 180 to 240 minutes.
+    - Eight case studies, 15 to 20 minutes attempting each before reading its arc, so 120 to 160 minutes.
     - Practice sets, five blocked problems at 15 to 20 minutes each (75 to 100) plus six interleaved problems at 20 to 25 minutes each (120 to 150), so 195 to 250 minutes.
 
-    Adding those three gives 483 to 652 minutes, which is the practice column total.
+    Adding those three gives 423 to 572 minutes, which is the practice column total.
 
     Review is five sessions of 36 to 48 minutes, which is 180 to 240 minutes. Every figure carries roughly 15 percent padding, because self-estimates of study time run optimistic. Minutes are the authoritative unit here: one headline number would be more marketable and less true. At an hour a day this is three weeks, full time it is four days.
 
 ---
 
-## 4. Learning objectives
+## Learning objectives
 
 Each objective is tested by exactly one numbered item in the mastery check, and the numbering matches: objective 1 is tested by mastery item 1.
 
@@ -108,7 +108,7 @@ Each objective is tested by exactly one numbered item in the mastery check, and 
 
 ---
 
-## 5. Warm-up retrieval
+## Warm-up retrieval
 
 Three to five minutes. Answer out loud or in writing before you open anything else. Retrieval beats rereading, and a visible answer quietly converts one into the other.
 
@@ -138,7 +138,7 @@ Three to five minutes. Answer out loud or in writing before you open anything el
 
 ---
 
-## 6. Module map
+## Module map
 
 ```
 +--------------------------------------------+
@@ -209,9 +209,9 @@ Low ends total 540 minutes, high ends total 720. That is the 9 to 12 reading hou
 
 ---
 
-## 7. The delivery clock for this round
+## The delivery clock for this round
 
-Most candidates who fail a frontend design round did not lack a fact. They named libraries, drew a component tree that would fit almost any prompt, and never committed to a rendering strategy, a byte budget, a keyboard model or a way of being wrong. This round is also the only one in the section with two genuinely different clocks, because "design a news feed" and "design an autocomplete" want their minutes spent in different places.
+This page takes a position on how the round is lost, and its whole structure follows from that position. The failure is rarely a missing fact. It is naming libraries, drawing a component tree that would fit almost any prompt, and never committing to a rendering strategy, a byte budget, a keyboard model or a way of being wrong. This round is also the only one in the section with two genuinely different clocks, because "design a news feed" and "design an autocomplete" want their minutes spent in different places.
 
 !!! tip "Which clock am I on?"
 
@@ -448,7 +448,7 @@ Three technical rounds, three different outputs. The design round wants a design
 
 The strongest signal in the email is "Web Platform team". That is infrastructure, not product. It shifts my expectation toward component scale, or toward an application prompt where the interesting part is the boundary rather than the feature.
 
-**The error most readers make here** is reading "Frontend Engineer" and rehearsing a news feed, because feed prompts dominate free material. The team name overrides the job title every time.
+**The error most readers make here** is reading "Frontend Engineer" and rehearsing a news feed, because a feed is the prompt that free material practises most. The team name overrides the job title every time.
 
 !!! note "Say it before you read on"
 
@@ -537,7 +537,7 @@ Format triage is a preparation tool, and it is over-applied more often than unde
 | The threshold below which it is over-engineering | One loop, with an invite that already names the format and the interviewer's team. Triage adds nothing on top of that |
 | The cheaper alternative | One recruiter message with the two questions in this module. Reply time is usually a day and the information is exact, where inference is a guess |
 | The failure mode of over-applying it | Spending study hours on meta-strategy instead of Modules 3 to 9. The whole triage exercise is worth about thirty minutes, once |
-| What to do if triage is genuinely impossible | Prepare the component format. It is the smaller body of material, it is the one most candidates skip, and application-scale prompts reward component thinking more than the reverse |
+| What to do if triage is genuinely impossible | Prepare the component format. It is the smaller body of material, it is the one most easily left unprepared, and application-scale prompts reward component thinking more than the reverse |
 
 ---
 
@@ -810,7 +810,7 @@ A candidate writes this requirements list in the first five minutes of a round. 
     | R4 | Not a requirement | Accessible is not a level. Without a conformance level and a test method, nobody can say whether it was met |
     | R5 | Not a requirement | "Mobile" is neither a device class nor a network. It is a word that lets everyone in the room believe something different |
 
-    R3 is the expensive one. A candidate who writes the rendering strategy into the requirements has skipped the derivation and can now only defend a choice they never made. Interviewers read this as pattern matching, and it is very hard to recover from once the word is on the board.
+    R3 is the expensive one. A candidate who writes the rendering strategy into the requirements has skipped the derivation and can now only defend a choice they never made. That is pattern matching rather than derivation, and it is very hard to recover from once the word is on the board.
 
 ### Functional requirements for a user interface
 
@@ -1258,7 +1258,7 @@ For each surface, one sentence of accepted cost:
 
 ??? note "Show answer"
 
-    Block 4 states the cost and the failure mode of the split, which is the part most candidates omit.
+    Block 4 states the cost and the failure mode of the split, which is the part that turns a split into a decision rather than a habit.
 
     "The cost I accept is a visible late change: the saved markers appear after the page has painted, so a returning user sees the page shift state once. I would make that acceptable by reserving the marker's space in the cached HTML so nothing moves, and by rendering the un-saved state as the default rather than rendering nothing, so the late arrival is a fill rather than an insertion."
 
@@ -1999,7 +1999,7 @@ Four mappings, each traceable to a sentence from block 1:
 - The list scrolls: the active option must be scrolled into view as arrows move, or a sighted keyboard user loses their position even though the widget is technically correct.
 - Announcement volume: I announce the count on a debounce rather than on every keystroke, because a user typing six characters should not hear six counts.
 
-**The error most readers make here** is announcing more, on the assumption that more speech is more accessible. Verbosity is the most common complaint about well-intentioned implementations.
+**The error most readers make here** is announcing more, on the assumption that more speech is more accessible. Verbosity is its own failure: an interface that narrates everything is harder to use than one that narrates only what changed.
 
 !!! note "Say it before you read on"
 
@@ -2138,7 +2138,7 @@ There is a fourth question worth asking before all of them, because it removes w
 
 ### Server cache state, mechanically
 
-This is the part most candidates have used and few can derive. Five mechanisms, each with arithmetic.
+This is the part that is easy to use through a library and hard to derive from scratch, so it is worth deriving once. Five mechanisms, each with arithmetic.
 
 #### Cache keys
 
@@ -2250,7 +2250,7 @@ Running the test on each piece:
 | Which rows are checked | Local, unless it must survive navigation | Component state |
 | The refund confirm dialog | Only the panel cares | Component state |
 
-The move worth noticing is the fourth row. Panel-open state is not stored at all, because it is a function of the URL. Deleting state is the cheapest correctness improvement available, and candidates almost never do it.
+The move worth noticing is the fourth row. Panel-open state is not stored at all, because it is a function of the URL. Deleting state is the cheapest correctness improvement available, and it is the move an answer reaches for last, because adding a store feels like design and removing one does not.
 
 **The error most readers make here** is starting with the store and asking what to put in it. Start with the state and ask where each piece belongs, and the store ends up small.
 
@@ -2381,7 +2381,7 @@ Three responses from the same application. Read the headers before continuing.
     | Hashed bundle with `max-age=86400` | Cached for a day, then revalidated | Wasteful and pointless. The filename contains a content hash, so the bytes at this URL can never change. Any revalidation is a guaranteed 304, so the correct value is a year plus `immutable` |
     | API response with `max-age=300, public` | Cached for five minutes by the browser and by any shared cache, including a CDN | `public` on a per-user response is a data leak: a shared cache can serve one user's orders to another. This is the most serious of the three by a wide margin |
 
-    Ranking those by severity is the point of the question. Row two wastes a round trip per asset per day. Row three can serve one customer's data to another, and it is a header, not a code change, which is why nobody reviews it.
+    Ranking those by severity is the point of the question. Row two wastes a round trip per asset per day. Row three can serve one customer's data to another, and it is a header, not a code change, which is how it escapes code review.
 
 ### The cache chain, in order
 
@@ -2620,6 +2620,317 @@ Avatars are the interesting row and the one people get wrong in both directions.
 | A service worker | You have a stated offline requirement, or a measured repeat-visit cost that HTTP caching cannot address | Wanting faster repeat visits. HTTP caching already does that, and a worker adds the stickiest failure mode in frontend delivery | Correct cache headers, which are configuration rather than code, and cannot strand a user |
 | IndexedDB | You are storing more than a few hundred kilobytes, or reads are on a path where blocking would be visible | A theme preference and a dismissed-banner flag. The API cost is real and the data is tiny | localStorage, read once at startup |
 | Storing anything in cookies beyond a session id | The value must be read by the server on every request | Anything the client alone reads. From the derivation above, 4 KB across 60 requests is about 1.9 seconds of uplink on a 1 Mbit/s connection | localStorage or IndexedDB, which cost zero bytes on the wire |
+
+---
+
+## Module 10. Network and real-time
+
+**Time: 32 to 42 minutes reading, 20 to 30 minutes practice.**
+
+Real-time answers fail in a recognisable way. The transport is named in the first sentence, and everything that decides whether the screen actually works is skipped. Direction, message rate and what the interface does while the connection is gone are what choose a transport. The transport itself decides very little.
+
+### 10a. Predict first
+
+Read this specification and commit to an answer before continuing.
+
+| Property | Value |
+|---|---|
+| Direction of messages | Server to client, apart from one subscribe on open |
+| Instruments streamed | 500 |
+| Updates per instrument | About 10 a second |
+| Rows visible at once | 40 |
+| Current design | One WebSocket, every message written to state on arrival |
+
+**Question.** Name the number that eliminates this design before you reach the transport at all, and say what breaks first on the device.
+
+??? note "Show answer"
+
+    Two numbers, both derivable from the table above.
+
+    **Message rate.** 500 instruments times 10 updates a second is 5,000 messages a second. At 60 frames a second a frame is 16.7 ms, so 5,000 divided by 60 is about 83 messages arriving inside every frame. If each one writes state and schedules a render, the loop is being asked for 5,000 renders a second and will deliver at most 60. The main thread saturates, and rising input latency is what the user notices first.
+
+    **Bytes.** Assume 200 bytes per message on the wire, which is a small JSON object with an instrument id, a price and a timestamp. 5,000 times 200 bytes is 1 MB a second. Against the 200 KB per second profile this page uses elsewhere, that is five times the entire downlink, so the design fails at the requirements step rather than at the transport step.
+
+    **What is actually wrong.** 40 rows are visible out of 500 instruments, so 92 percent of the messages change nothing the user can see. The fixes in order of value: subscribe to what is visible, conflate on the server, coalesce per frame on the client. Swapping WebSocket for something else fixes none of the three.
+
+    The transport question that does matter here is smaller than it looks. The direction is one way, so a bidirectional channel is buying nothing and charging you connection state you have to shed and rebalance.
+
+### Four transports, compared on what actually differs
+
+The primary sources, so you can check any of this rather than take it from a table: WebSocket is [RFC 6455](https://www.rfc-editor.org/rfc/rfc6455.html), published December 2011, which is also where the ping and pong control frames are defined. Server-sent events are specified in the [HTML standard](https://html.spec.whatwg.org/multipage/server-sent-events.html), which defines `EventSource`, the reconnection behaviour, the `retry` field and the `Last-Event-ID` request header. WebTransport is a [W3C Candidate Recommendation Snapshot dated 30 July 2026](https://www.w3.org/TR/webtransport/), which describes multiple streams and unreliable datagrams.
+
+| Transport | Direction | Reconnect and resume | Ordering | What it costs you |
+|---|---|---|---|---|
+| Long polling | Down, on a request the client keeps reissuing | Nothing to reconnect, because every message is a fresh request | Per response, and a gap exists between responses that the server must buffer across | A request per batch, plus latency of up to one round trip on every message |
+| Server-sent events | Down only | In the client already: automatic retry, plus `Last-Event-ID` so the server can replay from where you stopped | Ordered within one stream | Text only, so binary payloads need encoding. One connection per tab, which matters more on HTTP/1.1 than on HTTP/2 |
+| WebSocket | Both | Nothing. Reconnection, resume tokens and heartbeats are all yours to write | Ordered within one connection, and nothing is ordered across a reconnect | Connection state on the server, a handshake, and every liveness mechanism written by hand |
+| WebTransport | Both, over HTTP/3 | Yours to write, as with WebSocket | Ordered within a stream, unordered across streams, and datagrams may be lost or reordered | The newest of the four, so an answer that picks it owes a fallback path and a reason the fallback is acceptable |
+
+The row that changes most answers is the second one. Server-sent events give you the two things teams most often get wrong when they hand-roll them, automatic reconnection and a resume point, and they give them away for free. A WebSocket gives you neither and is chosen anyway, because "live" and "bidirectional" have become the same word.
+
+### The transport decision, drawn
+
+```
++------------------------------------------+
+| Does the client send messages up too,    |
+| on the same channel and at message rate? |
++------+---------------------------+-------+
+       | no                        | yes
+       v                           v
++----------------+     +------------------------+
+| updates faster |     | WebSocket. You now own |
+| than one every |     | reconnect, heartbeat,  |
+| ten seconds?   |     | resume and shedding    |
++---+--------+---+     +------------------------+
+    | yes    | no
+    v        v
++---------+ +------------------+
+| server- | | poll on a timer  |
+| sent    | | and stop calling |
+| events  | | it real time     |
++---------+ +------------------+
+
+Caption: the transport routing question, top to bottom. The first
+fork is direction, the second is rate. Long polling is where the
+left leaf goes when server-sent events cannot be used at all, and
+WebTransport is the right leaf when you need unreliable datagrams
+and can afford to carry a fallback for clients without it.
+```
+
+Two clarifications the diagram deliberately leaves out. A client that sends one message on open, or one message per user action, is not sending "at message rate", so it stays on the left branch and posts its writes over ordinary HTTP. And a screen with several live topics does not need several connections: multiplex topics over one stream and give each topic its own sequence.
+
+### Reconnection: backoff, jitter, and why jitter is the load-bearing half
+
+Backoff without jitter is a synchronised retry. Every client that dropped at the same instant comes back at the same instant, which is how a recovering server is knocked over by its own users.
+
+| Attempt | Ceiling from doubling a 1 s base | Delay actually used, with full jitter |
+|---|---|---|
+| 1 | 1 s | Uniform random in 0 to 1 s |
+| 2 | 2 s | Uniform random in 0 to 2 s |
+| 3 | 4 s | Uniform random in 0 to 4 s |
+| 4 | 8 s | Uniform random in 0 to 8 s |
+| 5 | 16 s | Uniform random in 0 to 16 s |
+| 6 and after | 30 s, the cap | Uniform random in 0 to 30 s |
+
+The arithmetic that justifies the cap, with the inputs stated. ASSUME 200,000 connected clients, the same population the market data problem in the interleaved set uses, and ASSUME a restart drops all of them at once.
+
+Retrying on a fixed one second delay puts 200,000 attempts into one second. Spreading the same attempts uniformly across a 30 second cap gives about 6,700 a second, a factor of 30 lower, and the price is that the unluckiest client waits 30 seconds. Pick the cap from what a user will tolerate staring at a stale screen, then check the arrival rate it implies.
+
+Not every disconnect deserves a retry, and treating them alike is a real bug.
+
+| Why the connection ended | Correct response |
+|---|---|
+| Transport error, or the device reports itself offline | Retry with backoff and jitter. Reset the attempt counter after a connection survives a stated interval, not on connect, or a flapping link resets it forever |
+| Server closed with a normal close code | Retry with backoff. This is a deploy or a rebalance, and it is the case jitter exists for |
+| Authentication or authorisation rejected | Do not retry the socket. Refresh the credential first, and if that fails, stop and say so on screen |
+| Server closed with a policy or protocol error | Stop. Retrying a message the server refuses to accept is an infinite loop with a network bill |
+
+One interface rule worth stating out loud, because it is cheap and almost always missing: do not show a "reconnecting" banner on the first failure. A one second blip that recovers on attempt one should be invisible. Show the banner from the second failed attempt, and show a stale-data timestamp rather than a spinner, because a spinner claims progress you cannot promise.
+
+### Heartbeats and liveness
+
+A closed connection is easy. A dead connection that nobody has closed is the problem, and it is common: a phone that loses radio sends no close frame, and an intermediary can drop an idle connection without telling either end. The socket stays open in your code and delivers nothing forever.
+
+So liveness is an application concern, with two numbers.
+
+- **Send interval.** ASSUMED at 20 s here. Choose it below the shortest idle timeout on your own path, measured rather than inherited, because that timeout belongs to whatever proxies and gateways your traffic actually crosses.
+- **Liveness deadline.** Two missed beats plus a margin, so about 45 s at a 20 s interval. Below two missed beats you will tear down healthy connections on ordinary jitter.
+
+The cost is a wakeup, not bytes. At a 20 s interval a client sends 3 beats a minute, so 180 an hour. At 5 s it sends 720 an hour, four times the radio wakeups to detect death four times sooner. On a phone that is a battery decision, so state the trade rather than picking 5 seconds because it feels responsive.
+
+Two details that separate a designed answer from a remembered one. First, heartbeats must run in both directions: a server that only listens cannot reclaim the socket of a client that vanished, and connection slots are the resource that runs out. Second, server-sent events reconnect automatically but do not detect a silently dead connection, so a stream that has delivered nothing past your deadline should be closed and reopened by your own code.
+
+### Ordering and deduplication on the client
+
+A single connection preserves the order of what it carries. That guarantee ends at the edges, and every edge is where the bugs live.
+
+| Where order breaks | Why | The mechanism that fixes it |
+|---|---|---|
+| Across a reconnect | The new connection knows nothing about the old one | A per-topic sequence number, and a resume request carrying the last applied value |
+| Between the snapshot fetch and the live stream | Two independent responses race | Subscribe first, buffer arriving messages, then fetch the snapshot and drop buffered messages at or below its sequence |
+| Between an optimistic local write and the server copy | The local item exists before the server has an id for it | A client-generated id sent with the write and echoed back, so the local item is replaced rather than joined by a twin |
+| Across several streams or datagrams | Independent streams are independently ordered by design | Order inside a topic only, and never assume two topics are comparable |
+
+Three rules that make the receive path boring, which is the goal.
+
+- **Detect gaps, do not paper over them.** If an arriving sequence is greater than the last applied plus one, messages were missed. Refetch the snapshot and resubscribe. Applying the message anyway leaves a client that is silently wrong, which is worse than a visible reload.
+- **Deduplicate against a bounded set.** Keep seen message ids in a fixed-size ring, sized from the rate and the resume window. At an assumed 60 chat messages an hour and a 30 minute session, 30 ids covers the session, so a 200 entry ring is generous and cannot grow. An unbounded seen-set is a memory leak that only appears in long sessions, which is exactly where nobody tests.
+- **Prefer idempotent application.** "Set price to 41.20 at version 9" survives a duplicate. "Increment unread by one" does not. Where the payload is a delta by nature, carry a version and ignore anything at or below the version already applied.
+
+### The receive path, drawn
+
+```
++----------+   +-----------+   +-----------+   +-----------+
+| socket   |-->| drop ids  |-->| sequence  |-->| coalesce  |
+| message  |   | already   |   | check,    |   | by key    |
+| arrives  |   | seen      |   | gap alarm |   | into a    |
+|          |   |           |   |           |   | buffer    |
++----------+   +-----------+   +-----------+   +-----+-----+
+                                                     |
+                                     once per frame  v
+                                          +---------------------+
+                                          | apply to state and  |
+                                          | render visible rows |
+                                          +---------------------+
+
+Caption: one message from the socket to the screen. Deduplication
+comes before the sequence check so a replayed message after a
+resume does not raise a false gap alarm. Everything to the left of
+the buffer runs per message; everything to the right runs at most
+once per frame, which is what stops the message rate from setting
+the render rate.
+```
+
+### Coalescing, batching, and the difference
+
+Coalescing drops superseded messages. Batching keeps all of them and applies them together. Choosing the wrong one either loses data or fails to reduce anything.
+
+| What the message means | Can a later one replace it? | Strategy |
+|---|---|---|
+| A value at a point in time, such as a price or a courier position | Yes | Coalesce by key, keep the last, flush once per frame |
+| A membership or presence state | Yes | Coalesce by key, and accept that intermediate states are never shown |
+| An event in a log, a chat message, a notification | No | Batch, apply the whole batch in one write, never drop |
+| A delta that depends on the previous value | No | Batch, and apply in sequence order or not at all |
+
+The saving is worth computing rather than asserting. From the predict-first numbers, 5,000 messages a second coalesced per frame at 60 frames a second is at most 60 state writes a second instead of 5,000, which is about 83 times fewer renders. Coalescing by key also collapses the 40 visible instruments to at most 40 changed values a frame, so the render is bounded by what is on screen rather than by what the market is doing.
+
+One frame is the upper bound on flush rate, not the right answer everywhere. A number a person reads rather than watches move can flush on a longer interval, say once per 100 ms, which is another factor of six and is often more legible because the digits stop flickering. Pick the interval from what the value is for, then say which one you picked and why.
+
+### Backpressure when the server outruns the render loop
+
+Backpressure means deciding, deliberately, what happens when input arrives faster than you can consume it. Doing nothing is also a decision, and the thing it decides is that the buffer grows until the tab dies.
+
+Four levers, cheapest first.
+
+1. **Filter at the source.** Subscribe to the visible set and resubscribe on scroll. In the predict-first problem this is 40 of 500 instruments, so it removes 92 percent of the traffic and the bytes with it. It is the cheapest lever and the one most often skipped, because it needs a server that accepts a subscription list.
+2. **Conflate on the server.** Send at most one update per key per interval, say one per 100 ms. This is the only lever that saves the bytes as well as the work, and from the arithmetic above the bytes were the binding constraint, so on that problem it is not optional.
+3. **Coalesce per frame on the client.** No server change needed, so it is available immediately. It saves renders but still pays the download, the parse and the deduplication for every message.
+4. **Shed.** If the pending buffer exceeds a stated bound, stop applying, refetch a snapshot and resubscribe. Shedding is what keeps a slow client correct rather than merely behind.
+
+The measurement that tells you which lever you need is the depth of the pending buffer sampled over a window. A depth that returns to zero every frame is healthy. A depth that trends upward over five seconds means the client is losing, and long task count and interaction latency will confirm it a moment later. If parsing is the cost rather than rendering, move the socket and the parse into a worker and post only the coalesced result to the main thread.
+
+### 10d. Worked example
+
+The prompt: "Design the live-updating part of an order tracking screen: the courier's position on a map, the order state, and a chat thread with the courier."
+
+**Block 1. PURPOSE: separate the streams by direction and by what a lost message costs, because those two properties decide everything downstream.**
+
+| Stream | Direction | Rate | Cost of a lost message | Cost of a duplicate |
+|---|---|---|---|---|
+| Courier position | Down | About 1 a second while moving | Nothing. The next one supersedes it | Nothing |
+| Order state | Down | A handful per order | High. The user waits on a state that never arrives | Nothing, if it carries a version |
+| Chat | Both | Bursty, zero for minutes then several in seconds | Unacceptable | Visible and embarrassing |
+
+**The error most readers make here** is picking one transport because the three streams share one screen. They share a screen and nothing else. The position stream can lose messages all day, and the chat send path cannot lose one ever, which is a durability requirement rather than a transport requirement.
+
+!!! note "Say it before you read on"
+
+    Say which of the three streams justifies a bidirectional channel, and then say whether that justification survives the sentence "the send must work when the tab is closed".
+
+**Block 2. PURPOSE: choose transports, and state what each choice costs rather than only what it buys.**
+
+- All three receive paths ride one server-sent events stream carrying three topics, each with its own sequence. Reconnection and the resume point are already in the client, and the direction is one way. Cost: text only, so any binary payload is encoded, and one connection per tab.
+- Chat sends are ordinary HTTP requests carrying a client-generated idempotency key, not socket frames. A send has to survive the tab closing, and a socket cannot promise that. Cost: a request per message instead of a frame, which at this rate is nothing.
+- What this rejects, out loud: a WebSocket for everything. It buys bidirectionality that only chat wants, and chat is better served by a request that can be queued, retried and deduplicated by a key the server already needs.
+
+**Block 3. PURPOSE: design the receive path, because ordering and duplication are settled here or not at all.**
+
+- Each topic carries a monotonic sequence. On reconnect the client resumes from the last applied sequence per topic. A gap triggers a snapshot refetch for that topic only, not for the screen.
+- Deduplication by message id against a 200 entry ring per topic, sized from an assumed 60 chat messages an hour against a 30 minute session, which is about 30 ids.
+- Position messages coalesce by key and flush once per frame, so a burst after a tunnel paints one marker move rather than forty.
+- Order state applies by version, and any version at or below the applied one is ignored. This is what makes a replay after resume harmless.
+
+**The error most readers make here** is applying messages the instant they arrive because the code is shorter. It is shorter until the first reconnect, at which point the difference between a resume and a replay becomes a user-visible duplicate.
+
+!!! note "Say it before you read on"
+
+    Before the last block, say what the screen should show when the stream has been down for 40 seconds, and why a spinner is the wrong answer.
+
+**Block 4. PURPOSE: design the failure behaviour, because that is the part of a live screen a user actually experiences.**
+
+- Reconnect with full jitter, doubling from a 1 s base to a 30 s cap, with the attempt counter reset only after a connection has survived 60 s. Authentication failures do not retry the stream, they refresh the credential once and then surface an error.
+- Heartbeat every 20 s in both directions, connection declared dead at 45 s. Assumptions as derived above: two missed beats plus a margin.
+- Chat sends queue in IndexedDB, so they survive a closed tab. Each entry holds the idempotency key, the payload, an attempt count and a created time. Entries older than a stated window surface to the user as failed rather than retrying forever.
+- Degradation, stated before it is asked for: if the stream cannot be established at all, poll order state every 15 s, and replace the live map marker with the last known position plus the time it was recorded. A stale position labelled stale is useful. A stale position pretending to be live is a support ticket.
+
+**Result.** Three streams separated by direction and loss cost, one transport chosen per direction with its cost stated, a receive path with sequences, gap detection and bounded deduplication, a send path that survives the tab, and a degradation mode that is honest about staleness. Nothing here required a WebSocket, and being able to say why is the point.
+
+### 10e. Fade the scaffold
+
+**Faded example 1.** Prompt: "Our live dashboard freezes for about two seconds every time the market opens." Blocks 1 to 3 are given. Produce block 4.
+
+- Block 1: a freeze is main-thread occupancy, so the candidates are parse cost, state write cost, render cost or a layout loop, and they are distinguishable in one profile.
+- Block 2: the profile shows thousands of short tasks rather than one long one, each a message parse followed by a state write followed by a render.
+- Block 3: the rate at open is measured at roughly 4,000 messages a second against a screen showing 30 rows, so almost every message changes nothing visible.
+
+??? note "Show answer"
+
+    Block 4, the fix in the order that costs least, and the measurement for each step.
+
+    "First, coalesce on the client, because it needs no server change and it is available this week. Buffer arriving messages into a map keyed by instrument and flush once per animation frame. At 60 frames a second that is at most 60 state writes a second instead of 4,000, and the freeze should become a busy but responsive screen. The measurement is long task count during the first ten seconds of open, before and after."
+
+    "Second, filter at the source, because 30 rows are visible out of the full set and the rest are being paid for in bytes, parse and deduplication. Resubscribe on scroll with a small overscan so a fast scroll does not blank. The measurement is bytes received during open, which should fall roughly in proportion to the fraction of instruments dropped."
+
+    "Third, conflate on the server, one update per instrument per 100 ms. This is the only step that also removes the download, so I would ask for it even though it is the slowest to land. The measurement is again bytes at open, and I would expect it to bound the rate at ten a second per instrument regardless of how the market behaves."
+
+    "What I would not do first is change the transport. Nothing in the evidence points at the transport, and swapping it would cost weeks and move no number in the profile. If the client is still behind after all three steps, the next move is parsing in a worker, and the signal for that is a profile where parse dominates the coalesced write."
+
+**Faded example 2.** Prompt: "Users report seeing their own chat messages twice after driving through a tunnel." Blocks 1 and 2 are given. Produce blocks 3 and 4.
+
+- Block 1: a duplicate after a connectivity gap is either a resend that the server accepted twice, or a single server-side message that the client rendered alongside its own optimistic copy.
+- Block 2: the server log shows two stored messages with different ids and identical bodies, seconds apart, both from the same device.
+
+??? note "Show answer"
+
+    Block 3, the elimination. "Two stored messages with different ids means this is not a client rendering bug, it is a duplicated write. The device sent the message, lost the radio before the response arrived, treated the failure as unsent, and sent it again on reconnect. The server had already stored the first one and had no way to know the second was the same intent."
+
+    "The distinguishing observation is the ambiguous failure. A request that fails after the server committed is indistinguishable at the client from one that failed before, so a retry is correct behaviour and duplication is the consequence. That means the fix cannot live in the retry logic. It has to live in the identity of the write."
+
+    Block 4, the fix and what it also fixes. "Generate an idempotency key on the client when the message is composed, not when it is sent, and store it with the queued item. The server treats that key as unique per conversation and returns the existing message on a repeat rather than storing a second one. Retries then become free, which is what lets the outbound queue be aggressive."
+
+    "The same key solves the optimistic rendering problem, which is the other way this bug appears. The local item is keyed by the client id, and the server echoes that id back, so the arriving copy replaces the local one instead of appearing beside it. Without the echo, matching is done on body and timestamp, which fails the moment someone sends the same word twice."
+
+    "The prevention is a rule rather than a patch: every write that a client may retry carries a client-generated identity, and every list that merges local and remote items matches on that identity. Stated once in the design, it removes a whole class of report."
+
+### 10f. Check yourself
+
+**Q1.** Your reconnect logic doubles from one second with no upper bound and no randomness. Describe both failure modes, and say what you would change.
+
+??? note "Show answer"
+
+    The first failure is synchronisation. Clients that dropped together retry together, so a server that has just come back receives its entire population in one instant. With an assumed 200,000 connected clients, a fixed one second delay is 200,000 attempts in a second, which is likely to knock the server down again and produce a second synchronised wave.
+
+    Full jitter, choosing a delay uniformly between zero and the current ceiling, spreads the same attempts across the window. At a 30 second cap that is about 6,700 a second, thirty times lower.
+
+    The second failure is the missing cap. Unbounded doubling reaches ten minutes by attempt sixteen, so a user whose connection recovered minutes ago sits in front of a stale screen because the client is still asleep. The cap should come from how long a user will tolerate stale data, and then be checked against the arrival rate it implies.
+
+    A third detail worth naming because it is usually wrong: reset the attempt counter after a connection has been healthy for a stated interval, not on connect. A flapping link connects constantly, and resetting on connect turns your backoff into a fixed one second retry exactly when the network is worst.
+
+**Q2.** After a reconnect, a client shows one message twice. Name the two independent mechanisms that both had to be absent, and say which one you would add first.
+
+??? note "Show answer"
+
+    Mechanism one is resume rather than replay. If the client reconnects and the server sends everything from the start of the session, the client receives messages it already applied. A per-topic sequence, sent on reconnect and honoured by the server, means the stream restarts at the right point. Server-sent events give this shape for free through the `Last-Event-ID` header, and a hand-rolled WebSocket has to be told to do it.
+
+    Mechanism two is deduplication at apply time. Even with resume, a replay window is normal: the server may send a small overlap deliberately, because an overlap is safe and a gap is not. So the client keeps a bounded set of applied ids and drops anything it has already seen.
+
+    Add deduplication first. It is local, it needs no protocol change, and it makes the client correct against any server behaviour including a server that deliberately overlaps. Resume is the larger win because it also removes the wasted transfer, but it needs both ends to agree, and a client that is correct only when the server behaves is not correct.
+
+    The trap to name: the deduplication set must be bounded. An unbounded set is invisible in every test and a slow leak in the long sessions where live features are actually used.
+
+### 10g. When not to use this
+
+| Thing | The measurement that justifies it | The threshold below which it is over-engineering | The cheaper alternative |
+|---|---|---|---|
+| A persistent connection at all | The update rate, times the staleness the product actually requires, makes polling either too slow or too chatty | Data that changes a few times an hour, or a screen a user looks at for ten seconds. A poll on a 30 s timer is two lines and cannot strand anyone | Poll on a timer, and refetch on the tab becoming visible again |
+| A WebSocket rather than server-sent events | The client genuinely sends at message rate, not one write per user action | Any one-way feed. You have taken on reconnection, resume and heartbeats to gain a direction you do not use | Server-sent events, which ship reconnection and a resume header already |
+| WebTransport | You need unreliable datagrams or independent streams, and you can name what you gain by dropping ordering | Anything that a single ordered stream serves. Two transports to maintain is the real cost, not the API | WebSocket, or server-sent events if the direction allows |
+| An offline outbound queue in storage | Writes must survive a closed tab, and you can point at the user journey where that happens | A desktop tool on an office network. An in-memory retry with a visible failed state is honest and far smaller | Retry in memory, and show the send as failed with a retry control |
+| Per-frame coalescing | A profile shows state writes or renders exceeding one per frame during a normal burst | Under roughly one message a second. A coalescer adds a buffer and a flush path for no measurable saving | Apply on arrival, and revisit when the profile says otherwise |
+| Client-side gap detection and resume | Missing a message leaves the client silently wrong rather than briefly stale | A feed where the next message supersedes the last, such as a position or a price. Resubscribing and refetching is simpler and always correct | Refetch a snapshot on reconnect and discard the question |
+| An application heartbeat | You have seen connections that deliver nothing and never close, or your path crosses intermediaries you do not control | A short-lived connection inside one page view, where a dead connection is indistinguishable from the page ending | The transport's own close handling, plus a refetch when the tab becomes visible |
+
+---
 
 ## Module 11. Performance
 
@@ -4836,8 +5147,8 @@ Diagnose and give two alternatives.
 
 Internationalisation appears in frontend rounds as a constraint on an otherwise
 familiar design, and it is a good discriminator because the wrong answers are
-confidently wrong. Almost everyone knows strings live in files. Far fewer can say
-what a plural rule does to a component API.
+confidently wrong. Putting strings in files is the obvious half of the problem.
+What a plural rule does to a component API is the half that decides the design.
 
 ### 15a. Predict first
 
@@ -5695,7 +6006,7 @@ informs the decision to stay at 100 percent rather than gating the ramp.
     size formula rather than in terms of intuition.
 
 **The error most readers make here.** Picking 1 percent, 5 percent, 25 percent,
-100 percent because those are the numbers everyone uses. The exposure percentage
+100 percent because those are the conventional numbers. The exposure percentage
 should come from how long you are willing to wait for the guardrail to become
 readable, which is arithmetic.
 
@@ -6001,7 +6312,7 @@ usually wrong.
 
 ### 17c. Sampling that leaves the data readable
 
-Three strategies, and the third is the one most teams have never considered.
+Three strategies, and the third is the one that rarely appears in an answer at all.
 
 | Strategy | How | Good for | Weakness |
 |---|---|---|---|
@@ -6991,7 +7302,7 @@ The 150 ms median and 800 ms 95th percentile round trip are ASSUMED. They are th
 
 ??? note "Show answer"
 
-    Not scroll performance, which is what most people answer. The first break is memory on long sessions: 500 posts holding attached images is 720 MB of decoded pixels by the arithmetic above, and the operating system discards the tab.
+    Not scroll performance, which is the intuitive answer. The first break is memory on long sessions: 500 posts holding attached images is 720 MB of decoded pixels by the arithmetic above, and the operating system discards the tab.
 
     The number that tells you is not a frame metric at all. It is the rate of sessions that end in a page reload from a restored tab, segmented by scroll depth. Frame drops are the second failure and they arrive later, because 20,000 elements still lay out in a few frames if you are not touching them.
 
@@ -7707,7 +8018,9 @@ The 20 ns per comparison is an ASSUMED placeholder for a comparison over two obj
 
 ??? note "Show answer"
 
-    Reducing the number of columns shown by default. A hundred columns is almost always a configuration failure rather than a requirement: users work with eight to fifteen at a time and reach for the rest occasionally. Shipping a default column set plus a picker cuts mounted elements, wire bytes and horizontal scrolling in one change, needs no new rendering machinery, and is reversible. It is also the answer most candidates skip, because the prompt says a hundred columns and they treat that as a constraint rather than as a symptom.
+    Reducing the number of columns shown by default. A hundred columns is almost always a configuration failure rather than a requirement: users work with eight to fifteen at a time and reach for the rest occasionally. Shipping a default column set plus a picker cuts mounted elements, wire bytes and horizontal scrolling in one change, needs no new rendering machinery, and is reversible.
+
+    It is also the easiest answer to skip, because the prompt says a hundred columns and it is tempting to treat that as a constraint rather than as a symptom.
 
 ```
 +-----------+   +--------------------+   +----------------+
@@ -8445,7 +8758,7 @@ Every line ends with the option it removes. A number that removes nothing is del
 
 ??? note "Show answer"
 
-    At the first feature that has to read the content rather than display it. Word count over a selection, a mention that must resolve to a user id, a comment anchored to a range, an export to anything that is not HTML. Until then the browser's editing surface is genuinely correct and cheaper than anything you would write. The trigger is a query requirement, not a size requirement, and candidates usually name size because size is easier to see.
+    At the first feature that has to read the content rather than display it. Word count over a selection, a mention that must resolve to a user id, a comment anchored to a range, an export to anything that is not HTML. Until then the browser's editing surface is genuinely correct and cheaper than anything you would write. The trigger is a query requirement, not a size requirement, and size is the tempting answer because size is visible and a query requirement is not.
 
 ```
 +-----------+     +------------------+     +----------------+
@@ -9303,7 +9616,7 @@ The error most readers make: tuning the up rule and leaving the down rule symmet
 
 ### Deep dive two: rebuilding what the native element gave away
 
-This dive is deliberately not more control theory. It is the bill for a decision made in V1, and it is the part of a player answer that most candidates never reach. Note that it is also not a focus-trapping exercise: dialog focus management belongs with the modal case study, and what is specific here is that a media player has continuous state that changes without user action.
+This dive is deliberately not more control theory. It is the bill for a decision made in V1, and it is the part of a player answer that is usually left unreached, because the transport discussion eats the clock. Note that it is also not a focus-trapping exercise: dialog focus management belongs with the modal case study, and what is specific here is that a media player has continuous state that changes without user action.
 
 **The state machine, because "buffering" is not a boolean.** The platform emits a stream of media events whose ordering varies, and reading them directly produces controls that flicker.
 
@@ -9509,7 +9822,7 @@ Non-functional:
 
 ??? note "Show answer"
 
-    Latency, and it fails at a number you can state. The mean delay before a message appears is half the poll interval, which is 1.5 seconds against a 1 second acknowledgement budget, so the product is already outside its requirement with a perfectly healthy server. Request volume fails later and more visibly: 1,200 requests per user per hour, nearly all returning nothing. Most candidates name volume because it sounds like the systems answer, and naming latency first shows you checked the requirement rather than the instinct.
+    Latency, and it fails at a number you can state. The mean delay before a message appears is half the poll interval, which is 1.5 seconds against a 1 second acknowledgement budget, so the product is already outside its requirement with a perfectly healthy server. Request volume fails later and more visibly: 1,200 requests per user per hour, nearly all returning nothing. Volume is the tempting answer because it sounds like the systems answer, and naming latency first shows you checked the requirement rather than the instinct.
 
 ```
 +---------+   +----------------+   +------------------+
@@ -10378,7 +10691,7 @@ Write or say your answer before opening the block. Producing an answer is what b
 
     Announcement contract: the selected chips live in a polite live region announcing the count, and the filtered result count is announced on a debounce so that it does not interrupt every keystroke.
 
-    Evolution rule, offered unprompted because almost nobody does: adding an input is a minor version, changing a default or a keyboard behaviour is a major one, and every deprecated input keeps working for two majors with a console warning.
+    Evolution rule, offered unprompted because it is rarely asked for and it is what separates a component from a library: adding an input is a minor version, changing a default or a keyboard behaviour is a major one, and every deprecated input keeps working for two majors with a console warning.
 
 **M5** (Objective 5, split the state). An order detail screen shows an order header, its line items, a live shipment position, a note field the user is editing, and a theme toggle. Sort the state into client, server-cache and shared, and for every server-cache entry give a cache key, a staleness tolerance in seconds and the event that invalidates it.
 
@@ -10440,10 +10753,10 @@ Write or say your answer before opening the block. Producing an answer is what b
 | Missed item | Reread | Redo |
 |---|---|---|
 | M1 | Module 1 on scope and honesty, plus the "Which clock am I on?" block in Section 7 | Take five prompts from the case study list, classify each in under sixty seconds, and write the two signals for each |
-| M2 | Module 4 on rendering strategy, and the requirements block of the e-commerce product and checkout case study | Problem B3, then redo M2 with per-user pricing instead of per-region and see which decisions flip |
+| M2 | Module 4 on rendering strategy, and the requirements block of the news feed application case study | Problem B3, then redo M2 with per-user pricing instead of per-region and see which decisions flip |
 | M3 | Module 3 on interface requirements and Module 11 on performance | Problems B3 and I3, out loud, naming the eliminated option after every number |
 | M4 | Module 6 on component design and Module 7 on accessibility, plus the autocomplete component case study | Specify the interface for a date range picker from scratch, then diff it against the combobox answer above |
-| M5 | Module 8 on state split three ways, and Module 9 on data fetching and caching | Take the analytics dashboard case study and write its full state table, keys and invalidation triggers included |
+| M5 | Module 8 on state split three ways, Module 9 on data fetching and caching, and Module 10 on network and real-time | Take the chat application case study and write its full state table, keys and invalidation triggers included |
 | M6 | Module 11 on performance and Module 17 on observability | Problem I2, then problem I3, then write the five-cause table from memory |
 | M7 | Module 16 on testing and rollout, and Module 18 on level calibration | Answer the news feed case study at mid level, then again at staff level, and diff the two line by line |
 
@@ -10455,7 +10768,7 @@ Write or say your answer before opening the block. Producing an answer is what b
 
 ## 13. Common mistakes
 
-Technical mistakes cost you a follow-up. Delivery mistakes cost you the round. The last five rows are delivery, they are the ones that appear in debrief notes, and they are the cheapest of all of these to fix.
+Technical mistakes cost you a follow-up. Delivery mistakes cost you the round. The last five rows are delivery, they are the ones an interviewer can observe directly rather than infer, and they are the cheapest of all of these to fix.
 
 | The mistake | Why candidates make it | What the interviewer concludes | What to say instead |
 |---|---|---|---|
@@ -10565,11 +10878,11 @@ Day 1 is whatever day you start. The skip column is the hard part to write and t
 | Day | Do | Skip |
 |---|---|---|
 | 1 | Modules 1 to 3, then problems B1 and B3 | Nothing yet |
-| 2 | Modules 4 and 5, then the e-commerce product and checkout case study end to end | Its second deep dive, unless you finish early |
+| 2 | Modules 4 and 5, then the news feed application case study end to end | Its second deep dive, unless you finish early |
 | 3 | Modules 6 and 7, then the autocomplete component case study, then problem B4 | Module 12 on design systems. It is the least likely to be examined and the easiest to read later |
-| 4 | Modules 8 and 9, then the news feed application case study, then problem B2 | Module 15 on internationalisation, unless your target product ships right-to-left locales |
+| 4 | Modules 8 and 9, then the data table or grid case study, then problem B2 | Module 15 on internationalisation, unless your target product ships right-to-left locales |
 | 5 | Modules 10 and 11, then problems B5 and I4 | Module 13 on micro-frontends, apart from its refusal argument, which is problem I1 |
-| 6 | Modules 14, 16 and 17, then the brownfield case study, then problem I2 with a timer | The rich text editor, video player and collaborative document case studies |
+| 6 | Modules 14, 16 and 17, then the chat application case study, then problem I2 with a timer | The image carousel, rich text editor, video player and collaborative document case studies |
 | 7 | Module 18, then Section 12, then Section 14 | Everything unreached. Do not start new material the day before a round |
 
 **One weekend (about 5 to 7 working hours)**
@@ -10578,7 +10891,7 @@ Day 1 is whatever day you start. The skip column is the hard part to write and t
 - Saturday afternoon: one case study end to end, out loud, with a timer. Take the autocomplete component if your target companies run the component format, the news feed application otherwise.
 - Sunday morning: Modules 6, 7 and 8, then problems B4 and I6.
 - Sunday afternoon: Sections 12, 13 and 14. Rehearse the first four sentences until they run without attention.
-- Skip entirely: Modules 5, 9, 12, 13, 15 and 17, every second deep dive, and ten of the twelve case studies. One case study done properly beats five skimmed, and the difference is visible within two minutes of a real round.
+- Skip entirely: Modules 5, 9, 12, 13, 15 and 17, every second deep dive, and seven of the eight case studies. One case study done properly beats five skimmed, and the difference is visible within two minutes of a real round.
 
 **One evening (about 2 to 3 hours)**
 
@@ -10809,7 +11122,7 @@ ASCII CONVENTIONS USED IN EVERY DIAGRAM ON THIS PAGE
 
 ### 16d. One-page summary cards
 
-Twelve cards, one per case study, in the order the case studies appear.
+Twelve cards. Cards 1 to 8 are the eight case studies above, in the order they appear. Cards 9 to 12 are four further prompts that do not carry a full arc on this page, kept here in compressed form because they are common enough to be worth rehearsing.
 
 **Card 1. News feed application**
 
@@ -11044,7 +11357,7 @@ Naming our limits is cheaper than pretending we have none, and it stops you stud
 
 | Date | Change |
 |---|---|
-| August 2026 | First publication: eighteen modules, twelve case studies with the full arc and level deltas, eleven practice problems with public rubrics, and seven mastery items mapped one to one against the seven learning objectives |
+| August 2026 | First publication: eighteen modules, eight case studies with the full arc and level deltas, eleven practice problems with public rubrics, and seven mastery items mapped one to one against the seven learning objectives |
 | August 2026 | Component-scale format separated from application-scale throughout after review, including a second delivery clock, because merging the two produced a page that served neither round well |
 | August 2026 | Every figure in Sections 10, 12 and 16 re-derived from inputs stated in the same section. Figures that could not be derived were relabelled as assumptions with the sentence that says why each is reasonable, and two that eliminated no design option were deleted |
 

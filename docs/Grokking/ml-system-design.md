@@ -237,7 +237,7 @@ Say four sentences, in this order. Rehearse them once so they are automatic and 
 1. "Let me restate it as a prediction: for each X we predict Y, and the consumer of that prediction is Z." (If you cannot fill in all three slots, that is your first clarifying question.)
 2. "I am going to spend about seven minutes on the objective and the labels, then draw the system end to end, then break it on purpose." (You just told them your clock, which reads as control.)
 3. "I will optimise for A, and I will hold B as a guardrail so we do not win A by damaging it." (Naming the guardrail is the cheapest senior signal available in this round.)
-4. "Stop me if you want depth somewhere specific rather than coverage." (Interviewers take this invitation more often than candidates expect.)
+4. "Stop me if you want depth somewhere specific rather than coverage." (It costs one sentence, and it replaces your guess about what the panel wants with an answer.)
 
 ### Declaring what you are skipping
 
@@ -275,7 +275,7 @@ The rough shape: mid level spends its minutes proving a working system could be 
 
     A lot of paid interview material sells an acronym spine: one memorable word whose letters name the phases, applied in the same order to every case study. This page does not have one, and that is deliberate.
 
-    The problem is not the letters. It is that an identical spine applied to nine prompts produces an answer that sounds recited, and interviewers who run these rounds weekly now screen for that tell. The clock above is a time budget. It never appears as a heading in any case study on this page, and Module 1 teaches when to abandon it.
+    The problem is not the letters. It is that an identical spine applied to nine prompts produces an answer that could have been given for any of the nine, which is exactly the evidence that you did not read this one. The clock above is a time budget. It never appears as a heading in any case study on this page, and Module 1 teaches when to abandon it.
 
 !!! danger "When to break this clock"
 
@@ -1294,7 +1294,7 @@ Now the allocation question, which is where the design lives. Assume a violation
 | Uncertainty band, score 0.3 to 0.7 | 20% | 12,000 | Training signal where the model is least sure | Model stops improving on the boundary |
 | Uniform random | 10% | 6,000 | Unbiased measurement of prevalence and recall | You can never estimate recall, at all |
 
-The uniform random slice is the part candidates omit and interviewers probe. Its size is derivable, not arbitrary:
+The uniform random slice is the part that gets omitted, and it is the only part that makes everything above it identifiable. Its size is derivable, not arbitrary:
 
 ```
 random labels/day    = 6,000
@@ -1640,7 +1640,7 @@ For a random sample of 10,000 logged predictions, recompute every feature throug
 
     That test compares offline recomputation to logged serving values. Say what class of bug it cannot catch, before reading on.
 
-**The error most readers make here** is describing point-in-time correctness as a principle rather than as an executable check. Interviewers hear the principle from everybody. The check is what they remember.
+**The error most readers make here** is describing point-in-time correctness as a principle rather than as an executable check. The principle is free to state and constrains nothing. The check either runs in the pipeline or it does not, and only the check stops the leak.
 
 **Block 4. PURPOSE: budget the online read path, because a correct feature that arrives late is a wrong feature.**
 
@@ -1851,7 +1851,7 @@ Everything that depends on the slate belongs in re-ranking:
 - Business rules: ad load, sponsored placement, editorial pins.
 - Slate-level models: a sequence model that scores the ordered list rather than the items.
 
-The design point interviewers probe: a diversity rule implemented as a penalty inside the ranking score is worse than the same rule implemented as a slot constraint at re-rank, because the penalty is opaque, needs retuning after every model change, and cannot be audited. Slot constraints are checkable by looking at the output.
+The design point that decides whether the rule survives contact with production: a diversity rule implemented as a penalty inside the ranking score is worse than the same rule implemented as a slot constraint at re-rank, because the penalty is opaque, needs retuning after every model change, and cannot be audited. Slot constraints are checkable by looking at the output.
 
 ### The funnel diagram
 
@@ -1943,7 +1943,7 @@ The 190 ms above is the sum of stage p99s, which the pre-question showed is the 
 
 81 ms of medians against a 195 ms server budget leaves 114 ms of slack, which is 58 percent. That is the number that makes the p99 target achievable: any single stage can go to its p99 and several can go well past it while the request still lands inside the budget.
 
-**The error most readers make here** is treating a budget as an allocation of the target. It is an allocation of the median, with the remainder held as tail absorption. Interviewers who run latency-critical services notice the difference immediately.
+**The error most readers make here** is treating a budget as an allocation of the target. It is an allocation of the median, with the remainder held as tail absorption. Allocate the target instead and the first stage to jitter blows the whole budget, because nothing was held back to absorb it.
 
 !!! note "Say it before you read on"
 
@@ -2453,7 +2453,7 @@ Figure the towers never meet before the dot product, by construction
 | Mixed negatives: in-batch plus uniformly sampled from the catalogue | In-batch negatives are all items someone engaged with, which is not the population the index searches | The model never learns to reject the 99.99 percent of the catalogue that is irrelevant |
 | Temperature on the dot product | Controls how peaked the softmax is, and interacts with the negative count | Untuned temperature makes the loss either flat or degenerate |
 
-The popularity correction is the one interviewers probe. The mechanism is simple enough to state: if an item appears as a negative with probability proportional to its frequency Q(j), subtracting log Q(j) from its logit removes that bias. The sampled-softmax formulation with this correction is described in Yi and colleagues at RecSys 2019, and naming the source is better than presenting it as folklore.
+The popularity correction is the part worth being precise about, because without it the sampling scheme quietly encodes a popularity prior into the model. The mechanism is simple enough to state: if an item appears as a negative with probability proportional to its frequency Q(j), subtracting log Q(j) from its logit removes that bias. The sampled-softmax formulation with this correction is described in Yi and colleagues at RecSys 2019, and naming the source is better than presenting it as folklore.
 
 **The cost of keeping item vectors current** connects straight back to module 7:
 
@@ -2529,7 +2529,7 @@ I choose a moderate network: embeddings for the identifiers with a frequency cut
 
 Then I do the comparison that earns credit rather than asserting the choice: I would ship boosted trees first. They train in under an hour, they need no embedding infrastructure, and they establish the baseline. The network has to beat that baseline on an online experiment before any of its infrastructure is justified.
 
-**The error most readers make here** is proposing the sophisticated model as the starting point. The sophisticated model is the second model. Interviewers who have shipped ranking systems are listening for whether you know that.
+**The error most readers make here** is proposing the sophisticated model as the starting point. The sophisticated model is the second model, and the first one is the thing that tells you whether the second is worth building at all.
 
 **Block 3. PURPOSE: decide multi-task against separate models on cost and label sparsity, not on elegance.**
 
@@ -2671,8 +2671,10 @@ and compute what that decision costs per million impressions.
     0.50 x 0.016 x 1000 = 8.00 per mille. Every one of those slots earns 2.00
     per mille less than the floor you set to protect it.
 
-    Per million impressions that is 1,000 x 2.00 = 2,000 currency units of
-    inventory sold below its own reserve.
+    Per million served impressions that is 1,000 x 2.00 = 2,000 currency units
+    of inventory sold below its own reserve. Served impressions, not ad
+    requests: requests that no bid filled never became inventory, so they do not
+    belong in this denominator. Section 9d puts a fill rate on that gap.
 
     AUC will never show you this. Every decile is over-predicted by roughly the
     same factor, and AUC is invariant to any strictly increasing transform of the
@@ -2895,12 +2897,24 @@ Inputs, stated before I touch anything:
 
 | Input | Value | Status |
 |---|---|---|
-| Impressions per day | 2,000,000,000 | GIVEN |
-| Click rate | 2 percent | GIVEN |
+| Ad requests per day | 2,500,000,000 | GIVEN |
+| Fill rate, requests that end in a served impression | 0.80 | ASSUMED. A request yields no impression when no bid clears the floor, when every eligible ad fails a brand-safety or frequency-cap filter, or when the slot is never rendered. Measure yours, because every row count below scales linearly with it |
+| Impressions per day | 2,000,000,000 | DERIVED: 2.5e9 requests x 0.80 fill |
+| Click rate per served impression | 2 percent | GIVEN |
 | Ad slots per page | 3 | GIVEN |
 | Slot propensities (1, 2, 3) | 1.00, 0.55, 0.38 | ASSUMED, from a 1 percent randomised-slot slice. Measure yours; the shape varies with layout |
 | Conversion maturity F(1 day) | 0.62 | ASSUMED, from matured cohorts 45 days old. Recompute monthly |
 | Auction floor | 10.00 per 1000 impressions | GIVEN |
+
+**Requests are not impressions, and the gap is a design fact rather than a
+rounding error.** The ranker scores all 2.5 billion requests, but only the 2
+billion that clear the floor and the filters become impressions carrying a
+label. The other 500 million are scored and discarded.
+
+Two consequences follow immediately, and both are propagated below.
+
+- Row counts are impression counts, so they are `requests x fill`, not requests. The 2e9 in Block B is 2.5e9 x 0.80.
+- Per-mille money moves with the same factor. The 2,000 currency units of under-floor inventory per million served impressions in 9a is 0.80 x 2,000, so 1,600 per million ad requests. Quote the wrong denominator and you are 25 percent out.
 
 #### Block A. Purpose: decide which properties the score must have
 
@@ -2925,7 +2939,8 @@ without one. Most of the time it does.
 
 #### Block B. Purpose: make training affordable without lying about the level
 
-Full log is 2e9 rows per day. At 2 percent click rate that is 40 M positives and
+The impression log is 2.5e9 requests times the 0.80 fill rate, so 2e9 rows per
+day. At 2 percent click rate that is 40 M positives and
 1.96e9 negatives per day. I keep all positives and keep negatives with
 probability w = 0.05, giving 98 M negatives and a training set of 138 M rows.
 That is 14 times smaller, which is the difference between a 90 minute run and a
@@ -2974,6 +2989,16 @@ bias correction is nearly free. With twenty slots and a propensity of 0.05 at
 the bottom, the same correction would cost most of my data and I would have to
 clip, or restrict training to the top few slots, or run a small randomised slice
 to get cleaner estimates.
+
+**The fill rate hides a second selection that propensity weighting cannot
+touch.** Slot weights repair which of three positions an ad landed in. They do
+nothing about the 500 million requests per day that produced no impression at
+all, because a request with no served ad has no outcome to reweight.
+
+So the honest claim is narrower than it looks: this model is calibrated on
+filled inventory. If you want to know what the unfilled 20 percent would have
+done, the only source is a small forced-fill slice that serves below the floor
+on a capped budget and logs the result.
 
 !!! tip "Self-explanation prompt"
 
@@ -3134,7 +3159,8 @@ in three sentences, with one number.
 
     Concretely, at a 10.00 per mille floor and a 0.50 bid, slots predicted at
     15.50 eCPM were earning 8.00, which is 2,000 currency units of under-floor
-    inventory per million impressions.
+    inventory per million served impressions, or 1,600 per million ad requests
+    at the 0.80 fill rate assumed in 9d.
 
 **Q2.** A colleague fits position propensities using a click model trained on the
 same logs your production ranker generated, with no randomisation anywhere in
@@ -5635,9 +5661,10 @@ right.
 
 Distributed systems interviews have a shared vocabulary of failure: retry storm,
 cache stampede, hot key, split brain. Machine learning systems have the same
-recurring failures and almost no shared names for them, so candidates describe
-them from scratch every time and interviewers cannot tell recognition from
-improvisation. This module gives them names, symptoms and repairs.
+recurring failures and almost no shared names for them, so each one gets
+described from scratch every time and the description carries no evidence that
+the failure was ever seen before. This module gives them names, symptoms and
+repairs.
 
 ### 15a. Predict first
 
@@ -6093,10 +6120,10 @@ experience.
     the others could not name. Level shows in what you consider your problem, not
     in what you know.
 
-**The mistake this module exists to correct.** Candidates try to level up by
-adding vocabulary. Interviewers read vocabulary as noise and read scope,
-prioritisation and self-correction as level. The additions that actually raise a
-rating are structural.
+**The mistake this module exists to correct.** The instinct is to level up by
+adding vocabulary. But the three answers above differ in scope, prioritisation
+and self-correction, not in vocabulary, and none of them names a technique the
+others could not. The additions that change the level are structural.
 
 | Level | What the answer treats as its problem | Typical failure at this level |
 |---|---|---|
@@ -8388,7 +8415,9 @@ These numbers are assumptions, stated as illustrations. The transferable part is
 | Rate limit per entity | Cap attempts per card, device, IP prefix and email domain, regardless of score | False positives on shared infrastructure, for example a corporate network |
 | Obscure the reason | Return one generic decline reason to the merchant | Genuine customers and honest merchants lose useful diagnostics |
 
-Price the randomisation, because interviewers ask. Assume the randomised band carries 2 percent of fraud and you randomise 0.5 percent of decisions in it. That is roughly 800 extra fraudulent approvals per day at 60 dollars, so 48,000 dollars per day. That is 2.4 percent of the 2.04 million daily net benefit. State the number, then say it is worth it only if you can show probing exists, and that the detector for probing is a per-entity attempt distribution with a long flat tail.
+Price the randomisation, because an exploration budget with no number attached is a wish rather than a design. Assume the randomised band carries 2 percent of fraud and you randomise 0.5 percent of decisions in it. That is roughly 800 extra fraudulent approvals per day at 60 dollars, so 48,000 dollars per day, which is 2.4 percent of the 2.04 million daily net benefit.
+
+State that number, then say the spend is worth it only if you can show probing exists. The detector for probing is a per-entity attempt distribution with a long flat tail.
 
 **Rings are invisible to per-transaction scoring.** Build a graph over shared attributes: card, device, IP prefix, shipping address, email domain, billing name.
 
@@ -9348,7 +9377,9 @@ Score all four on every problem. Two Strongs and two Adequates is a passing seni
     | Depth | Accounts for graph overhead separately from vectors, and for the second copy during a rebuild | Counts only vector bytes |
     | Communication | Says that the recall cost must be measured, not assumed | Asserts a recall number with no source |
 
-    Model answer: vectors are 200e6 times 256 times 4 bytes, so 205 GB. The graph at 64 base-layer neighbours times 4 bytes is 256 bytes per vector, round to 300 with upper layers, so 60 GB. Total 265 GB against 128 GB usable per node is 2.07, so three shards is the floor and four is the answer, because at three I cannot hold a second index copy during a swap or lose a node.
+    Model answer: vectors are 200e6 times 256 times 4 bytes, so 205 GB. The graph is connectivity only: 64 reserved neighbour slots per node at layer 0 times 4 bytes is 256 bytes per vector, and the layers above add about one slot, so 260. I carry 300 as a deliberate round-up for per-node bookkeeping, giving 60 GB.
+
+    Total 265 GB against 128 GB usable per node is 2.07, so three shards is the floor and four is the answer, because at three I cannot hold a second index copy during a swap or lose a node.
 
     int8 brings vectors to 51 GB and the total to 111 GB, which fits one node in theory and two in practice for the same reason. If I quantize, I retrieve deeper and rescore the top few hundred with full-precision vectors, and I measure the recall loss on my own query set rather than quoting one.
 
@@ -9995,7 +10026,7 @@ Inputs marked as assumed are chosen because they are typical order-of-magnitude 
 | 3,000 candidates into the ranker | 150 ms of ranking budget divided by 0.05 ms | Any candidate generation stage that returns tens of thousands |
 | 150 ms of ranking budget | 300 ms client-side p99, minus 40 ms assumed network and TLS, minus 50 ms of measured fixed stages, minus 60 ms of reserved headroom | Cross-encoders as the main ranker, since at 2 ms per item they buy only 75 candidates |
 | 205 GB of vectors | 200e6 items times 256 dimensions times 4 bytes | Holding float32 vectors for this catalogue on one machine |
-| about 300 bytes per vector of graph | 64 base-layer neighbour identifiers at 4 bytes, rounded up for upper layers | Sizing an index from vector bytes alone |
+| about 300 bytes per vector of graph | 64 reserved neighbour slots at layer 0 at 4 bytes is 260 with the layers above, rounded up for bookkeeping | Sizing an index from vector bytes alone |
 | Four index shards | 265 GB total divided by 128 GB usable per node is 2.07, so three is the arithmetic floor and four allows one spare plus a second copy during a swap | Three shards, which cannot rebuild or survive a node loss |
 | 111 GB after int8 quantization | 200e6 times 256 times 1 byte, plus the same 60 GB of graph | The claim that quantization removes the need to think about node count |
 | 144 dollars per full retrain | 8 accelerators times 6 hours is 48 accelerator-hours, at an assumed 3 dollars per accelerator-hour on demand | Nothing on its own. It earns its place only next to the cadence comparison below |

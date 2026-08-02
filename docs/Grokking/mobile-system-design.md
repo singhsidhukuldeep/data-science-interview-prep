@@ -73,11 +73,11 @@ Seniority is a weak readiness signal, and a job title is worse. Prerequisite mas
 | Modules 8 to 11, images, uploads, push and transports, sync | 153 to 206 min | 12 to 20 min | included below |
 | Modules 12 to 15, storage tiers, battery, concurrency, platform variation | 96 to 126 min | 12 to 20 min | included below |
 | Modules 16 to 20, security, release, SDK design, mechanics, levels | 112 to 153 min | 15 to 25 min | included below |
-| Eleven case studies, attempted before reading each arc | included above | 154 to 198 min | included below |
+| Eight case studies, attempted before reading each arc | included above | 112 to 144 min | included below |
 | Two practice sets, eleven problems | included above | 156 to 212 min | included below |
 | Two timed self-mocks, scored against the public rubric | 0 | 110 to 150 min | included below |
 | Five review sessions on days 1, 3, 7, 21 and 60 | 0 | 0 | 180 to 240 min |
-| **Total** | **540 to 720 min, so 9 to 12 h** | **480 to 660 min, so 8 to 11 h** | **180 to 240 min, so 3 to 4 h** |
+| **Total** | **540 to 720 min, so 9 to 12 h** | **438 to 606 min, so 7 to 10 h** | **180 to 240 min, so 3 to 4 h** |
 
 !!! note "How these were computed, so you can argue with them"
 
@@ -87,16 +87,16 @@ Seniority is a weak readiness signal, and a job title is worse. Prerequisite mas
 
     | Practice component | Unit cost | Count | Total |
     |---|---|---|---|
-    | Attempt each case study before reading its arc | 14 to 18 min | 11 | 154 to 198 min |
+    | Attempt each case study before reading its arc | 14 to 18 min | 8 | 112 to 144 min |
     | Faded examples inside the modules | 3 to 5 min | 20 | 60 to 100 min |
     | Blocked practice set | 12 to 16 min | 5 | 60 to 80 min |
     | Interleaved and cumulative set | 16 to 22 min | 6 | 96 to 132 min |
     | Timed self-mock plus rubric scoring | 55 to 75 min | 2 | 110 to 150 min |
-    | **Sum** | | | **480 to 660 min** |
+    | **Sum** | | | **438 to 606 min** |
 
     The five faded-example rows in the main table (9 to 15, 12 to 20, 12 to 20, 12 to 20, 15 to 25) are that 60 to 100 minute line split across the module clusters. Review assumes five sessions of 36 to 48 minutes, which is the 180 to 240 minute column.
 
-    Every figure is padded by roughly 15 percent, because self-estimates of study time run optimistic. Minutes are the authoritative unit here; a single headline number would be more marketable and less true. At an hour a day this is three weeks, full time it is four days.
+    Every figure is padded by roughly 15 percent, because self-estimates of study time run optimistic. Minutes are the authoritative unit here; a single headline number would be more marketable and less true. The three columns sum to 1,158 minutes at the low end and 1,566 at the high end, which is 19 to 26 hours. At an hour a day that is three to four weeks, and full time it is about three days.
 
 ---
 
@@ -212,7 +212,7 @@ Low ends total 540 minutes, high ends total 720. That is the 9 to 12 reading hou
 
 The hub owns the [shared clock](index.md#the-clock) used across all seven courses. This section is the mobile variant of it, and the shape is genuinely different: fewer minutes on capacity, more on what happens when the network, the OS or the release process takes something away from you. Read the hub's version once; do not read it twice.
 
-Most candidates who fail a mobile round did not lack a fact. They drew a screen, a view model and a repository, then answered every follow-up inside that picture, never committing to a budget, an offline behaviour, or a plan for the version of the app that is already in the store.
+The failure this clock is built to prevent is not a missing fact. It is an answer that draws a screen, a view model and a repository, then answers every follow-up inside that picture, never committing to a budget, an offline behaviour, or a plan for the version of the app that is already in the store. That answer can be entirely correct and still leave nothing to score.
 
 ### The 45 minute round
 
@@ -250,7 +250,7 @@ Say four sentences, in this order. Rehearse them once so they are automatic and 
 1. "Let me restate the boundary: the client owns X, the server owes me Y, and the contract between them is Z." (If you cannot fill all three slots, that is your first clarifying question.)
 2. "I am going to spend about six minutes on constraints and budgets, then draw the client end to end, then break it on purpose." (You just told them your clock, which reads as control.)
 3. "I will assume this has to work with no network and survive the process being killed, unless you tell me otherwise." (Naming those two up front is the cheapest senior signal in this round.)
-4. "Stop me if you want depth somewhere specific rather than coverage." (Interviewers take this invitation more often than candidates expect.)
+4. "Stop me if you want depth somewhere specific rather than coverage." (This costs one sentence and gives the other person a cheap way to redirect the round before you have spent ten minutes in the wrong place.)
 
 ### Declaring what you are skipping
 
@@ -288,7 +288,7 @@ The rough shape: mid level spends its minutes proving a working client could be 
 
     Educative's paid courses each ship an acronym spine and apply it identically to every case study; the hub [lists them with dated sources](index.md#the-shared-design-framework). Those are theirs, not ours.
 
-    The problem is not the letters. It is that one spine applied to six prompts produces an answer that sounds recited, and interviewers who run these rounds weekly now screen for that tell. The clock above is a time budget. It never appears as a heading in any case study on this page, and Module 1 teaches when to abandon it.
+    The problem is not the letters. It is that one spine applied to six prompts produces the same answer six times, and a design round is scored on the choices a prompt forces, not on the order the sections arrive in. A recited spine hides exactly the choices that are being graded. The clock above is a time budget. It never appears as a heading in any case study on this page, and Module 1 teaches when to abandon it.
 
 !!! danger "When to break this clock"
 
@@ -349,7 +349,7 @@ A mobile design round is not one question type. Four shapes recur, and they rewa
 
 **The asymmetry that defines this round.** A backend design round rewards you for scaling up. A mobile design round rewards you for degrading down. The client is the only node in the system with a human watching it, running on hardware you did not choose, on a network you cannot see, inside a process the operating system may terminate without asking.
 
-**What the rubric usually contains.** Interviewers vary, but the recurring columns are close to these seven.
+**The seven things we think this round is actually judging.** We cannot publish anyone else's scoring sheet, so this is our own list, derived from the asymmetry above rather than reported from inside a hiring loop. Treat it as a checklist to argue with.
 
 | Rubric column | A weak answer looks like | A strong answer looks like |
 |---|---|---|
@@ -363,7 +363,7 @@ A mobile design round is not one question type. Four shapes recur, and they rewa
 
 ### 1c. Why some interviewers run a backend round under a mobile title
 
-This is common enough that having a script for it is worth more than another architecture pattern.
+You cannot control whether this happens to you, and the cost of improvising through it is a third of the round, so a rehearsed script is worth more here than another architecture pattern.
 
 | Cause | What you observe | What it means for you |
 |---|---|---|
@@ -930,7 +930,7 @@ I say the consequence out loud: "This means the first two seconds of video will 
 
 Continuous video decode plus sustained network is close to the worst combination a phone can run, so I do not promise a number I cannot derive. I promise a method: "I would set the budget as a percentage of battery per hour of active viewing, measured on a fixed device at fixed brightness, and treat a regression above a set threshold as release blocking. I would also add a low power mode behaviour: drop the prefetch depth from three items to one and cap the bitrate ladder."
 
-**The error most readers make here** is inventing a milliwatt figure. Stating the measurement and the degradation policy is stronger than a number you cannot defend, and interviewers notice the difference.
+**The error most readers make here** is inventing a milliwatt figure. Stating the measurement and the degradation policy is stronger than a number you cannot defend, because the measurement survives a follow-up question and the invented number does not.
 
 **Result.** Four budgets, each attached to a tier, each ruling out at least one design option, and one of them explicitly handed back to the product as a trade-off. That block takes about three minutes to say and it makes every later decision in the round defensible.
 
@@ -1612,7 +1612,7 @@ Derive the effect. Assume 10,000 clients failed during the same incident, and th
 - With full jitter over an 8 second window divided into 100 millisecond buckets, there are 80 buckets, so the expected arrivals per bucket are 10,000 divided by 80, which is **125**.
 - That is an 80 times reduction in peak, from arithmetic alone, with no coordination between clients.
 
-**The retry budget, which is the part most candidates miss.** Cap retries as a fraction of successful requests over a rolling window, for example 10 percent. When the budget is exhausted, fail immediately without retrying.
+**The retry budget, which is the tier most designs leave out.** Cap retries as a fraction of successful requests over a rolling window, for example 10 percent. When the budget is exhausted, fail immediately without retrying.
 
 Why: during a total outage there are no successes, so the budget is zero, so clients stop retrying entirely. Without a budget, a full outage means every client sends 1 attempt plus 5 retries, which is **6 times normal load** aimed at a server trying to come back. The budget converts a self-inflicted denial of service into a graceful stop.
 
@@ -1779,7 +1779,7 @@ The full pipeline (tiers, dedupe, budgets, deadlines) is the right default for a
 | Scale threshold below which it is over-engineering | An app with under about 20 endpoints, no prefetching and no background sync. There is nothing for the tiers to separate, because everything is user blocking |
 | The cheaper alternative | Three things, in this order: a total deadline instead of a retry count, full jitter, and idempotency keys on writes. Those three are perhaps 40 lines and they prevent the two failures that actually reach production |
 | Failure mode of over-applying | Four queues configured for an app that only ever has one request in flight, and a retry budget that fires during normal operation because the success window is too small to be statistically meaningful at low traffic |
-| The specific over-engineering tell | Building a custom transport or a bespoke connection pool. Use the platform stack and configure it. Almost nobody needs to write this layer, and interviewers know it |
+| The specific over-engineering tell | Building a custom transport or a bespoke connection pool. Use the platform stack and configure it. Writing this layer yourself means owning connection reuse, protocol negotiation and every proxy quirk on every network your users are on, which is a permanent cost for a benefit you would have to measure to believe |
 
 ---
 
@@ -2917,14 +2917,365 @@ Push is cheap to add and expensive to get right, and there are cases where the r
 
 ---
 
+## Module 11. The sync engine
+
+**Time: 45 to 60 minutes reading, 20 to 30 minutes practice.**
+
+Every other subsystem on this page degrades when it fails. A slow image is slow, a dropped push is late, a missed frame is ugly. Sync is the one that destroys work the user typed, silently, with nothing in your telemetry to show for it. This module builds a sync engine in the order you would draw it in a round, and prices each mechanism before adding it.
+
+### 11a. Predict first
+
+Here is the sync design of a notes app that runs on a phone and a tablet.
+
+```
+local write        update the note row  then POST it
+send queue         in memory list  drained by a background task
+conflict rule      last write wins  by the device clock field
+delete             remove the row locally  then DELETE on the server
+pull               GET /notes  the whole list  on every foreground
+after a kill       queue rebuilt by scanning rows marked dirty
+
+Figure a sync design with six independent defects
+
+```
+
+??? note "Show answer"
+
+    Prediction asked for: name at least four defects, then say which one destroys data without telling anyone.
+
+    | Defect | Consequence |
+    |---|---|
+    | In-memory send queue | The process is killed between the local write and the drain. The intent is gone, and the interface has already said saved |
+    | Local write and send are separate steps | There is no single instant at which the edit became durable, so no relaunch path can tell an unsent edit from a sent one |
+    | Queue rebuilt from rows marked dirty | A dirty row carries no idempotency key and no record of which attempt was in flight, so an ambiguous timeout becomes a duplicate note on the server |
+    | Last write wins by the device clock | A device whose clock runs fast wins every conflict it takes part in, and the losing edit is discarded with no trace. See the arithmetic in 11c |
+    | Local delete with no tombstone | The next pull from the other device, which still holds the note, recreates it. Deletes do not stick |
+    | Full list pull on every foreground | Priced in 11c: about 2 MB against about 920 bytes of real change, on every foreground, for the life of the account |
+
+    The one that destroys data is the clock rule. A discarded edit is not recoverable, and nothing later in the design corrects it.
+
+    The one the user notices first is the resurrecting delete, because a note deleted last week reappearing on the other device is unmistakable and repeatable.
+
+### 11b. Two shapes of sync, and the count that chooses between them
+
+There are two honest answers to "how does a change travel", and picking the wrong one costs a month.
+
+| Dimension | Operation log | State sync |
+|---|---|---|
+| The unit that travels | The operation: insert this text at this offset, add this tag | The entity or the field, as it stands after the change |
+| What the server does | Assigns an order, and clients rebase their local operations onto it | Compares a version and accepts or rejects |
+| Cost of a 30 day absence | Every operation made anywhere in 30 days, or a snapshot plus a suffix | One row per entity that changed, however many times it changed |
+| Merge quality | Character level, inside a single field | Field level at best |
+| Failure mode | A lost or misordered operation corrupts the document, and the corruption is permanent | A lost update is overwritten, and the document stays well formed |
+| Build cost, stated honestly | Weeks to months, plus a permanent operational surface | Days to weeks |
+
+**The count that chooses.** How many writers can touch the same object inside the same second?
+
+- One writer on several devices. Use state sync with a per-field rule table. Simultaneous edits are rare, and when one is lost the same person can see it and retype it.
+- Several writers on the same object at once. Use an operation log or a CRDT, because "the loser retypes" stops being acceptable the moment the loser is a different person.
+
+Say that count out loud in a round. "One writer, several devices" is the sentence that lets you skip a month of design without sounding as though you skipped it.
+
+### 11c. Five mechanisms, each priced before it is added
+
+#### Mechanism 1. The write-ahead pattern, which is one transaction and two rows
+
+The local row and the outbox row commit together, and the interface says saved only after that commit returns.
+
+| Order of operations | Crash window | What the user loses |
+|---|---|---|
+| Send first, write locally on the acknowledgement | Between the acknowledgement and the local write | Nothing permanent. The server holds the edit and the next pull repairs the device |
+| Write locally, then enqueue in a second transaction | Between the two | Everything. The interface said saved, the row is on disk, and no intent to send it exists |
+| Write locally and enqueue in one transaction | None that matters | Nothing. On relaunch the outbox still holds the intent, with its key |
+
+**The rule.** The word "saved" in the interface is a claim about durability, so it may only appear after the transaction that contains both rows has committed. Anything else is a claim you cannot keep.
+
+The idempotency key is generated at enqueue, not at send, for the reason module 6 gives: a key generated per attempt turns every retry into a new object.
+
+#### Mechanism 2. Delta sync and the change token
+
+A change token is an opaque server cursor over the change stream for one account. It is a position, and the server owns it. The client stores it and never interprets it.
+
+| Part of the contract | Meaning |
+|---|---|
+| Token in the request | The position the client has fully applied |
+| Changes in the response | Entities changed since that position, including tombstones |
+| Next token in the response | The position the client will have applied once this batch commits |
+| Reset flag in the response | The token is older than the server's retention, so the client must do a full resync |
+
+Three reasons the token is not a timestamp: two writes can land in the same millisecond, server nodes disagree about the current millisecond, and a timestamp cannot express "you are too far behind to catch up incrementally".
+
+**Price it.** Assume 400 notes at an assumed 5 KB each, which is a plausible average for a text note with light formatting. Measure your own median and 90th percentile rather than adopting this one.
+
+- Full pull: 400 times 5 KB equals 2,000 KB, about **2 MB**.
+- Steady state: assume 4 notes change between one foreground and the next, and that the changed fields on a note average 200 bytes.
+- Delta body: 4 times 200 equals 800 bytes. Plus an assumed 120 bytes of envelope and new token, so about **920 bytes**.
+- Ratio: 2,000,000 divided by 920 is about **2,170 times**.
+- At 6 foregrounds a day: the full pull is 12 MB a day and about **360 MB a month** per user. The delta is 5,520 bytes a day, about **166 KB a month**.
+
+That is the number that eliminates the full pull, and it eliminates it on the user's data plan rather than on your server bill, which is the version of the argument that wins the room.
+
+#### Mechanism 3. Tombstones, and the horizon they force
+
+A delete has to travel as a value. An absence cannot travel, because a delta response contains only what changed, and "not present" is indistinguishable from "not changed".
+
+A tombstone row is small: entity identifier, entity type, and the version at which it was deleted. No payload, because the payload is what you are deleting.
+
+**Price the retention.** The product promise is 30 days offline, so retention is 35 days, with the extra 5 days as margin for a device that returns late.
+
+- Assume 2 deletions a day for an active user, so about **70 tombstones** live at any moment.
+- At an assumed 80 bytes a row that is 5,600 bytes, about **5.6 KB per user**.
+- Across 10 million accounts that is about **56 GB**, which is small enough that the horizon is a product decision rather than a storage one.
+
+| If the horizon is | Then |
+|---|---|
+| Shorter than the offline promise | A returning device never learns about the deletes it missed, and it pushes the old rows back up. This is the resurrection bug from 11a |
+| Equal to the offline promise | Correct only if no device is ever late. Add margin |
+| Much longer than the promise | Harmless on cost at this size, and it lowers the full resync rate. Keep the reset path anyway, because a device restored from an old backup can be arbitrarily far behind |
+
+The reset path is not optional. A client whose token predates retention must be told to discard its unsynced-clean state and pull the full set again, and its outbox must survive that reset untouched.
+
+#### Mechanism 4. Clock skew, and what you are allowed to order by
+
+| Clock | May you order by it | Why |
+|---|---|---|
+| Device wall clock | Never | The user can set it, time zones and daylight saving move it, and it drifts against every other device |
+| Device monotonic clock | Only inside one process lifetime | It restarts at boot and has no meaning on another device |
+| Server assigned per-entity version integer | Yes, for conflict detection | There is one writer of record, so a compare-and-set is exact |
+| Server assigned per-collection sequence | Yes, for ordering and for the change token | Same reason, and it gives the token something to be a position in |
+| Hybrid logical clock | Yes, when writes commit without passing a single server | It preserves causal order and stays near wall time, at the cost of carrying a clock on every record |
+
+**The skew arithmetic.** Assume one device's clock is 90 seconds fast, which happens through a hand-set clock or a device that has not reached a time server recently.
+
+Under last write wins by device clock, every edit from that device beats every edit the other device made in the previous 90 seconds. The user on the correct device fixes a typo, watches it revert, fixes it again, watches it revert. The defect is systematic rather than intermittent, and it produces no error to log.
+
+**Conflict rules are chosen per field, not per app.**
+
+| Field | Rule | Why that rule |
+|---|---|---|
+| Title | Last writer by server version | Short, rarely edited on two devices at once, and a lost title edit is visible and cheap to redo |
+| Body | Three way merge against the common ancestor, and present both versions when the merge fails | A silently lost paragraph is not recoverable by the user, so the design pays for the ancestor copy |
+| Pinned flag | Last writer by server version | Boolean, no information is lost by taking one of them |
+| Tags | Set merge with a per-element tombstone | Union alone resurrects removed tags. Worked below |
+| Reminder time | Last writer by server version | One value, and the user can see which one survived |
+
+**A worked set merge, rather than a named one.** Tags on one note. Every add carries a unique add identifier, and every remove records the add identifiers it observed.
+
+| Step | Phone | Tablet |
+|---|---|---|
+| Start, both in sync | adds {work as a1} | adds {work as a1} |
+| Both go offline | | |
+| Local edit | Adds "urgent" as a2 | Removes "work", observing a1 |
+| State before merge | adds {a1, a2}, removes {} | adds {a1}, removes {a1} |
+| After merge | adds {a1, a2}, removes {a1} | same |
+| Visible tags | urgent | urgent |
+
+Compare the two cheaper rules on the same inputs. A plain union gives `{work, urgent}`, so the removed tag returns. Last writer wins on the whole tag field gives either `{work, urgent}` or `{}` depending on which device synced second, so one of the two edits vanishes. Only the per-element rule keeps both intentions.
+
+The cost is real and worth stating: every element carries an identifier, and the remove set grows. It needs the same retention horizon and the same compaction as tombstones, for the same reason.
+
+#### Mechanism 5. What resumable means after the process is killed
+
+Three things have to be on disk before a sync starts, and one rule governs when the third of them moves.
+
+1. The outbox rows, with their idempotency keys and their state.
+2. The change token the client has fully applied.
+3. Nothing else. In particular, no in-memory list of what is in flight.
+
+**The rule.** A pulled batch is applied and the token is advanced in the same transaction. Then process death leaves exactly two possible outcomes: the batch and the token both landed, or neither did and the batch is refetched. Applying a batch and advancing the token separately is the bug that loses changes permanently, because the refetch will never ask for them again.
+
+```
++-----------+  1 write  +===============+  2 drain  +- - - - +
+| EDITOR    |---------->| LOCAL STORE   |==========>| SERVER |
+| says saved|           | + OUTBOX ROW  |  by key   |        |
++-----------+           | in ONE txn    |           |        |
+                        +=======+=======+           |        |
+                                ^                   |        |
+                        +-------+-------+  3 pull   |        |
+                        | APPLY BATCH   |<==========|        |
+                        | + ADVANCE     |  by token +- - - - +
+                        | TOKEN, ONE txn|
+                        +---------------+
+
+Figure the sync loop. The double edged box is durable on-device state:
+the note row and its outbox row commit together, so a write the editor
+called saved survives process death. The pull is durable the same way,
+because the applied batch and the advanced change token commit in one
+transaction. The dashed box is the server, which changes without a
+release. The solid arrow is work a user is waiting on and the double
+arrows are deferred work nobody is waiting on
+
+```
+
+For a long resync, page it. Ask for a bounded number of entities, apply that page with its token in one transaction, then ask again. A device returning after 30 days then makes progress that survives being killed on page 7 of 40, rather than starting over each time and never finishing on a bad connection.
+
+### 11d. Worked example: sync for a notes client
+
+The prompt: notes on a phone, a tablet and the web. One person owns each note. It must work offline for up to 30 days, and no note may be lost silently.
+
+**Block 1. PURPOSE: choose the shape first, because every mechanism below is downstream of it.**
+
+One writer per note across several devices, so state sync with a per-field rule table. I say the count out loud and I say what I am rejecting: an operation log would buy character level merging inside the body, and it would cost weeks plus a permanent rebase surface, for a conflict that this product creates rarely.
+
+I also name the condition that would change my mind: if the product later adds shared notes with two people typing, the body field alone moves to an operation log and the rest of the design survives.
+
+**The error most readers make here** is choosing the shape by prestige rather than by the writer count, and then defending a CRDT for data that only one person ever writes.
+
+!!! note "Say it before you read on"
+
+    Say which single field of a note would move first if shared editing arrived, and why the other fields would not move with it.
+
+**Block 2. PURPOSE: make the write durable at the exact moment the interface claims it is.**
+
+One transaction writes the note row and an outbox row holding the entity identifier, the changed fields, an idempotency key generated here, the base version the edit was made against, and the state Pending.
+
+The outbox is keyed by entity identifier plus operation type, so a second edit to the same note before the first has started sending replaces the pending row instead of queueing a second one. If the first has started, the second queues behind it with a fresh key, because it genuinely is a second operation.
+
+**The error most readers make here** is generating the idempotency key in the network layer. A retry after relaunch then carries a new key, and the server sees a second note.
+
+**Block 3. PURPOSE: size the pull so that a foreground is affordable on a data plan.**
+
+Change token, not a full list. Using the 11c arithmetic, the steady state delta is about 920 bytes against about 2 MB for the full set, and at 6 foregrounds a day that is about 166 KB a month instead of about 360 MB.
+
+The response carries changed entities, tombstones and the next token. The client applies the whole batch and advances the token in one transaction.
+
+**The error most readers make here** is treating the token as a timestamp so that they can "just filter by updated_at". That loses every write that landed in the same millisecond as the cutoff and gives no way to express "too far behind".
+
+!!! note "Say it before you read on"
+
+    Say what the client must do differently on the very first sync, when it has no token at all, and why that is not the same code path as a reset.
+
+**Block 4. PURPOSE: make deletes stick, and bound what they cost.**
+
+Deletes travel as tombstones. Retention is 35 days against a 30 day offline promise, which by the 11c arithmetic is about 5.6 KB per user and about 56 GB across 10 million accounts.
+
+A client whose token is older than retention receives the reset flag. On reset it discards its clean local state and pulls the full set, and it does not touch the outbox, because unsent local work is not stale, it is unsent.
+
+**The error most readers make here** is deleting the local row on reset, outbox included. That converts a recoverable staleness problem into permanent data loss, and it is the single most expensive line of code in a sync engine.
+
+**Block 5. PURPOSE: choose a conflict rule per field, and say what the user sees for each.**
+
+| Field | Rule | What the user sees on a conflict |
+|---|---|---|
+| Title | Server version wins the compare-and-set, loser is refetched | The other device's title, with no prompt |
+| Body | Three way merge against the stored ancestor | A merged body, or a conflict copy of the note if the merge fails |
+| Pinned | Server version wins | The other device's value |
+| Tags | Per-element merge, worked in 11c | The union of adds minus observed removes, which is both intentions |
+
+The body row is the one that costs something: keeping a common ancestor per note roughly doubles the storage for the body field. That is the price of not losing a paragraph, and it is worth saying the price out loud rather than pretending the merge is free.
+
+**The error most readers make here** is applying one rule to the whole entity. A note is not one value, and treating it as one is what turns a tag change into a lost paragraph.
+
+**Block 6. PURPOSE: make the whole loop survive the process being killed at the worst moment.**
+
+Nothing about what is in flight lives in memory. The outbox rows and the token are the entire state. The pull is paged, and each page commits with its own token advance, so a device returning after a month makes durable progress instead of restarting.
+
+One measurement goes in with it: the age of the oldest pending outbox row, at the 99th percentile. A poison row that never drains is invisible in every aggregate except that one.
+
+**The error most readers make here** is testing sync by backgrounding the app. Backgrounding is the easy case. The test that matters is a force stop in the middle of an apply, repeated until the assertion that local and server agree survives it.
+
+**Result.** The shape was chosen by a writer count, the write is durable in one transaction with its key, the pull costs 920 bytes instead of 2 MB, deletes travel as tombstones with a horizon that exceeds the offline promise, conflicts are resolved per field with a stated user-visible outcome, and the whole loop is resumable because the only state that matters is on disk.
+
+### 11e. Fade the scaffold
+
+**Faded example 1.** The prompt is a reading app that syncs highlights and the furthest read position for each book, across a phone, a tablet and an e-reader. Blocks 1 to 5 are given. Produce block 6.
+
+- Block 1: one writer, several devices, so state sync. A highlight is immutable once created, which removes most of the conflict surface before it exists.
+- Block 2: one transaction writes the highlight row and the outbox row, key generated at enqueue.
+- Block 3: change token delta sync, with the same reset flag contract as 11c.
+- Block 4: tombstones for deleted highlights, retention above the offline promise.
+- Block 5: highlights merge as a set because they are immutable and identified. The furthest read position is the interesting field, and the rule is the maximum position rather than the last writer, because reading position only moves forward within a book.
+- Block 6: **you make it resumable, and you name the one thing here that a force stop can still corrupt.**
+
+??? note "Show answer"
+
+    The resumable part is the same shape as 11d: outbox rows and the token are the only state, and each applied page advances the token inside the same transaction.
+
+    The thing that is genuinely different, and the reason this prompt is not the notes prompt again: the furthest read position updates continuously while the user reads, perhaps once a page. Writing an outbox row per page turn is a write amplification problem, not a correctness one.
+
+    So the position field is coalesced rather than queued. Keep one pending row per book, overwrite it in place as the user reads, and flush it on a timer or on backgrounding. Because the merge rule is a maximum, a lost intermediate value costs nothing at all: the next flush carries a larger number and the result is identical.
+
+    What a force stop can still corrupt: the last few pages of reading position, bounded by the flush interval. That is an acceptable loss and it should be stated as one, with the interval as the knob. Compare it with a highlight, where the same loss is unacceptable and so the highlight is never coalesced.
+
+    The general lesson is that durability is a per-field decision too. A field whose merge rule is idempotent or monotone can be coalesced and flushed lazily. A field that carries user-authored content cannot.
+
+**Faded example 2.** The prompt is a shared shopping list used by everyone in a household, where two people frequently tick items off in the same supermarket at the same time. Blocks 1 to 4 are given. Produce blocks 5 and 6.
+
+- Block 1: several writers on the same object at the same second, so the count from 11b points away from plain state sync for the item set.
+- Block 2: one transaction, outbox row, key at enqueue, unchanged.
+- Block 3: change token delta sync, unchanged.
+- Block 4: tombstones, with a horizon above the offline promise, unchanged.
+
+??? note "Show answer"
+
+    Block 5, conflict rules. The list is a set of items, and the two operations are add and remove, so this is the per-element structure from 11c rather than a version compare.
+
+    | Field | Rule | What the household sees |
+    |---|---|---|
+    | Item membership | Per-element adds and observed removes | Two people adding milk at once produces two entries unless the add identifier is derived from the normalised name, which is the design decision to make explicit |
+    | Ticked flag | Per item, last writer by server version | Whoever ticked last wins, and both people wanted it ticked anyway |
+    | Quantity | Last writer by server version, not a counter | A counter would merge "change 2 to 3" and "change 2 to 4" into 5, which nobody asked for |
+    | Item note | Last writer by server version | Short free text, cheap to retype |
+
+    The quantity row is the trap. A merge structure that adds increments is correct for a counter and wrong for a quantity, because the user is setting a value rather than incrementing one. Choosing the structure by what the user believes they are doing is the whole skill.
+
+    Block 6, resumability, plus what this prompt adds. The outbox and token rules are unchanged. What is new is that ticking an item is an operation two people race on, so the outbox must not coalesce a tick and an untick into one row. Coalescing is safe for a monotone field, as in faded example 1, and unsafe here, because the intermediate states are what the other person is reacting to.
+
+    The stronger answer names the product consequence: a shopping list needs a live foreground connection, not just a sync on foreground, because the value of the feature is that the other person sees the tick within seconds. That is a module 10 transport decision arriving through a sync requirement.
+
+### 11f. Check yourself
+
+**Q1.** A photo journal app stores 900 entries at an average of 12 KB of metadata each, and currently pulls the full set on every foreground. Users foreground it 5 times a day. Assume 3 entries change between foregrounds, that a changed entry sends 250 bytes of fields, and that the envelope and token cost 120 bytes. Quantify the change, then say which mechanism you would ship first.
+
+??? note "Show answer"
+
+    Full pull: 900 times 12 KB equals 10,800 KB, about **10.8 MB**. At 5 foregrounds a day that is 54 MB a day, about **1.6 GB a month** per user.
+
+    Delta: 3 times 250 equals 750 bytes, plus 120 equals **870 bytes**. At 5 foregrounds a day that is 4,350 bytes a day, about **131 KB a month**.
+
+    The ratio is about 12,400 to 1, and the absolute number is the argument: 1.6 GB a month on a metered plan is a reason for a user to delete the app.
+
+    Ship the change token first, before tombstones and before any conflict work. It is the only one of the three that changes a number the user can feel, and it is a server-side contract plus a small client change rather than a schema migration.
+
+    One caution: the delta path must carry tombstones from the first release, even if deletes are rare. Shipping delta pull without tombstones converts a bandwidth win into the resurrection bug, and that is a worse outcome than the bandwidth you started with.
+
+**Q2.** A colleague proposes dropping the change token and instead sending `?since=<the client's last updated_at>`, filtering server side on the entity's `updated_at` column. Evaluate it.
+
+??? note "Show answer"
+
+    Three defects, in increasing order of how hard they are to detect.
+
+    First, ties. Two entities written in the same millisecond straddle the cutoff, and one of them is skipped forever. A strictly greater comparison loses it and a greater-or-equal comparison refetches a row every time. Neither is correct without a tie-break, and adding a tie-break is halfway to inventing the token.
+
+    Second, the clock that stamps `updated_at`. If it is a server clock, several server nodes disagree by milliseconds and a write can be stamped earlier than a write that preceded it. If it is a device clock, 11c already ruled it out.
+
+    Third, and the one nobody notices in review: `since` cannot express "you are too far behind for an incremental answer". The server has no way to say reset, so a device returning after a backup restore silently receives a partial view and believes it is complete. The token version of this is one boolean in the response.
+
+    What I would do instead: keep an opaque token that the server maps to a position in a per-account change sequence. The client stores it and never parses it, which also means the server can change what it means without a client release, and that is the property that matters most on a device you cannot patch.
+
+### 11g. When not to use this
+
+A sync engine is the most expensive subsystem on this page to build and the most expensive to operate, and it is proposed far more often than it is needed.
+
+| Question | Answer |
+|---|---|
+| The measurement that justifies a sync engine | Users write from more than one device on the same account, measured as the share of accounts with two or more active installations, plus a nonzero share of sessions that begin offline. If the first number is near zero, you need a cache and an outbox, not a sync engine |
+| Scale threshold below which it is over-engineering | Single writer, a few hundred rows, and a dataset small enough to pull whole. The saved-items list in problem I1 is about 60 KB, which fits in one response, so a durable outbox plus a server-assigned version covers it completely |
+| The cheaper alternative | A durable outbox for writes, a full pull for reads, and a version integer per entity to reject stale writes. That is perhaps a tenth of the work and it holds until the full pull stops fitting in a response |
+| When to use an operation log instead | Several writers touch the same object inside the same second, and losing one of their edits is not acceptable. That is a different and much larger project, and 11b prices it |
+| When to skip the local store entirely | The data is read-only, server-authoritative and cheap to refetch, such as a public catalogue. Sync machinery on data the client never writes is pure cost |
+| Failure mode of over-applying | Building the general engine before any product needs it. The visible symptom is a conflict resolution policy for fields that two devices can never write concurrently, and the invisible one is that every subsequent feature pays a tax to pass through a subsystem that was solving a problem the product did not have |
+
+---
+
 ## Module 12. Storage and caching tiers on device
 
 **Time: 45 to 55 minutes reading, 30 to 40 minutes practice.**
 
 Every mobile app has four or five storage tiers whether anyone designed them or
 not. This module makes the choice explicit, sizes each tier from a device number
-rather than a guess, and answers the question interviewers use to separate
-levels: what exactly survives, and what exactly does not.
+rather than a guess, and answers the question that separates a described client
+from a designed one: what exactly survives, and what exactly does not.
 
 ### 12a. Predict first
 
@@ -3003,7 +3354,7 @@ everything, and the class determines the tier mechanically.
 | C, secret | A credential or key | Platform key store, excluded from backup | Re-authenticate |
 | D, ephemeral interface state | Scroll position, expanded rows, draft text | Memory, plus the platform's saved-state mechanism | The user loses their place, which is a quality bug |
 
-Class D deserves a sentence because candidates skip it. Your process can be
+Class D deserves a sentence because it is the one nobody plans for. Your process can be
 killed while backgrounded and recreated on the same screen. If interface state
 lives only in memory, the user returns to the top of the feed with a cleared
 form, and the crash reporter shows nothing because there was no crash.
@@ -3032,7 +3383,7 @@ is what makes scrolling back feel instant.
 
 Then measure the hit-rate curve and move the cap to the knee. A cap chosen from
 a curve is defensible in a design review. A cap of "512 MB because that seemed
-fine" is the thing an interviewer probes.
+fine" has no answer to the only follow-up it invites, which is why that number.
 
 **Eviction, compared on what each one actually optimises.**
 
@@ -4678,7 +5029,7 @@ problem.
 | Release trains can be independent per platform, but the flag system must be shared | A feature flagged on for one platform and not the other is normal, and the flag definition must live in one place |
 | The minimum supported version contract is shared | Because the server must serve both, the compatibility window is set by the slower-adopting platform |
 
-The last row is the one candidates miss. Your server contract's compatibility
+The last row is the one that is easiest to leave out. Your server contract's compatibility
 window is not a per-platform decision. It is set by whichever platform's users
 update most slowly, and that is a fact you look up rather than assume.
 
@@ -5909,8 +6260,9 @@ of flag where they are right and the general rule you would write down.
 
 **Time: 45 to 55 minutes reading, 35 to 45 minutes practice.**
 
-Component-scale prompts are common in mobile rounds and are where most
-candidates are least prepared. The shift is that your code runs inside someone
+Component-scale prompts appear in mobile rounds under names like "design an
+image loading library", and they reward preparation that an app-shaped answer
+does not give you. The shift is that your code runs inside someone
 else's process, on their startup budget, their battery, their crash rate and
 their support queue, and you cannot see their code. Every rule below follows
 from that.
@@ -6223,7 +6575,7 @@ smaller or much larger than it looks alone.
 | Server compatibility | The ingestion endpoint accepts payloads from every SDK version released in the last assumed 24 months. This is a server cost you accept when you ship a library |
 | Third-party types | Never in a public signature. Adapters ship as separate optional modules |
 
-The server compatibility row is the one candidates forget, and it is the largest
+The server compatibility row is the one that is easiest to forget, and it is the largest
 long-term cost of shipping an SDK. Hosts upgrade slowly, some never, so your
 ingestion path carries every payload shape you have ever released. Deciding the
 window explicitly, and instrumenting the share of traffic from each version, is
@@ -6530,8 +6882,9 @@ earlier modules and none requires a calculator:
 | Bytes per screen on a slow network | "A screen of feed should be under an assumed 300 KB, because at 200 kbit that is 12 seconds" |
 | Background battery share per day | "Under 1 percent, which at 41,580 J is about 74 isolated radio wakeups" |
 
-Stating even two of these separates you immediately, because most candidates
-design a client with no quantities in it at all.
+Stating even two of these changes what the rest of the round can be about. A
+client described with no quantities in it cannot have a breaking point, and
+without a breaking point there is nothing for a v1 to fix.
 
 **Descoping at minute 25, which is a skill rather than an apology.** The rule:
 at minute 25 of a 45 minute round, count the areas you still want to cover. If
@@ -6649,9 +7002,9 @@ Sync engine, at the depth of Module 11 and no deeper:
 |---|---|
 | 20 to 23 | The unit of change: per field, with the table of which fields can conflict |
 | 23 to 26 | Outbox and idempotency keys generated at enqueue, with the retry duplication failure named |
-| 26 to 29 | Change token pull, with the delta versus full arithmetic: 920 bytes steady state against 2 MB |
+| 26 to 29 | Change token pull, with the delta versus full arithmetic from Module 11: about 920 bytes steady state against about 2 MB |
 | 29 to 31 | Conflict resolution by version integer, and the sentence "I will not order anything by device clock" |
-| 31 to 33 | Tombstone horizon matched to the 30 day offline promise, at 240 KB per user |
+| 31 to 33 | Tombstone horizon matched to the 30 day offline promise, at about 5.6 KB per user by the Module 11 arithmetic |
 
 Two decisions I say out loud with the alternative I rejected: I chose state sync
 with a per-field rule table over an operation log for everything, because only
@@ -6688,7 +7041,8 @@ the single number that turns a class of silent sync failures into an alert.
 
 **The error most readers make here.** Listing failure modes without the
 detection. A failure you cannot observe is a failure you will hear about from a
-review, and interviewers hear the difference immediately.
+review instead of from a dashboard, and the list without the detections is
+indistinguishable from a list of things you have read about.
 
 #### Block E. Purpose: minutes 40 to 45, close by naming what you skipped
 
@@ -6861,7 +7215,7 @@ for.
 |---|---|
 | Measurement that justifies it | A 45 or 60 minute round with a single open prompt and an interviewer who expects you to drive |
 | Scale threshold below which it is over-engineering | In a 30 minute screen, this budget does not fit. Compress to: 2 minutes framing, 5 requirements, 8 architecture, 10 one dive, 5 close, and say the plan aloud so the compression is visible |
-| Cheaper alternative | Ask at the start how they want the time spent. Many interviewers have a fixed agenda, and following theirs beats following yours |
+| Cheaper alternative | Ask at the start how they want the time spent. If there is already an agenda in the room, following it beats following yours, and one question is cheaper than discovering the mismatch at minute twenty |
 
 **The fixed drawing order.**
 
@@ -6953,11 +7307,12 @@ decides the ranking.
 | Failure anticipation | Handles errors that are asked about | Names failure modes and their detection unprompted | Names the failure the organisation will actually hit, which is often process rather than code |
 | What is left out | Nothing, tries to cover everything | Skips deliberately and says so | Skips deliberately, says so, and sequences the skipped work |
 
-**The counter-intuitive fact worth internalising: staff answers usually contain
+**The counter-intuitive move worth internalising: a staff answer usually contains
 fewer components.** A mid answer adds a cache, a queue and a worker because each
 is defensible in isolation. A staff answer removes two of them and explains what
-measurement would bring them back. Interviewers read component count as
-enthusiasm and restraint as judgement.
+measurement would bring them back. Component count only demonstrates that you
+know the components exist; the removal, with its trigger condition attached,
+demonstrates that you can decide.
 
 **Behaviour by phase, so you can locate yourself.**
 
@@ -7085,7 +7440,7 @@ an order.
 !!! tip "Self-explanation prompt"
 
     Say which of the three staff moves you could make in your next interview
-    without knowing anything new, and what stops most candidates from making it.
+    without knowing anything new, and what would stop you from making it.
 
 #### Block D. Purpose: name the answers that look senior and are not
 
@@ -7510,7 +7865,7 @@ V2 makes the feed a real local store:
 
 This dive is chosen because the arithmetic above put every constraint in the image path. The chat, maps and video clients later on this page each have a different dominant cost, so their dives go elsewhere.
 
-**The four sizes of one photograph.** Candidates conflate them, and every real bug lives in the gap between two of them.
+**The four sizes of one photograph.** They are routinely treated as one number, and every real bug lives in the gap between two of them.
 
 | Size | What it is | Low tier value | Why it matters |
 |---|---|---|---|
@@ -7564,7 +7919,7 @@ The second design fetches half the bytes and bounds the memory, and the reason i
 
 ### Deep dive two: pagination on a feed that is editing itself
 
-The second dive goes somewhere unrelated to the first on purpose. The image dive was about a resource ceiling. This one is about correctness under concurrent mutation, and it ends somewhere candidates rarely go: what a reordering feed does to a screen reader.
+The second dive goes somewhere unrelated to the first on purpose. The image dive was about a resource ceiling. This one is about correctness under concurrent mutation, and it ends somewhere a pagination answer rarely goes: what a reordering feed does to a screen reader.
 
 **Four pagination schemes, compared on what breaks.**
 
@@ -7602,7 +7957,7 @@ The mechanics the W3C authoring guidance sets out for this pattern, in the terms
 | Which item is the anchor for loading more | Load and unload based on which item holds focus, not on pixel scroll position | Content unloads under the reading cursor, which throws focus to the top of the page |
 | Naming each item | Each item labelled by its own heading rather than by its body | Every item announces as a wall of text with no way to skim |
 
-**The design consequence.** If loading is driven by focus rather than by pixel offset, then your prefetch trigger has two implementations: a scroll position trigger for pointer and touch input, and a focus position trigger for assistive technology and keyboard input. Candidates who have shipped this know it; candidates who have not assume one trigger covers both.
+**The design consequence.** If loading is driven by focus rather than by pixel offset, then your prefetch trigger has two implementations: a scroll position trigger for pointer and touch input, and a focus position trigger for assistive technology and keyboard input. The untested assumption is that one trigger covers both, and it only fails for the users least able to work around it.
 
 **Do not unload aggressively.** Recycling views is fine. Removing items from the underlying collection to save memory is not, because the reading cursor may be inside the range you removed. Bound memory with the bitmap cache, which is where the megabytes actually are, and leave the item metadata in place. At 1.5 KB per item, 2,000 retained items cost 3 MB, which is 1.5 percent of the low tier budget.
 
@@ -7848,7 +8203,7 @@ V2 introduces an account level event stream:
 
 ### Deep dive one: the outbox, from tap to acknowledged
 
-This dive is chosen because the requirement "zero sends lost to process death" is the only hard guarantee on the page, and it is the thing candidates most often hand wave. The feed client's dives were about memory and about mutation under pagination; this one is about durability across a process boundary.
+This dive is chosen because the requirement "zero sends lost to process death" is the only hard guarantee on the page, and it is the easiest requirement on the page to hand wave, because "we queue it" sounds like a design. The feed client's dives were about memory and about mutation under pagination; this one is about durability across a process boundary.
 
 **The state machine, and what each transition costs.**
 
@@ -7886,7 +8241,9 @@ Reverse steps one and three and you have built the bug: the process dies between
 - On launch, scan the outbox for items in "in flight" and move them back to "retrying". A message left in flight forever is the "sending" spinner that never resolves, and it is the single most common chat client bug report.
 - Schedule a deferrable background job to drain the outbox, so a message composed offline sends before the user next opens the app. Deferrable, not immediate, because at 7.9 J per isolated wakeup, draining eagerly for one queued message is the wrong trade.
 
-**Editing and deleting a queued message.** The user writes a message offline, then deletes it before it sends. If the outbox row is simply removed, and the send had actually reached the server, the message exists for the recipient and not for the sender. The correct behaviour is to keep the row, mark it cancelled, and let the sender decide: if it has not been dispatched, drop it; if dispatch is ambiguous, send it and immediately send a delete. Candidates who name this have shipped chat.
+**Editing and deleting a queued message.** The user writes a message offline, then deletes it before it sends. If the outbox row is simply removed, and the send had actually reached the server, the message exists for the recipient and not for the sender. The correct behaviour is to keep the row, mark it cancelled, and let the sender decide: if it has not been dispatched, drop it; if dispatch is ambiguous, send it and immediately send a delete.
+
+This case is the difference between having drawn an outbox and having operated one.
 
 **A worked trace, so the states are concrete.** A user on a train sends three messages while the connection is dead, then walks into signal:
 
@@ -8211,7 +8568,7 @@ V2 separates pinned content from cached content:
 
 This dive is chosen because it is the only place in this prompt where the client owes the user a promise about the future. The feed dive was a memory ceiling, the chat dives were durability and key distribution; this one is about an estimate that has to be right before any work happens.
 
-**What is actually in a pack.** Candidates say "the tiles". A pack has at least four artefacts, and three of them are not tiles.
+**What is actually in a pack.** The obvious answer is "the tiles". A pack has at least four artefacts, and three of them are not tiles.
 
 | Artefact | Size for a 40 by 40 km region | Why it is separate |
 |---|---|---|
@@ -8589,7 +8946,7 @@ At a 30 s buffer, the round trip takes about 19 s down and however long it takes
 4. Ramp up only once the buffer has reached the dead band. Ramping while the buffer is filling is how you produce a stall in the first ten seconds, which is the single most abandonment inducing moment in a session.
 5. Render the first frame as soon as it decodes, before the buffer target is met. Startup is measured to first frame, not to steady state.
 
-**How you evaluate a change to any of this.** This is where candidates stop and where the interesting part starts.
+**How you evaluate a change to any of this.** This is the point where a design usually stops, and it is where the interesting part starts.
 
 | Metric | What it catches | Why it is not enough alone |
 |---|---|---|
@@ -8838,7 +9195,7 @@ Non-functional:
 
 ??? note "Show answer"
 
-    Later than most candidates say, and for a reason that is not load. At 1,500 concurrent trips polling every 2 seconds you generate 750 requests per second, which one modest service handles. What breaks first is the driver's battery and the rider's perception.
+    Later than the instinctive answer, and for a reason that is not load. At 1,500 concurrent trips polling every 2 seconds you generate 750 requests per second, which one modest service handles. What breaks first is the driver's battery and the rider's perception.
 
     Polling every 2 seconds pins the radio in its high-power state exactly as a 1 Hz stream would, so polling costs the same energy as streaming while delivering worse freshness. The trigger to move is not a request-per-second number, it is the first product requirement that needs a server-initiated event, such as an offer that must reach a driver within a second.
 
@@ -8931,7 +9288,7 @@ V2 adds three mechanisms, and each one is small:
 
 ### Deep dive one: the trip state machine, and the four races that actually happen
 
-Most candidates draw a state machine and move on. The state machine is not the interesting part. The interesting part is that two devices and a server all hold a copy of it, and only one of them is right.
+The obvious move is to draw a state machine and stop there. The state machine is not the interesting part. The interesting part is that two devices and a server all hold a copy of it, and only one of them is right.
 
 **The states, and who may propose what.**
 
@@ -8958,7 +9315,7 @@ Two rules fall out of that table and they carry the whole design:
 - A local optimistic transition does not increment the epoch. It sets a pending flag beside the last applied server state.
 - Any server event clears the pending flag, whether it confirms the proposal or contradicts it.
 
-That last line is the one candidates miss. A contradiction must clear the optimism, or the UI shows a proposal that the server already rejected, forever.
+That last line is the one that is easiest to miss. A contradiction must clear the optimism, or the UI shows a proposal that the server already rejected, forever.
 
 **Race one: the double request.** The rider taps request twice, or taps once on a network that retries under them.
 
@@ -9288,7 +9645,7 @@ The budget from the estimation table sums to 189 ms against a 250 ms objective. 
 | Layout and draw | 8 ms | You | Update a value, not a layout. A price change that triggers a re-layout of a row is the difference between 1 ms and 8 ms |
 | **Sum** | **189 ms** | | **61 ms of headroom, which is the only reason the budget survives one slow stage** |
 
-**How to measure it honestly.** You cannot measure a one-way latency between a server clock and a device clock, because the offset between them is unknown and drifts. Candidates who claim otherwise are subtracting two numbers that are not comparable.
+**How to measure it honestly.** You cannot measure a one-way latency between a server clock and a device clock, because the offset between them is unknown and drifts. Any claim to the contrary is subtracting two numbers that are not comparable.
 
 - Measure the client-side segment absolutely: from the moment bytes arrive at the socket to the frame callback that commits the change. One clock, one process, no skew.
 - Measure the network segment as half of a round trip taken on the same connection, and state the assumption that the path is roughly symmetric, which is often false on cellular uplinks.
@@ -9618,7 +9975,7 @@ V2 separates keys, adds ownership, and gives prefetch its own budget:
 
 ### Deep dive one: bitmap memory arithmetic and a cache size that is not a guess
 
-Every other decision in this component is downstream of one equation, and most candidates never write it down.
+Every other decision in this component is downstream of one equation, and it is worth writing that equation down before anything else.
 
 **The equation.** Decoded bytes equals width in pixels times height in pixels times bytes per pixel. The file size does not appear in it.
 
@@ -10156,7 +10513,7 @@ Re-check against the requirements:
 - **Instrumentation quality dominates transport quality.** The most common reason analytics data is unusable is not loss or duplication, it is that two teams named the same concept differently. That is a governance problem, and the schema allowlist above is only the enforcement end of it.
 - **Multiple processes, app extensions and embedded web views** all record events and all have their own lifecycles. A single-process design is a teaching simplification that a good interviewer will probe within ten minutes.
 - **The server side of this system** is a high-volume ingestion and aggregation pipeline with late events and deduplication, which is the metrics pipeline and ad click aggregation territory of [modern-system-design.md](modern-system-design.md).
-- **Experiment assignment is a different component** with a much stricter consistency requirement than analytics, even though it is often bundled into the same SDK. Deterministic bucketing for experiments is treated separately in the feature flag SDK case study elsewhere on this page.
+- **Experiment assignment is a different component** with a much stricter consistency requirement than analytics, even though it is often bundled into the same SDK. Deterministic bucketing for experiments is treated separately in Module 17, and summarised on the feature flag SDK card in the reference block.
 
 ### Level delta (analytics SDK)
 
@@ -10623,7 +10980,7 @@ Score all four on every problem. Two Strongs and two Adequates is a passing seni
 
     The fix set, in order: make first-run work idempotent, resumable and off the critical path; jitter every first-launch network call across a window rather than firing on open; and stage the rollout by install percentage with an automatic halt on crash-free sessions, so a bad release reaches 1 percent of installs rather than all of them.
 
-    The mobile-specific point most candidates miss: a server rollout can be halted in seconds, and a client rollout cannot. Once a binary is on a device you own that code until the user updates, so the kill switch has to be inside the shipped binary and controlled remotely. Designing the off switch is part of designing the feature.
+    The mobile-specific point that is easiest to miss: a server rollout can be halted in seconds, and a client rollout cannot. Once a binary is on a device you own that code until the user updates, so the kill switch has to be inside the shipped binary and controlled remotely. Designing the off switch is part of designing the feature.
 
     Wrong answer: "Add more backend capacity for release day." Reveals no mechanism. It also hides a client bug behind a server cost you now pay every release.
 
@@ -10810,9 +11167,9 @@ Seven short-answer items, one for each learning objective in Section 4, in the s
 
 ## 13. Common mistakes
 
-Technical mistakes cost you a follow-up. Delivery mistakes cost you the round. The last four rows are the ones that appear in debrief notes, and they are the cheapest to fix.
+Technical mistakes cost you a follow-up. Delivery mistakes cost you the round. We rank the five delivery rows at the bottom highest, because each one degrades every answer that follows it and each is fixable by rehearsal alone.
 
-| The mistake | Why candidates make it | What the interviewer concludes | What to say instead |
+| The mistake | Why it happens | What it implies about the answer | What to say instead |
 |---|---|---|---|
 | Drawing the client's layers as the answer | Architecture patterns are the part that was studied, and they are easy to draw | Has learned a diagram, not a system. Cannot be asked anything the diagram does not contain | "Before the layers: the budgets are 11.1 ms a frame, 1,200 ms cold start on the mid tier and about 32 MB of bitmaps. Here is what each one already rules out" |
 | Treating 16.7 ms as the frame budget | 60 Hz is the number everyone memorised | Has not shipped against a modern display, and will size work for the wrong device | "This device is 90 Hz, so the frame is 11.1 ms and I own about 7.8 ms of it once the compositor is paid" |
@@ -10936,7 +11293,7 @@ Day 1 is whatever day you start. The skip column is the part of this section tha
 - Saturday afternoon: one case study end to end, out loud, with a timer. Take the news feed client if you are early career, the chat client otherwise, because sync and ordering are where senior rounds go.
 - Sunday morning: Modules 10 and 11 (transports and the sync engine), then problems B5 and I3.
 - Sunday afternoon: Module 17, then one timed self-mock, then Sections 12, 13 and 14. Rehearse the first four sentences until they are automatic.
-- Skip entirely: Modules 4, 15, 16 and 18, the second timed self-mock, every second deep dive, and ten of the eleven case studies. One case study done properly beats five skimmed, and the difference shows inside two minutes of a real round.
+- Skip entirely: Modules 4, 15, 16 and 18, the second timed self-mock, every second deep dive, and seven of the eight case studies. One case study done properly beats five skimmed, and the difference shows inside two minutes of a real round.
 
 **One evening (about 2 to 3 hours)**
 
@@ -11116,6 +11473,9 @@ Every row below appeared with its derivation in Sections 10 to 15. Numbers intro
 | 360 messages per connection per hour | 6 updates a minute times 60 minutes | Polling for a live score screen, since above about 10 an hour a held connection wins |
 | 800,000 concurrent sockets | 10 million daily actives times an assumed 8 percent peak foreground share | The claim that socket concurrency is the hard part of a chat client |
 | About 60 KB for a saved-items list | A few hundred rows at an assumed 200 bytes each | A sync engine with an operation log for single-writer data |
+| About 2 MB for a full notes pull | 400 notes at an assumed 5 KB each | Pulling the whole set on every foreground once the delta below is priced |
+| About 920 bytes for a steady-state delta | 4 changed notes at an assumed 200 bytes of changed fields, plus an assumed 120 byte envelope and token | The full pull, at about 360 MB a month against about 166 KB at 6 foregrounds a day |
+| About 5.6 KB of tombstones per user | 2 deletions a day at an assumed 80 bytes a row, retained for 35 days | Trimming the tombstone horizon to the 30 day offline promise, since the margin costs almost nothing |
 | 10 ms to score a page on device | 50 candidates times an assumed 0.2 ms per candidate on the mid tier | Running inference on the main thread, and running it per scroll event |
 
 ### 16c. ASCII glyph legend
@@ -11148,7 +11508,7 @@ ASCII CONVENTIONS USED IN EVERY DIAGRAM ON THIS PAGE
 
 ### 16d. One-page summary cards
 
-Eleven cards, one per case study, in the order the case studies appear.
+Eleven cards. The first eight are one per case study, in the order the case studies appear. Cards 9 to 11 cover three prompts that are not written up as full case studies on this page, so each card is the whole treatment those prompts get here.
 
 **Card 1. News feed client**
 
@@ -11353,7 +11713,7 @@ Naming our limits is cheaper than pretending we have none, and it stops you stud
 
 | Date | Change |
 |---|---|
-| August 2026 | First publication: twenty modules, eleven case studies with the full arc and level deltas, eleven practice problems with public rubrics, and a mastery check mapped one to one against the seven learning objectives |
+| August 2026 | First publication: twenty modules, eight case studies with the full arc and level deltas, eleven practice problems with public rubrics, and a mastery check mapped one to one against the seven learning objectives |
 | August 2026 | Reference block separated from the teaching sections after review, so a reader returning for one decision table does not have to scroll through prose to reach it |
 | August 2026 | Every figure in Sections 10 to 16 re-derived from inputs stated in the same section; figures that could not be derived were relabelled as assumptions with the reason each is reasonable, and the ones that eliminated no design option were deleted |
 
