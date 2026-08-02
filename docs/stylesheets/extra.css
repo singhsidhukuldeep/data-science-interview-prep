@@ -111,3 +111,22 @@
   font-weight: bold;
   animation: nav-pulse 2s infinite;
 }
+
+/* Gentle glow on the Grokking Interviews navigation entry.
+   Targets the nested section label semantically via its child links,
+   so it survives navigation reordering. */
+.md-nav__item--nested:has(a.md-nav__link[href*="Grokking/"]) > .md-nav__link,
+.md-nav__item--nested:has(a.md-nav__link[href*="/Grokking/"]) > .md-nav__link {
+  color: #7c4dff;
+  font-weight: 600;
+  animation: grokking-nav-glow 2.8s ease-in-out infinite;
+}
+
+@keyframes grokking-nav-glow {
+  0%, 100% {
+    text-shadow: 0 0 0 rgba(124, 77, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(124, 77, 255, 0.55);
+  }
+}

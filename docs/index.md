@@ -85,6 +85,27 @@ hide:
         - [Product Architecture](Grokking/product-architecture.md)
         - [System Design Fast-Track (48 Hours)](Grokking/system-design-fast-track.md)
 
+-   ??? cheat-sheet ":octicons-arrow-right-24: __Cheat Sheets__"
+
+        ---
+
+        Distilled down important concepts for your quick reference
+
+        * [Django](Cheat-Sheets/Django.md)
+        * [Flask](Cheat-Sheets/Flask.md)
+        * [Hypothesis-Tests](Cheat-Sheets/Hypothesis-Tests.md)
+        * [Keras](Cheat-Sheets/Keras.md)
+        * [LangChain-LangGraph](Cheat-Sheets/LangChain-LangGraph.md)
+        * [NumPy](Cheat-Sheets/NumPy.ipynb)
+        * [Pandas](Cheat-Sheets/Pandas.ipynb)
+        * [PySpark](Cheat-Sheets/PySpark.md)
+        * [PyTorch](Cheat-Sheets/PyTorch.md)
+        * [Python](Cheat-Sheets/Python.md)
+        * [RegEx](Cheat-Sheets/RegEx.md)
+        * [Sk-learn](Cheat-Sheets/Sk-learn.md)
+        * [SQL](Cheat-Sheets/SQL.md)
+        * [tensorflow](Cheat-Sheets/tensorflow.md)
+
 -   ??? ml-algo ":octicons-arrow-right-24: __ML Algorithms__"
 
         ---
@@ -111,27 +132,6 @@ hide:
         - [Support Vector Machines](Machine-Learning/Support%20Vector%20Machines.md)
         - [Unbalanced, Skewed data](Machine-Learning/Unbalanced,%20Skewed%20data.md)
         - [kNN](Machine-Learning/kNN.md)
-
--   ??? cheat-sheet ":octicons-arrow-right-24: __Cheat Sheets__"
-
-        ---
-
-        Distilled down important concepts for your quick reference
-
-        * [Django](Cheat-Sheets/Django.md)
-        * [Flask](Cheat-Sheets/Flask.md)
-        * [Hypothesis-Tests](Cheat-Sheets/Hypothesis-Tests.md)
-        * [Keras](Cheat-Sheets/Keras.md)
-        * [LangChain-LangGraph](Cheat-Sheets/LangChain-LangGraph.md)
-        * [NumPy](Cheat-Sheets/NumPy.ipynb)
-        * [Pandas](Cheat-Sheets/Pandas.ipynb)
-        * [PySpark](Cheat-Sheets/PySpark.md)
-        * [PyTorch](Cheat-Sheets/PyTorch.md)
-        * [Python](Cheat-Sheets/Python.md)
-        * [RegEx](Cheat-Sheets/RegEx.md)
-        * [Sk-learn](Cheat-Sheets/Sk-learn.md)
-        * [SQL](Cheat-Sheets/SQL.md)
-        * [tensorflow](Cheat-Sheets/tensorflow.md)
 
 </div>
 
