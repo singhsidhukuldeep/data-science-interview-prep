@@ -286,7 +286,7 @@ The rough shape: mid level spends its minutes proving a working client could be 
 
 !!! tip "One note on frameworks, made once"
 
-    Educative's paid courses each ship an acronym spine and apply it identically to every case study; the hub [lists them with dated sources](index.md#the-shared-design-framework). Those are theirs, not ours.
+    Paid interview courses often ship an acronym spine and apply it identically to every case study. Those acronyms belong to their publishers, not to this page. The problem is not the letters, it is that one spine applied unchanged to every prompt produces an answer that sounds recited, and a recited answer gives a grader nothing to grade.
 
     The problem is not the letters. It is that one spine applied to six prompts produces the same answer six times, and a design round is scored on the choices a prompt forces, not on the order the sections arrive in. A recited spine hides exactly the choices that are being graded. The clock above is a time budget. It never appears as a heading in any case study on this page, and Module 1 teaches when to abandon it.
 
