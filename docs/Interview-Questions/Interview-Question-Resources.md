@@ -597,6 +597,10 @@ All topics have **5+ high-quality sources** with direct links to interview quest
     | 7 | [benthecoder/ds-interview-resources](https://github.com/benthecoder/ds-interview-resources) | 500+ ⭐ | Collection of awesome DS interview resources |
     | 8 | [ajitsingh98/DS-Interview-QA](https://github.com/ajitsingh98/Data-Science-Interview-Questions-Answers) | 500+ ⭐ | 1000+ most asked DS questions |
 
+    ### 💻 Practice Platforms
+
+    - [PracHub](https://prachub.com/positions/data-scientist){ target="_blank" rel="noopener" } — data-scientist interview questions organized by company, role, and topic.
+
 ---
 
 ## 💼 Real Interview Experiences
@@ -769,4 +773,3 @@ All topics have **5+ high-quality sources** with direct links to interview quest
     - Help the community grow!
 
 ---
-
